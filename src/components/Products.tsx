@@ -11,14 +11,27 @@ export function Products() {
     >
       <div className="prods">
         {PRODUCTS.map((product) => (
-          <article className="prod" key={product.name}>
+          <article className={product.featured ? 'prod feat' : 'prod'} key={product.name}>
             <span className="by">{product.by}</span>
             <h3>{product.name}</h3>
             <p>{product.text}</p>
+            {product.offers ? (
+              <ul className="offers">
+                {product.offers.map((offer) => (
+                  <li key={offer}>{offer}</li>
+                ))}
+              </ul>
+            ) : null}
             {product.href ? (
-              <a className="prod-link" href={product.href} target="_blank" rel="noopener">
-                {product.hrefLabel} →
-              </a>
+              product.cta ? (
+                <a className="prod-cta" href={product.href} target="_blank" rel="noopener">
+                  {product.cta} →
+                </a>
+              ) : (
+                <a className="prod-link" href={product.href} target="_blank" rel="noopener">
+                  {product.hrefLabel} →
+                </a>
+              )
             ) : null}
             <p className="tech">{product.tech}</p>
           </article>

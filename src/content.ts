@@ -51,8 +51,33 @@ export const FIGURES: Figure[] = [
   { value: '4', label: 'empresas' },
 ]
 
-export type Product = { by: string; name: string; text: string; tech: string; href?: string; hrefLabel?: string }
+export type Product = {
+  by: string
+  name: string
+  text: string
+  tech: string
+  href?: string
+  hrefLabel?: string
+  /** card em evidência: ocupa duas colunas e lista o que a plataforma entrega */
+  featured?: boolean
+  offers?: string[]
+  cta?: string
+}
 export const PRODUCTS: Product[] = [
+  { by: 'Grupo BlackHex', name: 'EmpreenderIA', featured: true,
+    text: 'A plataforma de formação do grupo, para quem empreende e para o time que precisa executar. Não é biblioteca de vídeo: junta conteúdo, gente e mentoria no mesmo lugar — e a mentora de IA foi treinada em estratégia de negócio, não em motivação genérica.',
+    offers: [
+      'Cursos de alta qualidade, com acesso individual ou por assinatura',
+      'Palestras corporativas presenciais ou ao vivo online, customizadas para a empresa',
+      'E-books e conteúdos avulsos, para quem quer só um tema',
+      'Networking Club: comunidade de troca de experiência e negócio entre empreendedores',
+      'IA mentora de estratégia: responde sobre o seu negócio, não sobre negócio em geral',
+      'Plano Corporate Premium com acompanhamento e atendimento personalizado',
+    ],
+    cta: 'Conhecer a EmpreenderIA',
+    tech: 'React · Vite · Firebase · Cloudflare',
+    href: 'https://empreenderia.com.br', hrefLabel: 'empreenderia.com.br' },
+
   { by: 'Hiperenge', name: 'Maya Home',
     text: 'A casa aprende a rotina de quem mora nela e passa a agir sozinha — luz, clima, irrigação, som, energia e segurança. Você fala em português e ela entende. Se a internet cair, continua funcionando: o cérebro fica dentro da casa, não numa nuvem lá fora.',
     tech: 'Home Assistant · integrações próprias · Cloud Run · Firestore',
@@ -90,11 +115,6 @@ export const PRODUCTS: Product[] = [
     text: 'Consulta para o médico à beira do leito: pergunta em português e recebe a resposta com a diretriz citada, incluindo dose e protocolo de sala. Não dá diagnóstico e não receita — mostra a fonte, e a decisão continua sendo do profissional. Cada especialidade só é liberada quando existe um médico revisor responsável por ela.',
     tech: 'PWA · Vite + React · Cloud Run · RAG sobre acervo curado',
     href: 'https://meds.ia.br', hrefLabel: 'meds.ia.br' },
-
-  { by: 'Grupo BlackHex', name: 'EmpreenderIA',
-    text: 'Plataforma de formação para empreendedor e equipe: cursos, palestras presenciais ou ao vivo online, e-books e a comunidade Networking Club. A empresa assina para o time inteiro. Tem ainda uma IA mentora de estratégia de negócio que, no plano corporativo, acompanha a operação de perto.',
-    tech: 'React · Vite · Firebase · Cloudflare',
-    href: 'https://empreenderia.com.br', hrefLabel: 'empreenderia.com.br' },
 
   { by: 'Hipercube', name: 'Hipercube Academy',
     text: 'A frente de formação da Hipercube: treina o time do cliente para colocar IA em uso de verdade na operação, em vez de assistir a mais uma demonstração e voltar para a planilha.',
