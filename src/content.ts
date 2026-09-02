@@ -24,14 +24,13 @@ export const ROLES: Role[] = [
   { org: 'Atimus Agro', role: 'CTPO', text: 'Tecnologia e produto em consultoria de inovação e incentivos fiscais à P&D para o agronegócio.', href: 'https://atimus.agr.br' },
   { org: 'BlackHex', role: 'CEO & Founder', text: 'Grupo de investimento em tecnologias disruptivas — a holding por trás das empresas abaixo.', href: 'https://blackhex.com.br' },
   { org: 'Hipercube', role: 'CEO & Founder', text: 'Software house de IA premium, parceiro consultivo de engenharia e produto, e a Academy.', href: 'https://hipercube.ia.br' },
-  { org: 'Hiperenge', role: 'CEO', text: 'Engenharia elétrica, telecomunicações, automação e sistemas críticos, agora com IA aplicada.', href: 'https://www.hiperenge.com.br' },
-  { org: 'Maya', role: 'Fundador', text: 'Automação residencial com IA autônoma: aprende, decide e age — e segue operando sem internet.', href: 'https://www.mayahome.ia.br' },
+  { org: 'Hiperenge', role: 'CEO', text: 'Engenharia elétrica, telecomunicações, automação e sistemas críticos — e a Maya, a linha de casa inteligente com IA.', href: 'https://www.hiperenge.com.br' },
 ]
 
 /** A pilha, do topo (agente) para a base (silício). O nível é a posição física real. */
 export type Layer = { level: string; name: string; tech: string; product: string }
 export const LAYERS: Layer[] = [
-  { level: 'L7', name: 'Agente', tech: 'Gemini 2.5 Pro · RAG · voz · WhatsApp / Telegram', product: 'Maya Hermes — a assistente que também programa' },
+  { level: 'L7', name: 'Agente', tech: 'Gemini 2.5 Pro · RAG · voz · WhatsApp / Telegram', product: 'Hermes — a assistente que também programa' },
   { level: 'L6', name: 'Aplicação', tech: 'React 19 · Vite · Next.js 14 · Kotlin + Compose', product: 'Athos, Meds, Money Day, Maya Home' },
   { level: 'L5', name: 'Borda', tech: 'Cloudflare Pages · Workers · D1 · Tunnel', product: 'proxy same-origin, cookies HttpOnly, CSP restrito' },
   { level: 'L4', name: 'Serviço', tech: 'FastAPI · Express · Cloud Run · PostgreSQL 16 · Firestore', product: 'APIs multi-tenant com segredo cifrado por cliente' },
@@ -47,27 +46,27 @@ export const FIGURES: Figure[] = [
   { value: '8', label: 'camadas da pilha' },
   { value: '113', label: 'repositórios' },
   { value: '10', label: 'formações' },
-  { value: '5', label: 'empresas' },
+  { value: '4', label: 'empresas' },
 ]
 
 export type Product = { by: string; name: string; text: string; tech: string; href?: string; hrefLabel?: string }
 export const PRODUCTS: Product[] = [
-  { by: 'Maya', name: 'Maya Home',
+  { by: 'Hiperenge', name: 'Maya Home',
     text: 'A casa aprende a rotina de quem mora nela e passa a agir sozinha — luz, clima, irrigação, som, energia e segurança. Você fala em português e ela entende. Se a internet cair, continua funcionando: o cérebro fica dentro da casa, não numa nuvem lá fora.',
     tech: 'Home Assistant · integrações próprias · Cloud Run · Firestore',
     href: 'https://www.mayahome.ia.br', hrefLabel: 'mayahome.ia.br' },
 
-  { by: 'Maya', name: 'Maya Hermes',
+  { by: 'Hipercube', name: 'Hermes',
     text: 'Uma assistente que atende no WhatsApp, por texto ou por voz, e lembra do que já foi conversado antes. Para a equipe técnica ela vai além: escreve e corrige código sozinha, no servidor, sem ninguém abrir o editor.',
     tech: 'PWA · Gemini 2.5 Pro · FastAPI · Cloud Run · RAG',
     href: 'https://maya.hipercube.ia.br', hrefLabel: 'maya.hipercube.ia.br' },
 
-  { by: 'Maya', name: 'Maya Knox',
+  { by: 'Hiperenge', name: 'Maya Knox',
     text: 'Câmeras que entendem o que estão vendo e avisam só quando importa: pessoa no perímetro, não folha caindo. A análise roda num computador dentro do próprio imóvel — nenhuma imagem sai da rede do cliente.',
     tech: 'Frigate · YOLOv9 · ONNX · NVIDIA TensorRT',
     href: 'https://knox.mayahome.ia.br', hrefLabel: 'knox.mayahome.ia.br' },
 
-  { by: 'Maya', name: 'Maya Vet Anest',
+  { by: 'Grupo BlackHex', name: 'Vet Anest',
     text: 'Assistente para o veterinário anestesista na hora do procedimento: calcula a dose pelo peso do animal, monta a ficha anestésica e deixa o protocolo farmacológico à mão. Substitui a tabela impressa e a conta no papel.',
     tech: 'React · Express · Firebase · agente Gemini por tenant',
     href: 'https://mayavetanest.ia.br', hrefLabel: 'mayavetanest.ia.br' },
@@ -160,12 +159,12 @@ export const EDUCATION: Degree[] = [
 
 export type Org = { role: string; name: string; text: string; href?: string; label?: string }
 export const ORGS: Org[] = [
-  { role: 'CEO & Founder · holding', name: 'BlackHex', text: 'Grupo de investimento em tecnologias disruptivas para os mercados residencial, corporativo e digital. Reúne o portfólio abaixo sob uma arquitetura técnica comum.', href: 'https://blackhex.com.br', label: 'blackhex.com.br' },
+  { role: 'CEO & Founder · holding', name: 'BlackHex', text: 'Grupo de investimento em tecnologias disruptivas para os mercados residencial, corporativo e digital. Reúne as empresas e os produtos abaixo sob uma arquitetura técnica comum.', href: 'https://blackhex.com.br', label: 'blackhex.com.br' },
   { role: 'CTPO', name: 'Atimus Agro', text: 'Consultoria de inovação e incentivos fiscais à P&D para o agronegócio — Lei do Bem, dados e produto digital.', href: 'https://atimus.agr.br', label: 'atimus.agr.br' },
   { role: 'CEO & Founder', name: 'Hipercube', text: 'Software house de IA premium: apps com IA, SaaS sob medida, automações, plataformas internas e a Academy.', href: 'https://hipercube.ia.br', label: 'hipercube.ia.br' },
-  { role: 'CEO', name: 'Hiperenge', text: 'Engenharia de energia, telecomunicações e automação, com 20+ anos em sistemas críticos residenciais e comerciais.', href: 'https://www.hiperenge.com.br', label: 'hiperenge.com.br' },
-  { role: 'Fundador', name: 'Maya', text: 'Automação residencial com IA autônoma, em quatro níveis de produto, para residências de alto padrão.', href: 'https://www.mayahome.ia.br', label: 'mayahome.ia.br' },
-  { role: 'portfólio da holding', name: 'EmpreenderIA · Money Day · HiperGED · Alpha-se', text: 'Formação e mentoria de negócio com IA, finanças pessoais, gestão de documentos e classificados digitais.', href: 'https://empreenderia.com.br', label: 'empreenderia.com.br' },
+  { role: 'CEO', name: 'Hiperenge', text: 'Engenharia de energia, telecomunicações e automação, com 20+ anos em sistemas críticos. É dela a linha Maya, de casa inteligente com IA.', href: 'https://www.hiperenge.com.br', label: 'hiperenge.com.br' },
+  { role: 'linha de produto · Hiperenge', name: 'Maya', text: 'Casa inteligente com IA para residências de alto padrão: automação que aprende a rotina, e vigilância que analisa a imagem dentro do próprio imóvel.', href: 'https://www.mayahome.ia.br', label: 'mayahome.ia.br' },
+  { role: 'portfólio da holding', name: 'EmpreenderIA · Vet Anest · Money Day · HiperGED · Alpha-se', text: 'Formação e mentoria de negócio com IA, assistência em anestesia veterinária, finanças pessoais, gestão de documentos e classificados digitais.', href: 'https://empreenderia.com.br', label: 'empreenderia.com.br' },
 ]
 
 export type Repo = { name: string; text: string; label: string; href: string }
