@@ -2,6 +2,7 @@ import { Contact } from './components/Contact'
 import { Education } from './components/Education'
 import { Footer } from './components/Footer'
 import { Hero } from './components/Hero'
+import { Offer } from './components/Offer'
 import { OpenSource } from './components/OpenSource'
 import { Orgs } from './components/Orgs'
 import { Principles } from './components/Principles'
@@ -23,6 +24,7 @@ export default function App() {
       <Education />
       <Orgs />
       <OpenSource />
+      <Offer />
       <Contact />
       <Footer />
       <WhatsAppButton />

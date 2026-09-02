@@ -8,6 +8,8 @@ export const IDENTITY = {
   thesis:
     'Eu projeto o sistema inteiro: o chip dentro do sensor, a rede que o conecta, o servidor que guarda o dado, o aplicativo na mão da pessoa e a inteligência que decide o que fazer.',
   thesisEmphasis: 'Oito camadas — e eu escrevo em todas elas.',
+  who:
+    'Sou engenheiro eletricista. Passei vinte anos em obra, mineração e sistemas críticos antes de construir software — e nunca parei de escrever código. Hoje lidero tecnologia e produto em quatro empresas.',
   email: 'klaus@hipercube.ia.br',
   github: 'https://github.com/klausterra',
   linkedin: 'https://www.linkedin.com/in/klausterra',
@@ -23,7 +25,7 @@ export type Role = { org: string; role: string; text: string; href?: string }
 export const ROLES: Role[] = [
   { org: 'Atimus Agro', role: 'CTPO', text: 'Tecnologia e produto em consultoria de inovação e incentivos fiscais à P&D para o agronegócio.', href: 'https://atimus.agr.br' },
   { org: 'BlackHex', role: 'CEO & Founder', text: 'Grupo de investimento em tecnologias disruptivas — a holding por trás das empresas abaixo.', href: 'https://blackhex.com.br' },
-  { org: 'Hipercube', role: 'CEO & Founder', text: 'Software house de IA premium, parceiro consultivo de engenharia e produto, e a Academy.', href: 'https://hipercube.ia.br' },
+  { org: 'Hipercube', role: 'CEO & Founder', text: 'Empresa de aplicativos e desenvolvimento: app, sistema, plataforma e time de engenharia sob medida.', href: 'https://hipercube.ia.br' },
   { org: 'Hiperenge', role: 'CEO', text: 'Engenharia elétrica, telecomunicações, automação e sistemas críticos — e a Maya, a linha de casa inteligente com IA.', href: 'https://www.hiperenge.com.br' },
 ]
 
@@ -95,7 +97,7 @@ export const PRODUCTS: Product[] = [
     href: 'https://empreenderia.com.br', hrefLabel: 'empreenderia.com.br' },
 
   { by: 'Hipercube', name: 'Hipercube Academy',
-    text: 'Treinamento para times que precisam colocar IA para funcionar de verdade na operação — não assistir a mais uma demonstração e voltar para a planilha.',
+    text: 'A frente de formação da Hipercube: treina o time do cliente para colocar IA em uso de verdade na operação, em vez de assistir a mais uma demonstração e voltar para a planilha.',
     tech: 'Next.js 14 · Cloudflare Pages',
     href: 'https://hipercube.ia.br/academy', hrefLabel: 'hipercube.ia.br/academy' },
 
@@ -161,7 +163,7 @@ export type Org = { role: string; name: string; text: string; href?: string; lab
 export const ORGS: Org[] = [
   { role: 'CEO & Founder · holding', name: 'BlackHex', text: 'Grupo de investimento em tecnologias disruptivas para os mercados residencial, corporativo e digital. Reúne as empresas e os produtos abaixo sob uma arquitetura técnica comum.', href: 'https://blackhex.com.br', label: 'blackhex.com.br' },
   { role: 'CTPO', name: 'Atimus Agro', text: 'Consultoria de inovação e incentivos fiscais à P&D para o agronegócio — Lei do Bem, dados e produto digital.', href: 'https://atimus.agr.br', label: 'atimus.agr.br' },
-  { role: 'CEO & Founder', name: 'Hipercube', text: 'Software house de IA premium: apps com IA, SaaS sob medida, automações, plataformas internas e a Academy.', href: 'https://hipercube.ia.br', label: 'hipercube.ia.br' },
+  { role: 'CEO & Founder', name: 'Hipercube', text: 'Empresa de aplicativos e desenvolvimento. Constrói app, sistema, plataforma e automação sob medida — e treina o time do cliente na Academy.', href: 'https://hipercube.ia.br', label: 'hipercube.ia.br' },
   { role: 'CEO', name: 'Hiperenge', text: 'Engenharia de energia, telecomunicações e automação, com 20+ anos em sistemas críticos. É dela a linha Maya, de casa inteligente com IA.', href: 'https://www.hiperenge.com.br', label: 'hiperenge.com.br' },
   { role: 'linha de produto · Hiperenge', name: 'Maya', text: 'Casa inteligente com IA para residências de alto padrão: automação que aprende a rotina, e vigilância que analisa a imagem dentro do próprio imóvel.', href: 'https://www.mayahome.ia.br', label: 'mayahome.ia.br' },
   { role: 'portfólio da holding', name: 'EmpreenderIA · Vet Anest · Money Day · HiperGED · Alpha-se', text: 'Formação e mentoria de negócio com IA, assistência em anestesia veterinária, finanças pessoais, gestão de documentos e classificados digitais.', href: 'https://empreenderia.com.br', label: 'empreenderia.com.br' },
@@ -179,6 +181,15 @@ export const OPEN_SOURCE: Repo[] = [
   { name: 'todos os repositórios →', text: 'Dezenove projetos públicos entre integrações, firmware, ferramentas de IA e documentação técnica.', label: 'GITHUB', href: 'https://github.com/klausterra?tab=repositories' },
 ]
 
+export const OFFER = {
+  eyebrow: 'Se você veio contratar',
+  title: 'Sua empresa precisa de um app, um sistema ou um time de desenvolvimento?',
+  text:
+    'Isso é a Hipercube, a empresa de aplicativos e desenvolvimento do grupo. Levamos do diagnóstico ao produto no ar: aplicativo, plataforma interna, automação de processo e IA aplicada onde ela realmente resolve — com a mesma engenharia que sustenta os produtos desta página.',
+  href: 'https://hipercube.ia.br',
+  label: 'hipercube.ia.br',
+} as const
+
 export const NAV = [
   { href: '#pilha', label: 'a pilha' },
   { href: '#produtos', label: 'produtos' },
@@ -186,5 +197,6 @@ export const NAV = [
   { href: '#trajetoria', label: 'trajetória' },
   { href: '#formacao', label: 'formação' },
   { href: '#grupo', label: 'grupo' },
+  { href: '#contratar', label: 'contratar' },
   { href: '#contato', label: 'contato' },
 ] as const

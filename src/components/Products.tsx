@@ -5,15 +5,9 @@ export function Products() {
   return (
     <Section
       id="produtos"
-      eyebrow="O que está no ar"
-      title={
-        <>
-          Produtos em produção,
-          <br />
-          não protótipos de slide.
-        </>
-      }
-      lede="Cada um destes tem cliente, domínio próprio e deploy automático. A lista é curta de propósito — é o que sobreviveu ao contato com a operação."
+      eyebrow="Evidência"
+      title="Treze produtos com cliente usando."
+      lede="Não é catálogo de venda: está aqui para mostrar alcance. Casa, agro, saúde, obra, finanças e operação — todos no ar, com domínio próprio e cliente usando. É a diferença entre falar de tecnologia e ter tecnologia rodando."
     >
       <div className="prods">
         {PRODUCTS.map((product) => (

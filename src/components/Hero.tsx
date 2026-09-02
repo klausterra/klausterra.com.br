@@ -34,6 +34,7 @@ export function Hero() {
             <p className="hero-thesis">
               {IDENTITY.thesis} <em>{IDENTITY.thesisEmphasis}</em>
             </p>
+            <p className="hero-who">{IDENTITY.who}</p>
             <div className="roles">
               {ROLES.map((item) => (
                 <div key={item.org}>
