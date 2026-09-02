@@ -1,6 +1,13 @@
-import { IDENTITY } from '../content'
+import { IDENTITY, SOCIAL } from '../content'
 import { Section } from './Section'
-import { GitHubIcon, LinkedInIcon, MailIcon, WhatsIcon } from './icons'
+import { GitHubIcon, InstagramIcon, LinkedInIcon, MailIcon, WhatsIcon, YouTubeIcon } from './icons'
+
+const GLYPH = {
+  linkedin: LinkedInIcon,
+  youtube: YouTubeIcon,
+  instagram: InstagramIcon,
+  github: GitHubIcon,
+} as const
 
 export function Contact() {
   return (
@@ -20,14 +27,17 @@ export function Contact() {
           <WhatsIcon />
           {IDENTITY.whatsappLabel}
         </a>
-        <a href={IDENTITY.linkedin} target="_blank" rel="noopener">
-          <LinkedInIcon />
-          linkedin.com/in/klausterra
-        </a>
-        <a href={IDENTITY.github} target="_blank" rel="noopener">
-          <GitHubIcon />
-          github.com/klausterra
-        </a>
+      </div>
+      <div className="cta cta-social">
+        {SOCIAL.map((item) => {
+          const Glyph = GLYPH[item.id]
+          return (
+            <a key={item.id} href={item.href} target="_blank" rel="noopener">
+              <Glyph />
+              {item.label} <i>{item.handle}</i>
+            </a>
+          )
+        })}
       </div>
     </Section>
   )

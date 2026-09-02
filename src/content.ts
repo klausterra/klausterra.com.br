@@ -13,6 +13,8 @@ export const IDENTITY = {
   email: 'klaus@hipercube.ia.br',
   github: 'https://github.com/klausterra',
   linkedin: 'https://www.linkedin.com/in/klausterra',
+  youtube: 'https://www.youtube.com/@klausterra',
+  instagram: 'https://www.instagram.com/klausterra',
   whatsapp: 'https://wa.me/5531995557007',
   whatsappLabel: '+55 31 99555-7007',
   site: 'https://klausterra.com.br',
@@ -199,6 +201,14 @@ export const OPEN_SOURCE: Repo[] = [
   { name: 'omada-sdn-para-cloud', text: 'Manual técnico em português para migrar sites do Omada on-premise para os controladores em nuvem.', label: 'GITHUB PAGES', href: 'https://github.com/klausterra/omada-sdn-para-cloud' },
   { name: 'token-calculator', text: 'Contagem de tokens em CLI, API e web, com preview token-a-token e estimativa de custo.', label: 'PYTHON · MIT', href: 'https://github.com/klausterra/token-calculator' },
   { name: 'todos os repositórios →', text: 'Dezenove projetos públicos entre integrações, firmware, ferramentas de IA e documentação técnica.', label: 'GITHUB', href: 'https://github.com/klausterra?tab=repositories' },
+]
+
+export type Social = { id: 'linkedin' | 'youtube' | 'instagram' | 'github'; label: string; handle: string; href: string }
+export const SOCIAL: Social[] = [
+  { id: 'linkedin', label: 'LinkedIn', handle: 'in/klausterra', href: 'https://www.linkedin.com/in/klausterra' },
+  { id: 'youtube', label: 'YouTube', handle: '@klausterra', href: 'https://www.youtube.com/@klausterra' },
+  { id: 'instagram', label: 'Instagram', handle: '@klausterra', href: 'https://www.instagram.com/klausterra' },
+  { id: 'github', label: 'GitHub', handle: 'klausterra', href: 'https://github.com/klausterra' },
 ]
 
 export const OFFER = {

@@ -64,6 +64,12 @@ section[id],header[id]{scroll-margin-top:60px}
   padding:8px 10px;border-radius:6px;transition:color .15s,background .15s}
 .navlinks a:hover{color:var(--ink);background:var(--sink)}
 @media (max-width:719px){.navlinks{display:none}}
+.social{display:flex;gap:1px;flex:0 0 auto;background:var(--rule);
+  border:1px solid var(--rule);border-radius:8px;overflow:hidden}
+.social a{display:grid;place-items:center;width:31px;height:31px;color:var(--ink3);
+  background:var(--bg2);transition:color .15s,background .15s}
+.social a:hover{color:var(--ochre);background:var(--sink)}
+@media (max-width:479px){.social a:nth-child(n+4){display:none}}
 .tbtn{border:1px solid var(--rule2);background:transparent;color:var(--ink2);border-radius:7px;
   width:33px;height:33px;display:grid;place-items:center;cursor:pointer;flex:0 0 auto;transition:.15s}
 .tbtn:hover{color:var(--ochre);border-color:var(--ochre)}
@@ -179,6 +185,10 @@ h1{font-size:clamp(2.4rem,7.4vw,4.6rem);line-height:.96;font-weight:800}
 .cta a.key:hover{background:var(--ochre);border-color:var(--ochre);color:#0B1418}
 .cta svg{flex:0 0 auto}
 
+.cta-social{margin-top:-2px}
+.cta-social a{font:600 12.5px/1 var(--display);padding:11px 15px}
+.cta-social a i{font-style:normal;font-weight:500;font-family:var(--mono);font-size:11px;color:var(--ink3)}
+.cta-social a:hover i{color:var(--ochre)}
 footer{border-top:1px solid var(--rule);padding:26px 0 40px;color:var(--ink3);
   font:400 12px/1.7 var(--mono)}
 footer p{max-width:78ch}
