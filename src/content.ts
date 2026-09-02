@@ -68,7 +68,7 @@ export const PRODUCTS: Product[] = [
     tech: 'Frigate · YOLOv9 · ONNX · NVIDIA TensorRT',
     href: 'https://knox.mayahome.ia.br', hrefLabel: 'knox.mayahome.ia.br' },
 
-  { by: 'Grupo BlackHex', name: 'Vet Anest',
+  { by: 'Grupo BlackHex', name: 'Maya Vet Anest',
     text: 'Assistente para o veterinário anestesista na hora do procedimento: calcula a dose pelo peso do animal, monta a ficha anestésica e deixa o protocolo farmacológico à mão. Substitui a tabela impressa e a conta no papel.',
     tech: 'React · Express · Firebase · agente Gemini por tenant',
     href: 'https://mayavetanest.ia.br', hrefLabel: 'mayavetanest.ia.br' },
@@ -166,7 +166,7 @@ export const ORGS: Org[] = [
   { role: 'CEO & Founder', name: 'Hipercube', text: 'Empresa de aplicativos e desenvolvimento. Constrói app, sistema, plataforma e automação sob medida — e treina o time do cliente na Academy.', href: 'https://hipercube.ia.br', label: 'hipercube.ia.br' },
   { role: 'CEO', name: 'Hiperenge', text: 'Engenharia de energia, telecomunicações e automação, com 20+ anos em sistemas críticos. É dela a linha Maya, de casa inteligente com IA.', href: 'https://www.hiperenge.com.br', label: 'hiperenge.com.br' },
   { role: 'linha de produto · Hiperenge', name: 'Maya', text: 'Casa inteligente com IA para residências de alto padrão: automação que aprende a rotina, e vigilância que analisa a imagem dentro do próprio imóvel.', href: 'https://www.mayahome.ia.br', label: 'mayahome.ia.br' },
-  { role: 'portfólio da holding', name: 'EmpreenderIA · Vet Anest · Money Day · HiperGED · Alpha-se', text: 'Formação e mentoria de negócio com IA, assistência em anestesia veterinária, finanças pessoais, gestão de documentos e classificados digitais.', href: 'https://empreenderia.com.br', label: 'empreenderia.com.br' },
+  { role: 'portfólio da holding', name: 'EmpreenderIA · Maya Vet Anest · Money Day · HiperGED · Alpha-se', text: 'Formação e mentoria de negócio com IA, assistência em anestesia veterinária, finanças pessoais, gestão de documentos e classificados digitais.', href: 'https://empreenderia.com.br', label: 'empreenderia.com.br' },
 ]
 
 export type Repo = { name: string; text: string; label: string; href: string }
