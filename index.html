@@ -49,11 +49,13 @@
 <!-- Matomo -->
 <script>
   var _paq = window._paq = window._paq || [];
-  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  /* Sem cookie: dispensa banner de consentimento (LGPD). O custo e perder
+     visitante unico fiel entre sessoes — a contagem passa a ser por visita. */
+  _paq.push(['disableCookies']);
   _paq.push(['trackPageView']);
   _paq.push(['enableLinkTracking']);
   (function() {
-    var u="//matomo.hipercube.ia.br/";
+    var u="https://matomo.hipercube.ia.br/";
     _paq.push(['setTrackerUrl', u+'matomo.php']);
     _paq.push(['setSiteId', '21']);
     var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
