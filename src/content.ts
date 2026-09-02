@@ -2,25 +2,30 @@
 
 export const IDENTITY = {
   name: 'Klaus Quirino Terra',
-  eyebrow: 'Engenharia de produto · Brasil',
+  title: 'CTPO · Atimus Agro',
+  eyebrow: 'Ribeirão Preto · São Paulo · Brasil',
   headline: ['Do silício', 'ao agente.'],
   thesis:
-    'Firmware em C no ESP32, rádio Zigbee, a rede do cliente, a infra em Proxmox, o serviço em Cloud Run, o app na loja e o agente de IA que atende no WhatsApp.',
+    'Eu projeto o sistema inteiro: o chip dentro do sensor, a rede que o conecta, o servidor que guarda o dado, o aplicativo na mão da pessoa e a inteligência que decide o que fazer.',
   thesisEmphasis: 'Oito camadas — e eu escrevo em todas elas.',
   email: 'klaus@hipercube.ia.br',
+  github: 'https://github.com/klausterra',
+  linkedin: 'https://www.linkedin.com/in/klausterra',
+  whatsapp: 'https://wa.me/5531995557007',
+  whatsappLabel: '+55 31 99555-7007',
+  site: 'https://klausterra.com.br',
   portrait: '/klaus-terra.jpg',
   portraitWebp: '/klaus-terra.webp',
   portraitAlt: 'Klaus Quirino Terra, de perfil, terno cinza e camisa branca',
-  github: 'https://github.com/klausterra',
-  site: 'https://klausterra.com.br',
 } as const
 
-export type Role = { org: string; text: string }
+export type Role = { org: string; role: string; text: string; href?: string }
 export const ROLES: Role[] = [
-  { org: 'Atimus Agro', text: 'CTO e CPO. Plataforma de editais, incentivo fiscal à P&D e inteligência de marca para o agronegócio.' },
-  { org: 'Hipercube', text: 'CEO. IA aplicada: produto, treinamento e automação de operação.' },
-  { org: 'Hiperenge', text: 'CEO. Engenharia, automação predial e residencial, redes e documentos.' },
-  { org: 'BlackHEx', text: 'CEO. Cibersegurança e inteligência clínica auditável.' },
+  { org: 'Atimus Agro', role: 'CTPO', text: 'Tecnologia e produto em consultoria de inovação e incentivos fiscais à P&D para o agronegócio.', href: 'https://atimus.agr.br' },
+  { org: 'BlackHex', role: 'CEO & Founder', text: 'Grupo de investimento em tecnologias disruptivas — a holding por trás das empresas abaixo.', href: 'https://blackhex.com.br' },
+  { org: 'Hipercube', role: 'CEO & Founder', text: 'Software house de IA premium, parceiro consultivo de engenharia e produto, e a Academy.', href: 'https://hipercube.ia.br' },
+  { org: 'Hiperenge', role: 'CEO', text: 'Engenharia elétrica, telecomunicações, automação e sistemas críticos, agora com IA aplicada.', href: 'https://www.hiperenge.com.br' },
+  { org: 'Maya', role: 'Fundador', text: 'Automação residencial com IA autônoma: aprende, decide e age — e segue operando sem internet.', href: 'https://www.mayahome.ia.br' },
 ]
 
 /** A pilha, do topo (agente) para a base (silício). O nível é a posição física real. */
@@ -38,65 +43,129 @@ export const LAYERS: Layer[] = [
 
 export type Figure = { value: string; label: string }
 export const FIGURES: Figure[] = [
-  { value: '20', label: 'produtos e plataformas' },
-  { value: '113', label: 'repositórios' },
+  { value: '20+', label: 'anos de engenharia' },
   { value: '8', label: 'camadas da pilha' },
-  { value: '4', label: 'empresas' },
+  { value: '113', label: 'repositórios' },
+  { value: '10', label: 'formações' },
+  { value: '5', label: 'empresas' },
 ]
 
-export type Product = { by: string; name: string; text: string; tech: string }
+export type Product = { by: string; name: string; text: string; tech: string; href?: string; hrefLabel?: string }
 export const PRODUCTS: Product[] = [
-  { by: 'Hiperenge', name: 'Maya Home',
-    text: 'Automação residencial em quatro níveis: do controle por app à IA local que entende voz natural em português e antecipa a rotina da casa. Servidor no datacenter ou dentro da residência — a versão Edge funciona sem internet.',
-    tech: 'Home Assistant · integrações próprias · Cloud Run · Firestore' },
-  { by: 'Hiperenge', name: 'Maya Knox',
-    text: 'Segurança patrimonial com visão computacional rodando na GPU do próprio cliente. Detecção por YOLO acelerada em TensorRT; nenhum frame de câmera sai da rede local.',
-    tech: 'Frigate · YOLOv9 · ONNX · NVIDIA TensorRT' },
-  { by: 'Atimus Agro', name: 'Athos',
-    text: 'Plataforma de editais do agronegócio: portal do cliente, painel administrativo e API. Em reescrita greenfield conduzida em paralelo à operação, sem parar quem já usa.',
-    tech: 'FastAPI · PostgreSQL 16 · Alembic · React 19' },
+  { by: 'Maya', name: 'Maya Home',
+    text: 'A casa aprende a rotina de quem mora nela e passa a agir sozinha — luz, clima, irrigação, som, energia e segurança. Você fala em português e ela entende. Se a internet cair, continua funcionando: o cérebro fica dentro da casa, não numa nuvem lá fora.',
+    tech: 'Home Assistant · integrações próprias · Cloud Run · Firestore',
+    href: 'https://www.mayahome.ia.br', hrefLabel: 'mayahome.ia.br' },
+
+  { by: 'Maya', name: 'Maya Hermes',
+    text: 'Uma assistente que atende no WhatsApp, por texto ou por voz, e lembra do que já foi conversado antes. Para a equipe técnica ela vai além: escreve e corrige código sozinha, no servidor, sem ninguém abrir o editor.',
+    tech: 'PWA · Gemini 2.5 Pro · FastAPI · Cloud Run · RAG',
+    href: 'https://maya.hipercube.ia.br', hrefLabel: 'maya.hipercube.ia.br' },
+
+  { by: 'Maya', name: 'Maya Knox',
+    text: 'Câmeras que entendem o que estão vendo e avisam só quando importa: pessoa no perímetro, não folha caindo. A análise roda num computador dentro do próprio imóvel — nenhuma imagem sai da rede do cliente.',
+    tech: 'Frigate · YOLOv9 · ONNX · NVIDIA TensorRT',
+    href: 'https://knox.mayahome.ia.br', hrefLabel: 'knox.mayahome.ia.br' },
+
+  { by: 'Maya', name: 'Maya Vet Anest',
+    text: 'Assistente para o veterinário anestesista na hora do procedimento: calcula a dose pelo peso do animal, monta a ficha anestésica e deixa o protocolo farmacológico à mão. Substitui a tabela impressa e a conta no papel.',
+    tech: 'React · Express · Firebase · agente Gemini por tenant',
+    href: 'https://mayavetanest.ia.br', hrefLabel: 'mayavetanest.ia.br' },
+
   { by: 'Atimus Agro', name: 'Lei do Bem',
-    text: 'Lê notas fiscais em PDF — inclusive digitalizadas —, classifica a elegibilidade ao incentivo fiscal da Lei 11.196/2005 e devolve a planilha pronta. Reclassificação manual auditável e consulta em linguagem natural sobre o acervo.',
+    text: 'A Lei do Bem devolve imposto para a empresa que investe em pesquisa — mas exige comprovar nota por nota. O sistema lê as notas fiscais, inclusive as escaneadas, separa o que é elegível e entrega a planilha pronta para o contador. Semanas de conferência manual viram horas.',
     tech: 'FastAPI · OCR · React · Cloud Run' },
+
+  { by: 'Atimus Agro', name: 'Athos',
+    text: 'O software que organiza a operação da consultoria: o cliente acompanha o andamento do próprio projeto num portal, e a equipe controla prazo, documento e entrega num painel único.',
+    tech: 'FastAPI · PostgreSQL 16 · Alembic · React 19 · GCP' },
+
   { by: 'Atimus Agro · Hipercube', name: 'BrandPulse',
-    text: 'Monitoramento de marca multi-tenant, entregue em duas instâncias de produção independentes. Os segredos de cada cliente ficam cifrados em repouso, um por tenant.',
-    tech: 'FastAPI · Fernet · Secret Manager · Next.js 14' },
-  { by: 'BlackHEx · Hipercube', name: 'Meds / MedEvidence',
-    text: 'Inteligência de evidência clínica para profissionais de saúde no Brasil. Não diagnostica e não prescreve: cita a diretriz, com posologia e protocolo quando o documento está no acervo. Cada área clínica fica bloqueada até existir um revisor humano responsável.',
-    tech: 'PWA · Vite + React · Cloud Run · RAG sobre acervo curado' },
-  { by: 'Hiperenge', name: 'Tesserion & GED',
-    text: 'Gestão física e financeira de obras, e gestão eletrônica de documentos de projeto com permissão por perfil de usuário — engenharia que precisa saber quem viu qual revisão.',
+    text: 'Acompanha o que se fala da marca da empresa e devolve isso em painel, sem depender de alguém garimpando menção na mão. Cada cliente tem seu espaço isolado, com os dados dele separados dos demais.',
+    tech: 'FastAPI · Fernet · Secret Manager · Next.js 14',
+    href: 'https://brandpulse.atimus.agr.br', hrefLabel: 'brandpulse.atimus.agr.br' },
+
+  { by: 'Grupo BlackHex · Hipercube', name: 'Meds · MedEvidence',
+    text: 'Consulta para o médico à beira do leito: pergunta em português e recebe a resposta com a diretriz citada, incluindo dose e protocolo de sala. Não dá diagnóstico e não receita — mostra a fonte, e a decisão continua sendo do profissional. Cada especialidade só é liberada quando existe um médico revisor responsável por ela.',
+    tech: 'PWA · Vite + React · Cloud Run · RAG sobre acervo curado',
+    href: 'https://meds.ia.br', hrefLabel: 'meds.ia.br' },
+
+  { by: 'Grupo BlackHex', name: 'EmpreenderIA',
+    text: 'Plataforma de formação para empreendedor e equipe: cursos, palestras presenciais ou ao vivo online, e-books e a comunidade Networking Club. A empresa assina para o time inteiro. Tem ainda uma IA mentora de estratégia de negócio que, no plano corporativo, acompanha a operação de perto.',
+    tech: 'React · Vite · Firebase · Cloudflare',
+    href: 'https://empreenderia.com.br', hrefLabel: 'empreenderia.com.br' },
+
+  { by: 'Hipercube', name: 'Hipercube Academy',
+    text: 'Treinamento para times que precisam colocar IA para funcionar de verdade na operação — não assistir a mais uma demonstração e voltar para a planilha.',
+    tech: 'Next.js 14 · Cloudflare Pages',
+    href: 'https://hipercube.ia.br/academy', hrefLabel: 'hipercube.ia.br/academy' },
+
+  { by: 'Grupo BlackHex', name: 'Money Day',
+    text: 'App de finanças pessoais para quem nunca conseguiu manter uma planilha. Orçamento por semana em vez de por mês, sem culpa e sem cobrança — pensado para gente ocupada e para quem se perde em controle complicado.',
+    tech: 'Kotlin + Jetpack Compose · React · Firebase · Open Finance',
+    href: 'https://moneyday.ia.br', hrefLabel: 'moneyday.ia.br' },
+
+  { by: 'Hiperenge · Grupo BlackHex', name: 'Tesserion e HiperGED',
+    text: 'O Tesserion mostra a obra por dentro: o que foi executado e quanto custou, lado a lado, em vez de duas planilhas que nunca fecham. O HiperGED guarda os documentos do projeto e sabe quem viu qual revisão — é o que resolve discussão de responsabilidade meses depois.',
     tech: 'Next.js 14 · Express · Prisma · Supabase' },
-  { by: 'BlackHEx', name: 'Kali Ops',
-    text: 'Plataforma de treinamento em Kali Linux: trilha prática de operações ofensivas e defensivas em laboratório isolado, para times que precisam aprender fazendo.',
-    tech: 'Kali Linux · laboratório isolado · OWASP' },
+
   { by: 'Hipercube', name: 'Marketing autônomo',
-    text: 'Um agente que publica sozinho, três vezes por dia: coleta notícia por RSS, escreve, gera a imagem com a logo aplicada, sobe no CDN e posta no Instagram e no LinkedIn. Nenhum operador no meio.',
+    text: 'Um sistema que cuida das redes sociais da empresa sozinho: lê as notícias do setor, escreve o post, cria a imagem já com a marca aplicada e publica no Instagram e no LinkedIn, três vezes por dia. Ninguém aprova no meio do caminho.',
     tech: 'Gemini · Imagen 4 · n8n · FastAPI · LXC' },
 ]
 
 export type Principle = { title: string; text: string }
 export const PRINCIPLES: Principle[] = [
-  { title: 'Inferência local quando o dado é sensível',
-    text: 'Vigilância roda YOLO na GPU do cliente, não numa nuvem de terceiro. O aplicativo de saúde processa os dados do Health Connect no aparelho e simplesmente não tem backend. Quando o dado é caro de vazar, ele não viaja.' },
-  { title: 'Humano no ponto de decisão',
-    text: 'No produto clínico, cada especialidade permanece bloqueada até haver um revisor responsável por ela — decisão registrada em ADR, não em reunião. O sistema cita a diretriz; quem decide é o profissional.' },
-  { title: 'Núcleo único, verticais isoladas',
-    text: 'A plataforma de IA é um núcleo replicado por vertical, cada uma com tenant, prompt e deploy próprios. Custa mais repositório e entrega isolamento de falha, de dado e de cliente.' },
-  { title: 'Custo de IA é métrica de engenharia',
-    text: 'Proxy próprio medindo token a token o que cada tarefa consome, com saldo, guardrails configuráveis e exportação para Prometheus. O gasto com modelo é tratado como qualquer outro SLI.' },
-  { title: 'O que é público sai sanitizado',
-    text: 'Tutoriais e repositórios de referência vão para fora com placeholders no lugar de IP, serial, MAC e nome de cliente. A versão que ensina não é a versão que expõe.' },
-  { title: 'Auto-hospedar onde faz sentido',
-    text: 'Gestão de projeto, BI, analytics e gestão de documentos rodando em Proxmox próprio. Menos assinatura, mais controle do dado — e a conta não cresce com o time.' },
+  { title: 'Dado sensível não viaja',
+    text: 'A análise das câmeras acontece num computador dentro do imóvel do cliente, não numa nuvem de terceiro. O aplicativo de saúde processa tudo no próprio celular e nem tem servidor. É mais trabalhoso de construir e é a única forma de prometer privacidade sem asterisco.' },
+  { title: 'Onde a decisão é grave, há uma pessoa respondendo',
+    text: 'No produto de saúde, cada especialidade fica bloqueada até existir um médico revisor com nome próprio por ela. O sistema mostra a fonte e a conclusão é do profissional. Automatizar a decisão seria mais fácil de vender e mais difícil de defender numa auditoria.' },
+  { title: 'IA não conserta bagunça de documento',
+    text: 'Se o acervo tem procedimento revogado e três versões do mesmo contrato, a IA cita com precisão o documento errado — e entrega resposta errada com fonte, o que aumenta a confiança em vez de reduzir. Antes de falar de tecnologia: qual é a versão vigente, quem a mantém, e o que já foi revogado e continua circulando.' },
+  { title: 'Projeto de IA se orça em consumo, não em usuário',
+    text: 'Muito piloto fecha bem na planilha e desanda quando cresce, porque foi estimado por número de usuário e volume de página. Eu peço três linhas antes de aprovar: consumo por operação, volume no mês e custo unitário. Texto técnico em português consome mais que o equivalente em inglês — isso entra na conta no primeiro mês, não no terceiro.' },
+  { title: 'Uma base comum, cada cliente isolado',
+    text: 'A plataforma de IA tem um núcleo só, replicado para cada segmento — casa, clínica veterinária, consultório, jurídico. Cada um roda separado, com seus dados e seu deploy. Dá mais trabalho e garante que problema em um cliente não alcança os outros.' },
+  { title: 'O que publico sai limpo',
+    text: 'Tutoriais e projetos de referência vão para fora sem endereço de rede, número de série ou nome de cliente. A versão que ensina não é a versão que expõe.' },
 ]
 
-export type Org = { role: string; name: string; text: string; href: string; label: string }
+export type Stop = { period: string; org: string; role: string; text: string }
+export const TRACK: Stop[] = [
+  { period: '2009 – 2018', org: 'Grupo Quirino Terra', role: 'Fundador',
+    text: 'Comissionamento elétrico e infraestrutura, com equipes de até 250 profissionais entre engenheiros, técnicos de campo e staff. Rede aérea, mobilização, fornecedores e start de obra — entrega no prazo em operação de alta complexidade.' },
+  { period: '2018 – 2020', org: 'SM&A Sistemas Elétricos', role: 'Engenheiro de automação e controle',
+    text: 'Comissionamento de salas elétricas: checagem, parametrização e testes a frio e a quente, garantindo partida segura de sistemas de potência e controle.' },
+  { period: '2020 – 2023', org: 'Progen S.A.', role: 'Engenheiro eletricista',
+    text: 'Elétrica, automação, instrumentação e telecomunicações no Projeto New Steel, de separação magnética a seco, com orçamento previsto de R$ 2 bilhões. Controle de Capex e Opex em projetos estratégicos de mineração e indústria pesada.' },
+  { period: '2023 – 2024', org: 'Vale · Anglo American', role: 'Engenheiro eletricista · Owner Team',
+    text: 'Projeto de Recursos Hídricos da Vale no complexo Vargem Grande e disciplinas técnicas no Owner Team da Anglo American — interface técnica, qualidade de projeto e alinhamento entre engenharia, operação e entrega.' },
+  { period: '2023 →', org: 'Hiperenge · Maya · Hipercube · Atimus', role: 'C-level',
+    text: 'A mesma disciplina de campo aplicada a produto digital: sistemas críticos, prazo, risco e Capex agora em plataformas de IA, automação e agro.' },
+]
+
+export type Degree = { period: string; course: string; school: string; current?: boolean }
+export const EDUCATION: Degree[] = [
+  { period: '1999 – 2004', course: 'Engenharia Elétrica com ênfase em Telecomunicações', school: 'Universidade de Uberaba' },
+  { period: '2005 – 2006', course: 'Especialização em Automação de Processos Industriais', school: 'Universidade de Uberaba' },
+  { period: '2007 – 2008', course: 'MGA — Gestão Estratégica Empresarial', school: 'FGV' },
+  { period: '2010 – 2011', course: 'MBA Executivo Internacional em Gerenciamento de Projetos', school: 'FGV' },
+  { period: '2016 – 2017', course: 'Especialização em Engenharia e Gerenciamento de Manutenção', school: 'UCAM · Universidad Católica San Antonio de Murcia' },
+  { period: '2017 – 2018', course: 'Especialização em Finanças, Investimentos e Banking', school: 'PUCRS' },
+  { period: '2019 – 2020', course: 'Pós-graduação em Cibersegurança Ofensiva', school: 'Acadi-TI' },
+  { period: '2021 – 2022', course: 'MBA em Liderança, Gestão de Equipes e Produtividade', school: 'PUCRS' },
+  { period: '2025 – 2026', course: 'Pós-graduação em IA aplicada à Engenharia e Arquitetura', school: 'EBPÓS · Escola Brasileira de Pós-Graduação' },
+  { period: '2026 – 2027', course: 'Pós-graduação em Engenharia de Inteligência Artificial', school: 'UNIPDS', current: true },
+]
+
+export type Org = { role: string; name: string; text: string; href?: string; label?: string }
 export const ORGS: Org[] = [
-  { role: 'CTO & CPO', name: 'Atimus Agro', text: 'Tecnologia para o agronegócio: editais, incentivo fiscal à pesquisa e inteligência de marca.', href: 'https://atimus.agr.br', label: 'atimus.agr.br' },
-  { role: 'CEO', name: 'Hipercube', text: 'IA aplicada — produto, automação de operação e a Hipercube Academy, com treinamentos e cursos.', href: 'http://hipercube.ia.br', label: 'hipercube.ia.br' },
-  { role: 'CEO', name: 'Hiperenge', text: 'Engenharia e automação: residencial e predial, redes corporativas, obras e documentos técnicos.', href: 'https://www.hiperenge.com.br', label: 'hiperenge.com.br' },
-  { role: 'CEO', name: 'BlackHEx', text: 'Cibersegurança, formação de times e inteligência clínica auditável para profissionais de saúde.', href: 'https://www.mayahome.ia.br', label: 'mayahome.ia.br' },
+  { role: 'CEO & Founder · holding', name: 'BlackHex', text: 'Grupo de investimento em tecnologias disruptivas para os mercados residencial, corporativo e digital. Reúne o portfólio abaixo sob uma arquitetura técnica comum.', href: 'https://blackhex.com.br', label: 'blackhex.com.br' },
+  { role: 'CTPO', name: 'Atimus Agro', text: 'Consultoria de inovação e incentivos fiscais à P&D para o agronegócio — Lei do Bem, dados e produto digital.', href: 'https://atimus.agr.br', label: 'atimus.agr.br' },
+  { role: 'CEO & Founder', name: 'Hipercube', text: 'Software house de IA premium: apps com IA, SaaS sob medida, automações, plataformas internas e a Academy.', href: 'https://hipercube.ia.br', label: 'hipercube.ia.br' },
+  { role: 'CEO', name: 'Hiperenge', text: 'Engenharia de energia, telecomunicações e automação, com 20+ anos em sistemas críticos residenciais e comerciais.', href: 'https://www.hiperenge.com.br', label: 'hiperenge.com.br' },
+  { role: 'Fundador', name: 'Maya', text: 'Automação residencial com IA autônoma, em quatro níveis de produto, para residências de alto padrão.', href: 'https://www.mayahome.ia.br', label: 'mayahome.ia.br' },
+  { role: 'portfólio da holding', name: 'EmpreenderIA · Money Day · HiperGED · Alpha-se', text: 'Formação e mentoria de negócio com IA, finanças pessoais, gestão de documentos e classificados digitais.', href: 'https://empreenderia.com.br', label: 'empreenderia.com.br' },
 ]
 
 export type Repo = { name: string; text: string; label: string; href: string }
@@ -114,7 +183,9 @@ export const OPEN_SOURCE: Repo[] = [
 export const NAV = [
   { href: '#pilha', label: 'a pilha' },
   { href: '#produtos', label: 'produtos' },
-  { href: '#empresas', label: 'empresas' },
   { href: '#engenharia', label: 'engenharia' },
+  { href: '#trajetoria', label: 'trajetória' },
+  { href: '#formacao', label: 'formação' },
+  { href: '#grupo', label: 'grupo' },
   { href: '#contato', label: 'contato' },
 ] as const

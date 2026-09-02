@@ -4,7 +4,7 @@ export function Stack() {
   return (
     <div className="stack" id="pilha">
       <div className="stack-cap">
-        <span>a pilha</span>
+        <span>a pilha · da inteligência ao chip</span>
         <span>L7 → L0</span>
       </div>
       {LAYERS.map((layer) => (

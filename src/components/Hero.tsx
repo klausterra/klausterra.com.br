@@ -22,6 +22,7 @@ export function Hero() {
               </picture>
               <div className="who">
                 <b>{IDENTITY.name}</b>
+                <span className="who-title">{IDENTITY.title}</span>
                 <p className="eyebrow">{IDENTITY.eyebrow}</p>
               </div>
             </div>
@@ -34,10 +35,20 @@ export function Hero() {
               {IDENTITY.thesis} <em>{IDENTITY.thesisEmphasis}</em>
             </p>
             <div className="roles">
-              {ROLES.map((role) => (
-                <div key={role.org}>
-                  <b>{role.org}</b>
-                  <span>{role.text}</span>
+              {ROLES.map((item) => (
+                <div key={item.org}>
+                  <b>
+                    {item.href ? (
+                      <a href={item.href} target="_blank" rel="noopener">
+                        {item.org}
+                      </a>
+                    ) : (
+                      item.org
+                    )}
+                  </b>
+                  <span>
+                    <i>{item.role}.</i> {item.text}
+                  </span>
                 </div>
               ))}
             </div>

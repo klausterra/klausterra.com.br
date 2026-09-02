@@ -21,6 +21,11 @@ export function Products() {
             <span className="by">{product.by}</span>
             <h3>{product.name}</h3>
             <p>{product.text}</p>
+            {product.href ? (
+              <a className="prod-link" href={product.href} target="_blank" rel="noopener">
+                {product.hrefLabel} →
+              </a>
+            ) : null}
             <p className="tech">{product.tech}</p>
           </article>
         ))}

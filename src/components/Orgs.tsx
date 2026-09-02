@@ -4,10 +4,10 @@ import { Section } from './Section'
 export function Orgs() {
   return (
     <Section
-      id="empresas"
-      eyebrow="Quatro frentes"
-      title="Uma pilha, quatro mercados."
-      lede="As empresas compartilham engenharia, infraestrutura e o mesmo harness de desenvolvimento assistido por IA. O que muda é o cliente na ponta."
+      id="grupo"
+      eyebrow="O grupo"
+      title="Uma holding, cinco frentes."
+      lede="A BlackHex é o grupo de investimento em tecnologias disruptivas que reúne as empresas abaixo. Todas compartilham a mesma engenharia e a mesma infraestrutura — o que muda é o cliente na ponta."
     >
       <div className="orgs">
         {ORGS.map((org) => (
@@ -15,9 +15,11 @@ export function Orgs() {
             <span className="role">{org.role}</span>
             <h3>{org.name}</h3>
             <p>{org.text}</p>
-            <a href={org.href} target="_blank" rel="noopener">
-              {org.label} →
-            </a>
+            {org.href ? (
+              <a href={org.href} target="_blank" rel="noopener">
+                {org.label} →
+              </a>
+            ) : null}
           </div>
         ))}
       </div>
