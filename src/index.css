@@ -76,6 +76,12 @@ h1{font-size:clamp(2.4rem,7.4vw,4.6rem);line-height:.96;font-weight:800}
 .hero-cols{display:grid;grid-template-columns:1fr;gap:32px}
 .hero-left{display:grid;gap:22px;align-content:start}
 @media (min-width:960px){.hero-cols{grid-template-columns:minmax(0,1.02fr) minmax(0,1fr);gap:clamp(40px,5vw,64px);align-items:start}}
+.byline{display:flex;align-items:center;gap:15px}
+.byline picture{flex:0 0 auto;display:block;padding:3px;border:1px solid var(--ochre);border-radius:50%}
+.byline .ph{display:block;width:76px;height:76px;border-radius:50%;object-fit:cover;
+  object-position:50% 22%;background:var(--sink)}
+.byline .who{display:grid;gap:4px;min-width:0}
+.byline .who b{font:700 1.0625rem/1.2 var(--display);letter-spacing:-.022em;color:var(--ink)}
 .roles{display:grid;gap:10px;font-size:.9375rem;color:var(--ink2);max-width:48ch;padding-top:4px;border-top:1px solid var(--rule)}
 .roles div{display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:baseline}
 .roles b{font:500 11px/1.5 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--ochre);

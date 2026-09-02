@@ -8,6 +8,9 @@ export const IDENTITY = {
     'Firmware em C no ESP32, rádio Zigbee, a rede do cliente, a infra em Proxmox, o serviço em Cloud Run, o app na loja e o agente de IA que atende no WhatsApp.',
   thesisEmphasis: 'Oito camadas — e eu escrevo em todas elas.',
   email: 'klaus@hipercube.ia.br',
+  portrait: '/klaus-terra.jpg',
+  portraitWebp: '/klaus-terra.webp',
+  portraitAlt: 'Klaus Quirino Terra, de perfil, terno cinza e camisa branca',
   github: 'https://github.com/klausterra',
   site: 'https://klausterra.com.br',
 } as const

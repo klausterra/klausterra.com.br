@@ -8,7 +8,23 @@ export function Hero() {
       <div className="shell hero-in">
         <div className="hero-cols">
           <div className="hero-left">
-            <p className="eyebrow">{IDENTITY.eyebrow}</p>
+            <div className="byline">
+              <picture>
+                <source srcSet={IDENTITY.portraitWebp} type="image/webp" />
+                <img
+                  className="ph"
+                  src={IDENTITY.portrait}
+                  alt={IDENTITY.portraitAlt}
+                  width={76}
+                  height={76}
+                  decoding="async"
+                />
+              </picture>
+              <div className="who">
+                <b>{IDENTITY.name}</b>
+                <p className="eyebrow">{IDENTITY.eyebrow}</p>
+              </div>
+            </div>
             <h1>
               {line1}
               <br />
