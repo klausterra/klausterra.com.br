@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Klaus Quirino Terra</title>
+<meta name="description" content="Do firmware em C no ESP32 ao agente de IA em produção. CTO e CPO da Atimus Agro; CEO da BlackHEx, Hipercube e Hiperenge. 20 produtos, 113 repositórios, oito camadas da pilha.">
+<link rel="canonical" href="https://klausterra.com.br/">
+<meta name="author" content="Klaus Quirino Terra">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://klausterra.com.br/">
+<meta property="og:title" content="Klaus Quirino Terra — do silício ao agente">
+<meta property="og:description" content="Construo produtos em todas as camadas: firmware em C, rádio Zigbee, rede Omada, infra Proxmox, serviços em Cloud Run, apps React e agentes de IA em produção.">
+<meta property="og:locale" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0B1418" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#F7F5F0" media="(prefers-color-scheme: light)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230B1418'/%3E%3Cpath d='M9 23V9h3v6.4L18.3 9H22l-5.9 6.2L22.4 23h-3.8l-4.6-5.9L12 18.6V23z' fill='%23D98A2B'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+
+/* ---------- tokens: light (papel morno) ---------- */
+:root{
+  --ground:#F7F5F0; --raise:#FFFDF8; --sink:#EEEBE2;
+  --rule:#DCD7C9; --rule2:#C6C0AE;
+  --ink:#0B1418; --ink2:#4A5B60; --ink3:#7E8B8C;
+  --ochre:#96570F; --ochre-soft:#F2E4CE; --ochre-ink:#7A4509;
+  --signal:#16606D; --signal-soft:#DDEAEC;
+  --display:"Bricolage Grotesque",-apple-system,"Segoe UI",sans-serif;
+  --body:"Newsreader",Georgia,"Times New Roman",serif;
+  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --pad:clamp(20px,5vw,40px);
+  --shell:1140px; --prose:66ch;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --ground:#0B1418; --raise:#101E23; --sink:#081013;
+  --rule:#1B2E34; --rule2:#2A444C;
+  --ink:#EDF2F1; --ink2:#9FB3B7; --ink3:#6E858A;
+  --ochre:#D98A2B; --ochre-soft:#2A1E10; --ochre-ink:#F0B968;
+  --signal:#4FB6C4; --signal-soft:#0E262B;
+}}
+:root[data-theme="dark"]{
+  --ground:#0B1418; --raise:#101E23; --sink:#081013;
+  --rule:#1B2E34; --rule2:#2A444C;
+  --ink:#EDF2F1; --ink2:#9FB3B7; --ink3:#6E858A;
+  --ochre:#D98A2B; --ochre-soft:#2A1E10; --ochre-ink:#F0B968;
+  --signal:#4FB6C4; --signal-soft:#0E262B;
+}
+
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--ground);color:var(--ink);
+  font:400 17px/1.62 var(--body);-webkit-font-smoothing:antialiased;
+  font-variant-numeric:tabular-nums}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--ochre);outline-offset:3px;border-radius:2px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+.shell{max-width:var(--shell);margin:0 auto;padding:0 var(--pad)}
+.eyebrow{font:500 11px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--ochre);margin:0}
+h1,h2,h3{font-family:var(--display);font-weight:700;letter-spacing:-.028em;text-wrap:balance;margin:0}
+h2{font-size:clamp(1.55rem,3.4vw,2.2rem);line-height:1.1}
+h3{font-size:1.0625rem;line-height:1.25;letter-spacing:-.015em;font-weight:700}
+.lede{font-size:clamp(1.0625rem,2vw,1.25rem);line-height:1.55;color:var(--ink2);max-width:var(--prose)}
+p{margin:0}
+
+section{border-top:1px solid var(--rule)}
+.sec-in{padding:clamp(52px,7vw,88px) 0;display:grid;gap:clamp(26px,3.4vw,40px)}
+.sec-head{display:grid;gap:12px;max-width:var(--prose)}
+
+/* ---------- topbar ---------- */
+.topbar{position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--ground) 90%,transparent);
+  backdrop-filter:blur(12px);border-bottom:1px solid var(--rule)}
+.topbar-in{max-width:var(--shell);margin:0 auto;padding:11px var(--pad);
+  display:flex;align-items:center;gap:14px}
+.wordmark{font:800 15px/1 var(--display);letter-spacing:-.03em;text-decoration:none;margin-right:auto}
+.wordmark span{color:var(--ochre)}
+.navlinks{display:flex;gap:2px}
+.navlinks a{font:500 12px/1 var(--mono);letter-spacing:.02em;text-decoration:none;color:var(--ink2);
+  padding:8px 10px;border-radius:6px;transition:color .15s,background .15s}
+.navlinks a:hover{color:var(--ink);background:var(--sink)}
+@media (max-width:719px){.navlinks{display:none}}
+.tbtn{border:1px solid var(--rule2);background:transparent;color:var(--ink2);border-radius:7px;
+  width:33px;height:33px;display:grid;place-items:center;cursor:pointer;flex:0 0 auto;transition:.15s}
+.tbtn:hover{color:var(--ochre);border-color:var(--ochre)}
+
+/* ---------- hero ---------- */
+.hero{border-top:0;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(760px 380px at 8% -6%,var(--ochre-soft),transparent 66%)}
+.hero-in{position:relative;padding:clamp(44px,6vw,76px) 0 clamp(40px,5vw,60px);display:grid;gap:clamp(32px,4vw,46px)}
+h1{font-size:clamp(2.4rem,7.4vw,4.6rem);line-height:.96;font-weight:800}
+.hero-thesis{font-size:clamp(1.125rem,2.3vw,1.5rem);line-height:1.45;color:var(--ink);max-width:34ch;
+  font-family:var(--body);font-weight:400}
+.hero-thesis em{font-style:italic;color:var(--ochre-ink)}
+.hero-cols{display:grid;grid-template-columns:1fr;gap:32px}
+.hero-left{display:grid;gap:22px;align-content:start}
+@media (min-width:960px){.hero-cols{grid-template-columns:minmax(0,1.02fr) minmax(0,1fr);gap:clamp(40px,5vw,64px);align-items:start}}
+.roles{display:grid;gap:10px;font-size:.9375rem;color:var(--ink2);max-width:48ch;padding-top:4px;border-top:1px solid var(--rule)}
+.roles div{display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:baseline}
+.roles b{font:500 11px/1.5 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--ochre);
+  white-space:nowrap}
+
+/* ---------- pilha (hero diagram) ---------- */
+.stack{display:grid;gap:2px;border:1px solid var(--rule);border-radius:12px;overflow:hidden;background:var(--rule)}
+.stack-cap{background:var(--sink);padding:10px 15px;display:flex;justify-content:space-between;gap:12px;
+  font:500 10px/1.4 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--ink3)}
+.layer{background:var(--raise);padding:11px 15px;display:grid;grid-template-columns:38px minmax(0,1fr);
+  gap:14px;align-items:baseline;transition:background .16s}
+.layer:hover{background:var(--sink)}
+.layer .lv{font:700 10.5px/1.6 var(--mono);letter-spacing:.04em;color:var(--signal)}
+.layer .lb{display:grid;gap:2px;min-width:0}
+.layer .ln{font:700 13px/1.35 var(--display);letter-spacing:-.01em}
+.layer .lt{font:400 11.5px/1.5 var(--mono);color:var(--ink3);overflow-wrap:anywhere}
+.layer .lp{font-size:.8125rem;color:var(--ochre-ink);font-style:italic}
+
+/* ---------- números ---------- */
+.figs{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1px;
+  background:var(--rule);border:1px solid var(--rule);border-radius:12px;overflow:hidden}
+.fig{background:var(--raise);padding:18px 20px;display:grid;gap:3px}
+.fig b{font:800 clamp(1.7rem,3.6vw,2.3rem)/1 var(--display);letter-spacing:-.035em;color:var(--ink)}
+.fig small{font:500 10px/1.4 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink3)}
+
+/* ---------- empresas ---------- */
+.orgs{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px}
+.org{display:grid;gap:8px;padding-top:15px;border-top:2px solid var(--ochre)}
+.org .role{font:500 10px/1.4 var(--mono);letter-spacing:.11em;text-transform:uppercase;color:var(--ochre)}
+.org p{font-size:.9375rem;color:var(--ink2)}
+.org a{font:500 12px var(--mono);color:var(--signal);text-decoration:none}
+.org a:hover{text-decoration:underline}
+
+/* ---------- produtos ---------- */
+.prods{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,290px),1fr));gap:1px;
+  background:var(--rule);border:1px solid var(--rule);border-radius:12px;overflow:hidden}
+.prod{background:var(--raise);padding:22px;display:flex;flex-direction:column;gap:10px}
+.prod .by{font:500 10px/1.4 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink3)}
+.prod p{font-size:.9rem;color:var(--ink2)}
+.prod .tech{margin-top:auto;padding-top:4px;font:400 11px/1.6 var(--mono);color:var(--signal)}
+
+/* ---------- princípios ---------- */
+.prin{display:grid;gap:0;border-top:1px solid var(--rule)}
+.pr{display:grid;grid-template-columns:1fr;gap:6px;padding:20px 0;border-bottom:1px solid var(--rule)}
+@media (min-width:820px){.pr{grid-template-columns:minmax(0,15rem) minmax(0,1fr);gap:32px;align-items:baseline}}
+.pr h3{color:var(--ink)}
+.pr p{color:var(--ink2);font-size:.9375rem;max-width:62ch}
+
+/* ---------- open source ---------- */
+.oss{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,255px),1fr));gap:14px}
+.os{display:grid;gap:6px;padding:16px 18px;border:1px solid var(--rule);border-radius:10px;
+  background:var(--raise);text-decoration:none;transition:border-color .15s,transform .15s}
+.os:hover{border-color:var(--ochre);transform:translateY(-2px)}
+.os .on{font:500 12.5px/1.3 var(--mono);color:var(--ink);overflow-wrap:anywhere}
+.os .od{font-size:.8125rem;color:var(--ink2)}
+.os .ol{font:500 9.5px/1 var(--mono);letter-spacing:.08em;color:var(--ochre)}
+
+/* ---------- contato ---------- */
+.contact{background:var(--sink)}
+.cta{display:flex;flex-wrap:wrap;gap:10px}
+.cta a{display:inline-flex;align-items:center;gap:8px;text-decoration:none;
+  font:500 13.5px/1 var(--display);letter-spacing:-.005em;padding:13px 18px;border-radius:9px;
+  border:1px solid var(--rule2);color:var(--ink);background:var(--raise);transition:.15s}
+.cta a:hover{border-color:var(--ochre);color:var(--ochre);transform:translateY(-1px)}
+.cta a.key{background:var(--ink);color:var(--ground);border-color:var(--ink)}
+.cta a.key:hover{background:var(--ochre);border-color:var(--ochre);color:#0B1418}
+.cta svg{flex:0 0 auto}
+
+footer{border-top:1px solid var(--rule);padding:26px 0 40px;color:var(--ink3);
+  font:400 12px/1.7 var(--mono)}
+footer p{max-width:78ch}
+footer a{color:var(--ink2)}
+</style>
+</head>
+<body>
+
+<div class="topbar"><div class="topbar-in">
+  <a class="wordmark" href="#topo">Klaus Quirino <span>Terra</span></a>
+  <nav class="navlinks" aria-label="Seções">
+    <a href="#pilha">a pilha</a>
+    <a href="#produtos">produtos</a>
+    <a href="#empresas">empresas</a>
+    <a href="#engenharia">engenharia</a>
+    <a href="#contato">contato</a>
+  </nav>
+  <button class="tbtn" id="theme" title="Alternar tema" aria-label="Alternar tema">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/></svg>
+  </button>
+</div></div>
+
+<header class="hero" id="topo"><div class="shell hero-in">
+  <div class="hero-cols">
+    <div class="hero-left">
+    <p class="eyebrow">Engenharia de produto · Brasil</p>
+    <h1>Do silício<br>ao agente.</h1>
+    <p class="hero-thesis">Firmware em C no ESP32, rádio Zigbee, a rede do cliente, a infra em Proxmox,
+      o serviço em Cloud Run, o app na loja e o agente de IA que atende no WhatsApp.
+      <em>Oito camadas — e eu escrevo em todas elas.</em></p>
+    <div class="roles">
+      <div><b>Atimus Agro</b><span>CTO e CPO. Plataforma de editais, incentivo fiscal à P&amp;D e inteligência de marca para o agronegócio.</span></div>
+      <div><b>Hipercube</b><span>CEO. IA aplicada: produto, treinamento e automação de operação.</span></div>
+      <div><b>Hiperenge</b><span>CEO. Engenharia, automação predial e residencial, redes e documentos.</span></div>
+      <div><b>BlackHEx</b><span>CEO. Cibersegurança e inteligência clínica auditável.</span></div>
+    </div>
+    </div>
+
+    <div class="stack" id="pilha">
+      <div class="stack-cap"><span>a pilha</span><span>L7 → L0</span></div>
+      <div class="layer"><span class="lv">L7</span><span class="lb">
+        <span class="ln">Agente</span>
+        <span class="lt">Gemini 2.5 Pro · RAG · voz · WhatsApp / Telegram</span>
+        <span class="lp">Maya Hermes — a assistente que também programa</span></span></div>
+      <div class="layer"><span class="lv">L6</span><span class="lb">
+        <span class="ln">Aplicação</span>
+        <span class="lt">React 19 · Vite · Next.js 14 · Kotlin + Compose</span>
+        <span class="lp">Athos, Meds, Money Day, Maya Home</span></span></div>
+      <div class="layer"><span class="lv">L5</span><span class="lb">
+        <span class="ln">Borda</span>
+        <span class="lt">Cloudflare Pages · Workers · D1 · Tunnel</span>
+        <span class="lp">proxy same-origin, cookies HttpOnly, CSP restrito</span></span></div>
+      <div class="layer"><span class="lv">L4</span><span class="lb">
+        <span class="ln">Serviço</span>
+        <span class="lt">FastAPI · Express · Cloud Run · PostgreSQL 16 · Firestore</span>
+        <span class="lp">APIs multi-tenant com segredo cifrado por cliente</span></span></div>
+      <div class="layer"><span class="lv">L3</span><span class="lb">
+        <span class="ln">Infra</span>
+        <span class="lt">Proxmox · LXC · Docker · GCP · Secret Manager</span>
+        <span class="lp">Plane, Metabase, Matomo e EDMS auto-hospedados</span></span></div>
+      <div class="layer"><span class="lv">L2</span><span class="lb">
+        <span class="ln">Rede</span>
+        <span class="lt">Omada SDN · WireGuard · VLAN · MQTT / EMQX</span>
+        <span class="lp">VPN site-to-site entre controladores de cliente</span></span></div>
+      <div class="layer"><span class="lv">L1</span><span class="lb">
+        <span class="ln">Rádio</span>
+        <span class="lt">Zigbee 802.15.4 · Wi-Fi CSI · mmWave · RTSP</span>
+        <span class="lp">presença sem câmera, lida no próprio canal Wi-Fi</span></span></div>
+      <div class="layer"><span class="lv">L0</span><span class="lb">
+        <span class="ln">Silício</span>
+        <span class="lt">ESP32-C6 em C / ESP-IDF · M5Stack · NVIDIA TensorRT</span>
+        <span class="lp">servidor web com OTA e captive portal em 4 MB de flash</span></span></div>
+    </div>
+  </div>
+
+  <div class="figs">
+    <div class="fig"><b>20</b><small>produtos e plataformas</small></div>
+    <div class="fig"><b>113</b><small>repositórios</small></div>
+    <div class="fig"><b>8</b><small>camadas da pilha</small></div>
+    <div class="fig"><b>4</b><small>empresas</small></div>
+  </div>
+</div></header>
+
+<section id="produtos"><div class="shell sec-in">
+  <div class="sec-head">
+    <p class="eyebrow">O que está no ar</p>
+    <h2>Produtos em produção, não protótipos de slide.</h2>
+    <p class="lede">Cada um destes tem cliente, domínio próprio e deploy automático. A lista é curta de propósito —
+      é o que sobreviveu ao contato com a operação.</p>
+  </div>
+
+  <div class="prods">
+    <article class="prod"><span class="by">Hiperenge</span>
+      <h3>Maya Home</h3>
+      <p>Automação residencial em quatro níveis: do controle por app à IA local que entende voz natural em
+        português e antecipa a rotina da casa. Servidor no datacenter ou dentro da residência — a versão Edge
+        funciona sem internet.</p>
+      <p class="tech">Home Assistant · integrações próprias · Cloud Run · Firestore</p></article>
+
+    <article class="prod"><span class="by">Hiperenge</span>
+      <h3>Maya Knox</h3>
+      <p>Segurança patrimonial com visão computacional rodando na GPU do próprio cliente. Detecção por YOLO
+        acelerada em TensorRT; nenhum frame de câmera sai da rede local.</p>
+      <p class="tech">Frigate · YOLOv9 · ONNX · NVIDIA TensorRT</p></article>
+
+    <article class="prod"><span class="by">Atimus Agro</span>
+      <h3>Athos</h3>
+      <p>Plataforma de editais do agronegócio: portal do cliente, painel administrativo e API. Em reescrita
+        greenfield conduzida em paralelo à operação, sem parar quem já usa.</p>
+      <p class="tech">FastAPI · PostgreSQL 16 · Alembic · React 19</p></article>
+
+    <article class="prod"><span class="by">Atimus Agro</span>
+      <h3>Lei do Bem</h3>
+      <p>Lê notas fiscais em PDF — inclusive digitalizadas —, classifica a elegibilidade ao incentivo fiscal
+        da Lei 11.196/2005 e devolve a planilha pronta. Reclassificação manual auditável e consulta em
+        linguagem natural sobre o acervo.</p>
+      <p class="tech">FastAPI · OCR · React · Cloud Run</p></article>
+
+    <article class="prod"><span class="by">Atimus Agro · Hipercube</span>
+      <h3>BrandPulse</h3>
+      <p>Monitoramento de marca multi-tenant, entregue em duas instâncias de produção independentes. Os
+        segredos de cada cliente ficam cifrados em repouso, um por tenant.</p>
+      <p class="tech">FastAPI · Fernet · Secret Manager · Next.js 14</p></article>
+
+    <article class="prod"><span class="by">BlackHEx · Hipercube</span>
+      <h3>Meds / MedEvidence</h3>
+      <p>Inteligência de evidência clínica para profissionais de saúde no Brasil. Não diagnostica e não
+        prescreve: cita a diretriz, com posologia e protocolo quando o documento está no acervo. Cada área
+        clínica fica bloqueada até existir um revisor humano responsável.</p>
+      <p class="tech">PWA · Vite + React · Cloud Run · RAG sobre acervo curado</p></article>
+
+    <article class="prod"><span class="by">Hiperenge</span>
+      <h3>Tesserion &amp; GED</h3>
+      <p>Gestão física e financeira de obras, e gestão eletrônica de documentos de projeto com permissão por
+        perfil de usuário — engenharia que precisa saber quem viu qual revisão.</p>
+      <p class="tech">Next.js 14 · Express · Prisma · Supabase</p></article>
+
+    <article class="prod"><span class="by">BlackHEx</span>
+      <h3>Kali Ops</h3>
+      <p>Plataforma de treinamento em Kali Linux: trilha prática de operações ofensivas e defensivas em
+        laboratório isolado, para times que precisam aprender fazendo.</p>
+      <p class="tech">Kali Linux · laboratório isolado · OWASP</p></article>
+
+    <article class="prod"><span class="by">Hipercube</span>
+      <h3>Marketing autônomo</h3>
+      <p>Um agente que publica sozinho, três vezes por dia: coleta notícia por RSS, escreve, gera a imagem
+        com a logo aplicada, sobe no CDN e posta no Instagram e no LinkedIn. Nenhum operador no meio.</p>
+      <p class="tech">Gemini · Imagen 4 · n8n · FastAPI · LXC</p></article>
+  </div>
+</div></section>
+
+<section id="engenharia"><div class="shell sec-in">
+  <div class="sec-head">
+    <p class="eyebrow">Como eu construo</p>
+    <h2>Decisões que se repetem em todos os produtos.</h2>
+    <p class="lede">Não são slogans: são escolhas que aparecem no código de projeto atrás de projeto,
+      e que dá para conferir nos repositórios abertos.</p>
+  </div>
+
+  <div class="prin">
+    <div class="pr"><h3>Inferência local quando o dado é sensível</h3>
+      <p>Vigilância roda YOLO na GPU do cliente, não numa nuvem de terceiro. O aplicativo de saúde processa
+        os dados do Health Connect no aparelho e simplesmente não tem backend. Quando o dado é caro de vazar,
+        ele não viaja.</p></div>
+    <div class="pr"><h3>Humano no ponto de decisão</h3>
+      <p>No produto clínico, cada especialidade permanece bloqueada até haver um revisor responsável por ela —
+        decisão registrada em ADR, não em reunião. O sistema cita a diretriz; quem decide é o profissional.</p></div>
+    <div class="pr"><h3>Núcleo único, verticais isoladas</h3>
+      <p>A plataforma de IA é um núcleo replicado por vertical, cada uma com tenant, prompt e deploy próprios.
+        Custa mais repositório e entrega isolamento de falha, de dado e de cliente.</p></div>
+    <div class="pr"><h3>Custo de IA é métrica de engenharia</h3>
+      <p>Proxy próprio medindo token a token o que cada tarefa consome, com saldo, guardrails configuráveis e
+        exportação para Prometheus. O gasto com modelo é tratado como qualquer outro SLI.</p></div>
+    <div class="pr"><h3>O que é público sai sanitizado</h3>
+      <p>Tutoriais e repositórios de referência vão para fora com placeholders no lugar de IP, serial, MAC e
+        nome de cliente. A versão que ensina não é a versão que expõe.</p></div>
+    <div class="pr"><h3>Auto-hospedar onde faz sentido</h3>
+      <p>Gestão de projeto, BI, analytics e gestão de documentos rodando em Proxmox próprio. Menos assinatura,
+        mais controle do dado — e a conta não cresce com o time.</p></div>
+  </div>
+</div></section>
+
+<section id="empresas"><div class="shell sec-in">
+  <div class="sec-head">
+    <p class="eyebrow">Quatro frentes</p>
+    <h2>Uma pilha, quatro mercados.</h2>
+    <p class="lede">As empresas compartilham engenharia, infraestrutura e o mesmo harness de desenvolvimento
+      assistido por IA. O que muda é o cliente na ponta.</p>
+  </div>
+  <div class="orgs">
+    <div class="org"><span class="role">CTO &amp; CPO</span><h3>Atimus Agro</h3>
+      <p>Tecnologia para o agronegócio: editais, incentivo fiscal à pesquisa e inteligência de marca.</p>
+      <a href="https://atimus.agr.br" target="_blank" rel="noopener">atimus.agr.br →</a></div>
+    <div class="org"><span class="role">CEO</span><h3>Hipercube</h3>
+      <p>IA aplicada — produto, automação de operação e a Hipercube Academy, com treinamentos e cursos.</p>
+      <a href="http://hipercube.ia.br" target="_blank" rel="noopener">hipercube.ia.br →</a></div>
+    <div class="org"><span class="role">CEO</span><h3>Hiperenge</h3>
+      <p>Engenharia e automação: residencial e predial, redes corporativas, obras e documentos técnicos.</p>
+      <a href="https://www.hiperenge.com.br" target="_blank" rel="noopener">hiperenge.com.br →</a></div>
+    <div class="org"><span class="role">CEO</span><h3>BlackHEx</h3>
+      <p>Cibersegurança, formação de times e inteligência clínica auditável para profissionais de saúde.</p>
+      <a href="https://www.mayahome.ia.br" target="_blank" rel="noopener">mayahome.ia.br →</a></div>
+  </div>
+</div></section>
+
+<section id="aberto"><div class="shell sec-in">
+  <div class="sec-head">
+    <p class="eyebrow">Código aberto</p>
+    <h2>Dá para ler o que eu escrevo.</h2>
+    <p class="lede">Parte do ferramental está público — integrações, firmware e as ferramentas que eu
+      precisei construir para operar IA em escala de time.</p>
+  </div>
+  <div class="oss">
+    <a class="os" href="https://github.com/klausterra/tokens-monitor" target="_blank" rel="noopener">
+      <span class="on">tokens-monitor</span>
+      <span class="od">Bridge OpenAI-compatible com contabilidade de token em tempo real, guardrails e métricas Prometheus.</span>
+      <span class="ol">PYTHON · MIT</span></a>
+    <a class="os" href="https://github.com/klausterra/maya_garden" target="_blank" rel="noopener">
+      <span class="on">maya_garden</span>
+      <span class="od">Irrigação inteligente no Home Assistant: duas zonas, motor de agendamento próprio e card Lovelace.</span>
+      <span class="ol">PYTHON · MIT</span></a>
+    <a class="os" href="https://github.com/klausterra/esp32c6_webserver_at" target="_blank" rel="noopener">
+      <span class="on">esp32c6_webserver_at</span>
+      <span class="od">Servidor web em ESP-IDF com OTA dupla, captive portal e comandos AT em 4 MB de flash.</span>
+      <span class="ol">C · ESP-IDF</span></a>
+    <a class="os" href="https://github.com/klausterra/maya-commbox" target="_blank" rel="noopener">
+      <span class="on">maya-commbox</span>
+      <span class="od">Integração Home Assistant para módulos CommBox MIO, com detecção automática de modelo.</span>
+      <span class="ol">PYTHON</span></a>
+    <a class="os" href="https://github.com/klausterra/frigatenvidia" target="_blank" rel="noopener">
+      <span class="on">frigatenvidia</span>
+      <span class="od">Referência sanitizada para rodar Frigate com YOLOv9 acelerado por TensorRT em GPU NVIDIA.</span>
+      <span class="ol">DOCKER · ONNX</span></a>
+    <a class="os" href="https://github.com/klausterra/omada-sdn-para-cloud" target="_blank" rel="noopener">
+      <span class="on">omada-sdn-para-cloud</span>
+      <span class="od">Manual técnico em português para migrar sites do Omada on-premise para os controladores em nuvem.</span>
+      <span class="ol">GITHUB PAGES</span></a>
+    <a class="os" href="https://github.com/klausterra/token-calculator" target="_blank" rel="noopener">
+      <span class="on">token-calculator</span>
+      <span class="od">Contagem de tokens em CLI, API e web, com preview token-a-token e estimativa de custo.</span>
+      <span class="ol">PYTHON · MIT</span></a>
+    <a class="os" href="https://github.com/klausterra?tab=repositories" target="_blank" rel="noopener">
+      <span class="on">todos os repositórios →</span>
+      <span class="od">Dezenove projetos públicos entre integrações, firmware, ferramentas de IA e documentação técnica.</span>
+      <span class="ol">GITHUB</span></a>
+  </div>
+</div></section>
+
+<section class="contact" id="contato"><div class="shell sec-in">
+  <div class="sec-head">
+    <p class="eyebrow">Contato</p>
+    <h2>Vamos conversar.</h2>
+    <p class="lede">Projeto de automação, plataforma para o agro, time de engenharia para montar ou uma
+      conversa sobre IA em produção — escreva e eu respondo.</p>
+  </div>
+  <div class="cta">
+    <a class="key" href="mailto:klaus@hipercube.ia.br">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="M3 6l9 7 9-7"/></svg>
+      klaus@hipercube.ia.br</a>
+    <a href="https://github.com/klausterra" target="_blank" rel="noopener">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 00-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.56-1.11-4.56-4.95 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.5 9.5 0 015 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.85-2.35 4.7-4.58 4.94.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0012 2z"/></svg>
+      github.com/klausterra</a>
+  </div>
+</div></section>
+
+<footer><div class="shell">
+  <p>Klaus Quirino Terra · Brasil · <a href="https://klausterra.com.br">klausterra.com.br</a></p>
+  <p>Números conferidos em setembro de 2026. Nomes de repositório privado, endpoints internos e
+    dados de cliente não constam desta página.</p>
+</div></footer>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Klaus Quirino Terra",
+"url":"https://klausterra.com.br/","nationality":"BR",
+"jobTitle":["CTO e CPO","CEO"],
+"description":"Engenheiro de produto atuando da camada de firmware à camada de agentes de IA.",
+"worksFor":[
+ {"@type":"Organization","name":"Atimus Agro","url":"https://atimus.agr.br"},
+ {"@type":"Organization","name":"Hipercube","url":"http://hipercube.ia.br"},
+ {"@type":"Organization","name":"Hiperenge","url":"https://www.hiperenge.com.br"},
+ {"@type":"Organization","name":"BlackHEx"}],
+"sameAs":["https://github.com/klausterra"],
+"knowsAbout":["Inteligência artificial aplicada","Automação residencial","Firmware ESP32","Visão computacional","Redes corporativas","Engenharia de plataforma"]}
+</script>
+
+<script>
+(function(){
+  var b=document.getElementById("theme");
+  try{var t=localStorage.getItem("kt-theme"); if(t){document.documentElement.dataset.theme=t;}}catch(e){}
+  b.addEventListener("click",function(){
+    var cur=document.documentElement.dataset.theme||
+      (window.matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light");
+    var nx=cur==="dark"?"light":"dark";
+    document.documentElement.dataset.theme=nx;
+    try{localStorage.setItem("kt-theme",nx);}catch(e){}
+  });
+})();
+</script>
+</body>
+</html>
