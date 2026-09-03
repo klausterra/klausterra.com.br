@@ -77,7 +77,8 @@ export const PRODUCTS: Product[] = [
     ],
     cta: 'Conhecer a EmpreenderIA',
     tech: 'React · Vite · Firebase · Cloudflare',
-    href: 'https://empreenderia.com.br', hrefLabel: 'empreenderia.com.br' },
+    // Endereço oficial: empreenderia.ia.br — temporariamente em empreenderia.hipercube.ia.br
+    href: 'https://empreenderia.hipercube.ia.br', hrefLabel: 'empreenderia.hipercube.ia.br' },
 
   { by: 'Hiperenge', name: 'Maya Home',
     text: 'A casa aprende a rotina de quem mora nela e passa a agir sozinha — luz, clima, irrigação, som, energia e segurança. Você fala em português e ela entende. Se a internet cair, continua funcionando: o cérebro fica dentro da casa, não numa nuvem lá fora.',
@@ -188,7 +189,7 @@ export const ORGS: Org[] = [
   { role: 'CEO & Founder', name: 'Hipercube', text: 'Empresa de aplicativos e desenvolvimento. Constrói app, sistema, plataforma e automação sob medida — e treina o time do cliente na Academy.', href: 'https://hipercube.ia.br', label: 'hipercube.ia.br' },
   { role: 'CEO', name: 'Hiperenge', text: 'Engenharia de energia, telecomunicações e automação, com 20+ anos em sistemas críticos. É dela a linha Maya, de casa inteligente com IA.', href: 'https://www.hiperenge.com.br', label: 'hiperenge.com.br' },
   { role: 'linha de produto · Hiperenge', name: 'Maya', text: 'Casa inteligente com IA para residências de alto padrão: automação que aprende a rotina, e vigilância que analisa a imagem dentro do próprio imóvel.', href: 'https://www.mayahome.ia.br', label: 'mayahome.ia.br' },
-  { role: 'portfólio da holding', name: 'EmpreenderIA · Maya Vet Anest · Money Day · HiperGED · Alpha-se', text: 'Formação e mentoria de negócio com IA, assistência em anestesia veterinária, finanças pessoais, gestão de documentos e classificados digitais.', href: 'https://empreenderia.com.br', label: 'empreenderia.com.br' },
+  { role: 'portfólio da holding', name: 'EmpreenderIA · Maya Vet Anest · Money Day · HiperGED · Alpha-se', text: 'Formação e mentoria de negócio com IA, assistência em anestesia veterinária, finanças pessoais, gestão de documentos e classificados digitais.', href: 'https://empreenderia.hipercube.ia.br', label: 'empreenderia.hipercube.ia.br' },
 ]
 
 export type Repo = { name: string; text: string; label: string; href: string }
