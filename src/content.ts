@@ -2,14 +2,14 @@
 
 export const IDENTITY = {
   name: 'Klaus Quirino Terra',
-  title: 'CTPO · Atimus Agro',
+  title: 'Engenheiro · Executivo de tecnologia e produto',
   eyebrow: 'Ribeirão Preto · São Paulo · Brasil',
   headline: ['Do silício', 'ao agente.'],
   thesis:
     'Eu projeto o sistema inteiro: o chip dentro do sensor, a rede que o conecta, o servidor que guarda o dado, o aplicativo na mão da pessoa e a inteligência que decide o que fazer.',
   thesisEmphasis: 'Oito camadas — e eu escrevo em todas elas.',
   who:
-    'Sou engenheiro eletricista. Passei vinte anos em obra, mineração e sistemas críticos antes de construir software — e nunca parei de escrever código. Hoje lidero tecnologia e produto em quatro empresas.',
+    'Sou engenheiro eletricista. Passei vinte anos em obra, mineração e sistemas críticos antes de construir software — e nunca parei de escrever código. Hoje lidero tecnologia e produto nas empresas que fundei.',
   email: 'klaus@hipercube.ia.br',
   github: 'https://github.com/klausterra',
   linkedin: 'https://www.linkedin.com/in/klausterra',
@@ -25,7 +25,6 @@ export const IDENTITY = {
 
 export type Role = { org: string; role: string; text: string; href?: string }
 export const ROLES: Role[] = [
-  { org: 'Atimus Agro', role: 'CTPO', text: 'Tecnologia e produto em consultoria de inovação e incentivos fiscais à P&D para o agronegócio.', href: 'https://atimus.agr.br' },
   { org: 'BlackHex', role: 'CEO & Founder', text: 'Grupo de investimento em tecnologias disruptivas — a holding por trás das empresas abaixo.', href: 'https://blackhex.com.br' },
   { org: 'Hipercube', role: 'CEO & Founder', text: 'Empresa de aplicativos e desenvolvimento: app, sistema, plataforma e time de engenharia sob medida.', href: 'https://hipercube.ia.br' },
   { org: 'Hiperenge', role: 'CEO', text: 'Engenharia elétrica, telecomunicações, automação e sistemas críticos — e a Maya, a linha de casa inteligente com IA.', href: 'https://www.hiperenge.com.br' },
@@ -50,7 +49,7 @@ export const FIGURES: Figure[] = [
   { value: '8', label: 'camadas da pilha' },
   { value: '113', label: 'repositórios' },
   { value: '10', label: 'formações' },
-  { value: '4', label: 'empresas' },
+  { value: '3', label: 'empresas' },
 ]
 
 export type Product = {
@@ -163,7 +162,7 @@ export const TRACK: Stop[] = [
     text: 'Elétrica, automação, instrumentação e telecomunicações no Projeto New Steel, de separação magnética a seco, com orçamento previsto de R$ 2 bilhões. Controle de Capex e Opex em projetos estratégicos de mineração e indústria pesada.' },
   { period: '2023 – 2024', org: 'Vale · Anglo American', role: 'Engenheiro eletricista · Owner Team',
     text: 'Projeto de Recursos Hídricos da Vale no complexo Vargem Grande e disciplinas técnicas no Owner Team da Anglo American — interface técnica, qualidade de projeto e alinhamento entre engenharia, operação e entrega.' },
-  { period: '2023 →', org: 'Hiperenge · Maya · Hipercube · Atimus', role: 'C-level',
+  { period: '2023 →', org: 'Hiperenge · Maya · Hipercube · BlackHex', role: 'CEO & Founder',
     text: 'A mesma disciplina de campo aplicada a produto digital: sistemas críticos, prazo, risco e Capex agora em plataformas de IA, automação e agro.' },
 ]
 
@@ -184,7 +183,6 @@ export const EDUCATION: Degree[] = [
 export type Org = { role: string; name: string; text: string; href?: string; label?: string }
 export const ORGS: Org[] = [
   { role: 'CEO & Founder · holding', name: 'BlackHex', text: 'Grupo de investimento em tecnologias disruptivas para os mercados residencial, corporativo e digital. Reúne as empresas e os produtos abaixo sob uma arquitetura técnica comum.', href: 'https://blackhex.com.br', label: 'blackhex.com.br' },
-  { role: 'CTPO', name: 'Atimus Agro', text: 'Consultoria de inovação e incentivos fiscais à P&D para o agronegócio — Lei do Bem, dados e produto digital.', href: 'https://atimus.agr.br', label: 'atimus.agr.br' },
   { role: 'CEO & Founder', name: 'Hipercube', text: 'Empresa de aplicativos e desenvolvimento. Constrói app, sistema, plataforma e automação sob medida — e treina o time do cliente na Academy.', href: 'https://hipercube.ia.br', label: 'hipercube.ia.br' },
   { role: 'CEO', name: 'Hiperenge', text: 'Engenharia de energia, telecomunicações e automação, com 20+ anos em sistemas críticos. É dela a linha Maya, de casa inteligente com IA.', href: 'https://www.hiperenge.com.br', label: 'hiperenge.com.br' },
   { role: 'linha de produto · Hiperenge', name: 'Maya', text: 'Casa inteligente com IA para residências de alto padrão: automação que aprende a rotina, e vigilância que analisa a imagem dentro do próprio imóvel.', href: 'https://www.mayahome.ia.br', label: 'mayahome.ia.br' },
