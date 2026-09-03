@@ -17,7 +17,7 @@ export const IDENTITY = {
   instagram: 'https://www.instagram.com/klausterra',
   whatsapp: 'https://wa.me/5531995557007',
   whatsappLabel: '+55 31 99555-7007',
-  site: 'https://klausterra.com.br',
+  site: 'https://klausterra.hipercube.ia.br',
   portrait: '/klaus-terra.jpg',
   portraitWebp: '/klaus-terra.webp',
   portraitAlt: 'Klaus Quirino Terra, de perfil, terno cinza e camisa branca',
