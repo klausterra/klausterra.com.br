@@ -1,4 +1,5 @@
 import { FIGURES, IDENTITY, ROLES } from '../content'
+import { CountUp } from './CountUp'
 import { Stack } from './Stack'
 
 export function Hero() {
@@ -26,7 +27,7 @@ export function Hero() {
                 <p className="eyebrow">{IDENTITY.eyebrow}</p>
               </div>
             </div>
-            <h1>
+            <h1 className="hero-title-shimmer">
               {line1}
               <br />
               {line2}
@@ -60,7 +61,9 @@ export function Hero() {
         <div className="figs">
           {FIGURES.map((fig) => (
             <div className="fig" key={fig.label}>
-              <b>{fig.value}</b>
+              <b>
+                <CountUp value={fig.value} />
+              </b>
               <small>{fig.label}</small>
             </div>
           ))}

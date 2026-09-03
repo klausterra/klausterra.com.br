@@ -10,6 +10,12 @@ export function CircuitBackground() {
         <div className="aurora-orb orb-cyan" />
       </div>
 
+      {/* Segunda onda de aurora fluida cobrindo o scroll */}
+      <div className="aurora-wrap aurora-mid">
+        <div className="aurora-orb orb-mid-cyan" />
+        <div className="aurora-orb orb-mid-emerald" />
+      </div>
+
       {/* ========================================================= */}
       {/* TRILHAS TÉCNICAS DISCRETAS DE CIRCUITO (PCB Traces)       */}
       {/* ========================================================= */}
