@@ -6,8 +6,8 @@ export function Orgs() {
     <Section
       id="grupo"
       eyebrow="O grupo"
-      title="Uma holding, quatro empresas."
-      lede="A BlackHex é o grupo de investimento em tecnologias disruptivas que reúne as empresas abaixo. Todas compartilham a mesma engenharia e a mesma infraestrutura — o que muda é o cliente na ponta."
+      title="Uma holding, duas empresas e produtos próprios."
+      lede="A BlackHex é o grupo de investimento em tecnologias disruptivas que reúne as empresas e os produtos abaixo. Todos compartilham a mesma engenharia e a mesma infraestrutura — o que muda é o cliente na ponta."
     >
       <div className="orgs">
         {ORGS.map((org) => (
