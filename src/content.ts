@@ -162,6 +162,8 @@ export const TRACK: Stop[] = [
     text: 'Elétrica, automação, instrumentação e telecomunicações no Projeto New Steel, de separação magnética a seco, com orçamento previsto de R$ 2 bilhões. Controle de Capex e Opex em projetos estratégicos de mineração e indústria pesada.' },
   { period: '2023 – 2024', org: 'Vale · Anglo American', role: 'Engenheiro eletricista · Owner Team',
     text: 'Projeto de Recursos Hídricos da Vale no complexo Vargem Grande e disciplinas técnicas no Owner Team da Anglo American — interface técnica, qualidade de projeto e alinhamento entre engenharia, operação e entrega.' },
+  { period: 'Atuação anterior', org: 'Atimus Agro', role: 'CTO e CPO · posição encerrada',
+    text: 'Liderei tecnologia e produto na consultoria de inovação e incentivos fiscais à P&D para o agronegócio, incluindo plataformas digitais para a operação e para os clientes.' },
   { period: '2023 →', org: 'Hiperenge · Maya · Hipercube · BlackHex', role: 'CEO & Founder',
     text: 'A mesma disciplina de campo aplicada a produto digital: sistemas críticos, prazo, risco e Capex agora em plataformas de IA, automação e agro.' },
 ]
