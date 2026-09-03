@@ -3,7 +3,7 @@
 export const IDENTITY = {
   name: 'Klaus Quirino Terra',
   title: 'Engenheiro · Executivo de tecnologia e produto',
-  eyebrow: 'Ribeirão Preto · São Paulo · Brasil',
+  eyebrow: 'Brasil',
   headline: ['Do silício', 'ao agente.'],
   thesis:
     'Eu projeto o sistema inteiro: o chip dentro do sensor, a rede que o conecta, o servidor que guarda o dado, o aplicativo na mão da pessoa e a inteligência que decide o que fazer.',
