@@ -36,14 +36,14 @@ a{color:inherit}
 :focus-visible{outline:2px solid var(--ochre);outline-offset:3px;border-radius:2px}
 @media (prefers-reduced-motion:reduce){
   *{animation:none!important;transition:none!important}
-  .circuit-bg,.stack-pulse,.track-pulse,.data-packet{display:none!important}
+  .stack-pulse,.track-pulse,.data-packet{display:none!important}
 }
 
-/* ---------- circuito de fundo (pcb overlay) ---------- */
-.circuit-bg{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden;
-  opacity:.07;transition:opacity .3s}
-:root[data-theme="dark"] .circuit-bg{opacity:.16}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .circuit-bg{opacity:.16}}
+/* ---------- circuito de fundo (pcb overlay & gemini gem) ---------- */
+.circuit-bg{position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:0;overflow:hidden;
+  opacity:.20;transition:opacity .3s}
+:root[data-theme="dark"] .circuit-bg{opacity:.40}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .circuit-bg{opacity:.40}}
 .circuit-svg{width:100%;height:100%;object-fit:cover}
 .circuit-path{stroke:var(--rule2);stroke-width:1.2;stroke-linecap:round;stroke-linejoin:round}
 .circuit-via{fill:var(--rule2);stroke:var(--ground);stroke-width:1}
@@ -86,6 +86,49 @@ a{color:inherit}
   35%{offset-distance:100%;opacity:.8}
   39%{opacity:0}
   100%{offset-distance:100%;opacity:0}
+}
+
+/* ---------- gemini gem (astroid de luz & aurora) ---------- */
+.gemini-core{animation:gem-float 16s ease-in-out infinite}
+.gem-crystal{animation:gem-breathe 14s ease-in-out infinite}
+.gem-halo{animation:halo-pulse 11s ease-in-out infinite}
+.gem-orbit-ring{animation:orbit-spin 70s linear infinite}
+.gem-inner-facet{animation:gem-facet-twinkle 6s ease-in-out infinite}
+.gem-center-spark{fill:#ffffff;filter:drop-shadow(0 0 6px #fff) drop-shadow(0 0 12px var(--signal));
+  animation:center-sparkle 4.5s ease-in-out infinite}
+.gem-node{fill:var(--ground);stroke:var(--signal);stroke-width:1.5;animation:node-ping 6s ease-in-out infinite}
+.node-top{animation-delay:0s}
+.node-right{animation-delay:1.5s}
+.node-bottom{animation-delay:3s}
+.node-left{animation-delay:4.5s}
+
+@keyframes gem-float{
+  0%,100%{transform:translateY(0px) rotate(0deg)}
+  50%{transform:translateY(-14px) rotate(2deg)}
+}
+@keyframes gem-breathe{
+  0%,100%{transform:scale(1)}
+  50%{transform:scale(1.07)}
+}
+@keyframes halo-pulse{
+  0%,100%{transform:scale(0.92);opacity:.7}
+  50%{transform:scale(1.12);opacity:1}
+}
+@keyframes orbit-spin{
+  from{transform:rotate(0deg)}
+  to{transform:rotate(360deg)}
+}
+@keyframes center-sparkle{
+  0%,100%{transform:scale(0.85);opacity:.5}
+  50%{transform:scale(1.4);opacity:1;filter:drop-shadow(0 0 8px #fff) drop-shadow(0 0 16px var(--signal))}
+}
+@keyframes gem-facet-twinkle{
+  0%,100%{opacity:.45}
+  50%{opacity:.95;stroke-width:1.3}
+}
+@keyframes node-ping{
+  0%,100%{stroke:var(--signal);r:3}
+  50%{stroke:#fff;r:4.2;filter:drop-shadow(0 0 6px var(--signal))}
 }
 
 .shell{max-width:var(--shell);margin:0 auto;padding:0 var(--pad)}
