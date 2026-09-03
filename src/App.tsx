@@ -1,3 +1,4 @@
+import { CircuitBackground } from './components/CircuitBackground'
 import { Contact } from './components/Contact'
 import { Education } from './components/Education'
 import { Footer } from './components/Footer'
@@ -16,6 +17,7 @@ export default function App() {
   const { toggle } = useTheme()
   return (
     <>
+      <CircuitBackground />
       <TopBar onToggleTheme={toggle} />
       <Hero />
       <Products />
