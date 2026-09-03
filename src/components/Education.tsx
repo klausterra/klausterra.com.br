@@ -11,10 +11,18 @@ export function Education() {
     >
       <ol className="edu">
         {EDUCATION.map((degree) => (
-          <li className="deg" key={degree.period + degree.school}>
+          <li
+            className={`deg ${degree.current ? 'deg-live' : ''}`}
+            key={degree.period + degree.school}
+          >
             <span className="deg-when">
               {degree.period}
-              {degree.current ? <em> · em curso</em> : null}
+              {degree.current ? (
+                <em className="deg-tag">
+                  <span className="deg-dot" aria-hidden="true" />
+                  em curso
+                </em>
+              ) : null}
             </span>
             <span className="deg-body">
               <span className="deg-course">{degree.course}</span>
