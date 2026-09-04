@@ -245,7 +245,7 @@ h1{font-size:clamp(2.4rem,7.4vw,4.6rem);line-height:.96;font-weight:800}
 @keyframes flow-blink{0%,100%{opacity:.35;transform:scale(.9)}50%{opacity:1;transform:scale(1.2);box-shadow:0 0 6px var(--signal)}}
 
 .stack-body{position:relative;display:grid;gap:2px;background:var(--rule)}
-.stack-track{position:absolute;top:16px;bottom:16px;left:20px;width:1.5px;
+.stack-track{position:absolute;top:16px;bottom:32px;left:20px;width:1.5px;
   background:color-mix(in srgb,var(--signal) 22%,var(--rule2));z-index:1;pointer-events:none;transform:translateX(-50%)}
 .stack-pulse{position:absolute;left:50%;transform:translateX(-50%);width:3px;height:38px;border-radius:999px;
   background:linear-gradient(to top,transparent,var(--signal) 55%,#fff);
@@ -277,6 +277,7 @@ h1{font-size:clamp(2.4rem,7.4vw,4.6rem);line-height:.96;font-weight:800}
   gap:12px;align-items:baseline;position:relative;transition:background .2s,box-shadow .2s;cursor:pointer;
   animation:layer-activate 6.5s ease-out infinite;animation-delay:calc(var(--step) * 0.35s)}
 .layer:hover{background:var(--sink)}
+.layer:last-child{padding-bottom:22px;border-radius:0 0 11px 11px}
 
 .layer.layer-active{
   background:color-mix(in srgb,var(--signal) 9%,var(--raise)) !important;
@@ -355,6 +356,7 @@ h1{font-size:clamp(2.4rem,7.4vw,4.6rem);line-height:.96;font-weight:800}
   .layer .ln{font-size:12.5px}
   .layer .lt{font-size:10.5px;line-height:1.35}
   .layer .lp{font-size:11px;line-height:1.35}
+  .layer:last-child{padding-bottom:24px}
 
   .figs{grid-template-columns:repeat(2,1fr)}
   .fig{padding:12px 14px;gap:2px}
@@ -558,6 +560,7 @@ ul.offers li::before{content:"";position:absolute;left:2px;top:.6em;width:5px;he
 .deg-body{display:grid;gap:2px;min-width:0}
 .deg-course{font:600 .9375rem/1.35 var(--display);letter-spacing:-.012em;color:var(--ink)}
 .deg-school{font-size:.8125rem;color:var(--ink2)}
+.deg:last-child{padding-bottom:16px;border-radius:0 0 11px 11px}
 
 /* ---------- botão flutuante de WhatsApp ---------- */
 .wa-fab{position:fixed;right:clamp(14px,3vw,26px);bottom:clamp(14px,3vw,26px);z-index:60;
