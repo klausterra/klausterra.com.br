@@ -1,4 +1,5 @@
 import { IDENTITY } from '../content'
+import { analytics } from '../lib/analytics'
 
 function WhatsAppGlyph() {
   return (
@@ -18,6 +19,7 @@ export function WhatsAppButton() {
       target="_blank"
       rel="noopener"
       aria-label={`Falar comigo no WhatsApp, ${IDENTITY.whatsappLabel}`}
+      onClick={() => analytics.whatsappClick()}
     >
       <WhatsAppGlyph />
       <span className="wa-label">Falar no WhatsApp</span>

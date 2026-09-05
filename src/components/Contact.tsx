@@ -1,4 +1,5 @@
 import { IDENTITY, SOCIAL } from '../content'
+import { analytics } from '../lib/analytics'
 import { Section } from './Section'
 import { GitHubIcon, InstagramIcon, LinkedInIcon, MailIcon, WhatsIcon, YouTubeIcon } from './icons'
 
@@ -19,11 +20,20 @@ export function Contact() {
       lede="Automação da sua casa, plataforma para o agro, produto digital para tirar do papel, time de engenharia para montar ou uma conversa sobre onde IA realmente ajuda — me chame e eu respondo."
     >
       <div className="cta">
-        <a className="key" href={`mailto:${IDENTITY.email}`}>
+        <a
+          className="key"
+          href={`mailto:${IDENTITY.email}`}
+          onClick={() => analytics.contactClick('email')}
+        >
           <MailIcon />
           {IDENTITY.email}
         </a>
-        <a href={IDENTITY.whatsapp} target="_blank" rel="noopener">
+        <a
+          href={IDENTITY.whatsapp}
+          target="_blank"
+          rel="noopener"
+          onClick={() => analytics.contactClick('whatsapp')}
+        >
           <WhatsIcon />
           {IDENTITY.whatsappLabel}
         </a>
@@ -32,7 +42,13 @@ export function Contact() {
         {SOCIAL.map((item) => {
           const Glyph = GLYPH[item.id]
           return (
-            <a key={item.id} href={item.href} target="_blank" rel="noopener">
+            <a
+              key={item.id}
+              href={item.href}
+              target="_blank"
+              rel="noopener"
+              onClick={() => analytics.contactClick(item.id)}
+            >
               <Glyph />
               {item.label} <i>{item.handle}</i>
             </a>

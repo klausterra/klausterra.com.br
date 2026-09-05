@@ -1,4 +1,5 @@
 import { PRODUCTS } from '../content'
+import { analytics } from '../lib/analytics'
 import { Section } from './Section'
 
 export function Products() {
@@ -24,11 +25,23 @@ export function Products() {
             ) : null}
             {product.href ? (
               product.cta ? (
-                <a className="prod-cta" href={product.href} target="_blank" rel="noopener">
+                <a
+                  className="prod-cta"
+                  href={product.href}
+                  target="_blank"
+                  rel="noopener"
+                  onClick={() => analytics.productCta(product.name)}
+                >
                   {product.cta} →
                 </a>
               ) : (
-                <a className="prod-link" href={product.href} target="_blank" rel="noopener">
+                <a
+                  className="prod-link"
+                  href={product.href}
+                  target="_blank"
+                  rel="noopener"
+                  onClick={() => analytics.productCta(product.name)}
+                >
                   {product.hrefLabel} →
                 </a>
               )

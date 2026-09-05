@@ -59,6 +59,7 @@
   /* Sem cookie: dispensa banner de consentimento (LGPD). O custo e perder
      visitante unico fiel entre sessoes — a contagem passa a ser por visita. */
   _paq.push(['disableCookies']);
+  _paq.push(['enableHeartBeatTimer', 15]);
   _paq.push(['trackPageView']);
   _paq.push(['enableLinkTracking']);
   (function() {
