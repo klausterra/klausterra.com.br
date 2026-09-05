@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://klausterra.hipercube.ia.br/sitemap.xml
+Sitemap: https://klausterra.blackhex.com.br/sitemap.xml

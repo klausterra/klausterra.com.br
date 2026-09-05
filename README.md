@@ -1,4 +1,4 @@
-# klausterra.com.br
+# klausterra.blackhex.com.br
 
 Site pessoal de Klaus Quirino Terra. React 19 + Vite 7 + TypeScript, exportado como site estático.
 
@@ -24,7 +24,7 @@ npm run check    # só a checagem de tipos
 | Build output directory | `dist` |
 | Node version | 20 ou superior |
 
-Push em `main` publica automaticamente. Depois do primeiro deploy: **Custom domains → `klausterra.com.br`**.
+Push em `main` publica automaticamente. Custom domain: **`klausterra.blackhex.com.br`**.
 
 ## Onde mexer
 
