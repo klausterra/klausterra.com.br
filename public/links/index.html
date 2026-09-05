@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Klaus Terra</title>
+  <meta name="description" content="Executivo e founder. Engenharia, software e IA virando negócios — via BlackHex." />
+  <meta name="theme-color" content="#0b0d10" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0b0d10;
+      --bg-elev: #12161c;
+      --line: #243041;
+      --text: #e8edf4;
+      --muted: #9aa8b8;
+      --accent: #c4a574;
+      --accent-soft: rgba(196, 165, 116, 0.14);
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; }
+    body {
+      font-family: "Instrument Sans", system-ui, sans-serif;
+      background:
+        radial-gradient(900px 420px at 50% -10%, #1a2230 0%, transparent 60%),
+        var(--bg);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrap {
+      width: min(440px, calc(100% - 2rem));
+      margin: 0 auto;
+      padding: 2.5rem 0 3.5rem;
+    }
+    .identity {
+      text-align: center;
+      margin-bottom: 1.75rem;
+    }
+    .avatar {
+      width: 88px;
+      height: 88px;
+      border-radius: 50%;
+      border: 1px solid var(--line);
+      margin: 0 auto 1rem;
+      background: #171c24;
+      display: grid;
+      place-items: center;
+      font-family: Newsreader, Georgia, serif;
+      font-size: 1.35rem;
+      color: var(--accent);
+      letter-spacing: 0.04em;
+    }
+    .identity h1 {
+      font-family: Newsreader, Georgia, serif;
+      font-weight: 600;
+      font-size: 1.65rem;
+      letter-spacing: -0.02em;
+      margin: 0 0 0.35rem;
+    }
+    .identity p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.45;
+    }
+    .pill {
+      display: inline-block;
+      margin-top: 0.85rem;
+      padding: 0.28rem 0.7rem;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .group { margin-top: 1.35rem; }
+    .group-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 0.55rem 0.15rem;
+      font-weight: 600;
+    }
+    .links { display: grid; gap: 0.65rem; }
+    a.card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      padding: 0.95rem 1.05rem;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--bg-elev);
+      color: var(--text);
+      text-decoration: none;
+      transition: border-color 160ms ease, transform 160ms ease, background 160ms ease;
+    }
+    a.card:hover {
+      border-color: #3a4b63;
+      transform: translateY(-1px);
+      background: #151a22;
+    }
+    a.card.primary {
+      border-color: #4a3d28;
+      background: linear-gradient(180deg, #1a1712 0%, #12161c 100%);
+    }
+    a.card .meta { display: grid; gap: 0.15rem; min-width: 0; }
+    a.card .title { font-weight: 600; font-size: 0.98rem; }
+    a.card .sub { color: var(--muted); font-size: 0.8rem; }
+    a.card .arrow {
+      color: var(--muted);
+      font-size: 1.1rem;
+      flex: none;
+    }
+    footer {
+      margin-top: 2.25rem;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.78rem;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header class="identity">
+      <div class="avatar" aria-hidden="true">KT</div>
+      <h1>Klaus Terra</h1>
+      <p>Construo produtos e empresas com engenharia, software e IA.</p>
+      <span class="pill">Founder · BlackHex</span>
+    </header>
+
+    <section class="group">
+      <p class="group-label">Contato</p>
+      <div class="links">
+        <!-- Ajuste o número WhatsApp se necessário -->
+        <a class="card primary" href="https://wa.me/553199057007?text=Ol%C3%A1%20Klaus%2C%20vim%20pelo%20Instagram" target="_blank" rel="noopener">
+          <span class="meta">
+            <span class="title">Falar comigo</span>
+            <span class="sub">WhatsApp · projetos e parcerias</span>
+          </span>
+          <span class="arrow">→</span>
+        </a>
+        <a class="card" href="https://klausterra.hipercube.ia.br/" target="_blank" rel="noopener">
+          <span class="meta">
+            <span class="title">Portfólio</span>
+            <span class="sub">Trajetória e visão</span>
+          </span>
+          <span class="arrow">→</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="group">
+      <p class="group-label">Ecossistema</p>
+      <div class="links">
+        <a class="card" href="https://www.blackhex.com.br/" target="_blank" rel="noopener">
+          <span class="meta">
+            <span class="title">BlackHex</span>
+            <span class="sub">Marca-mãe · venture builder</span>
+          </span>
+          <span class="arrow">→</span>
+        </a>
+        <a class="card" href="https://www.hiperenge.com.br/" target="_blank" rel="noopener">
+          <span class="meta">
+            <span class="title">Hiperenge</span>
+            <span class="sub">Engenharia e tecnologia</span>
+          </span>
+          <span class="arrow">→</span>
+        </a>
+        <a class="card" href="https://www.hipercube.ia.br/" target="_blank" rel="noopener">
+          <span class="meta">
+            <span class="title">Hipercube</span>
+            <span class="sub">IA e software</span>
+          </span>
+          <span class="arrow">→</span>
+        </a>
+        <a class="card" href="https://www.mayahome.ia.br/" target="_blank" rel="noopener">
+          <span class="meta">
+            <span class="title">Maya Home</span>
+            <span class="sub">Casa inteligente on-premise</span>
+          </span>
+          <span class="arrow">→</span>
+        </a>
+        <a class="card" href="https://hiperbuild.ia.br/" target="_blank" rel="noopener">
+          <span class="meta">
+            <span class="title">Hiperbuild</span>
+            <span class="sub">Educação · construir com IA</span>
+          </span>
+          <span class="arrow">→</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="group">
+      <p class="group-label">Conteúdo</p>
+      <div class="links">
+        <a class="card" href="https://www.youtube.com/@klausterra" target="_blank" rel="noopener">
+          <span class="meta">
+            <span class="title">YouTube</span>
+            <span class="sub">@klausterra</span>
+          </span>
+          <span class="arrow">→</span>
+        </a>
+        <a class="card" href="https://www.linkedin.com/in/klausterra" target="_blank" rel="noopener">
+          <span class="meta">
+            <span class="title">LinkedIn</span>
+            <span class="sub">Perfil executivo</span>
+          </span>
+          <span class="arrow">→</span>
+        </a>
+        <a class="card" href="https://www.instagram.com/klausterra/" target="_blank" rel="noopener">
+          <span class="meta">
+            <span class="title">Instagram</span>
+            <span class="sub">@klausterra</span>
+          </span>
+          <span class="arrow">→</span>
+        </a>
+      </div>
+    </section>
+
+    <footer>
+      BlackHex · engenharia · software · IA<br />
+      <a href="https://www.instagram.com/blackhexgroup/">@blackhexgroup</a>
+    </footer>
+  </main>
+</body>
+</html>
