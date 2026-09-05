@@ -1,9 +1,11 @@
 ﻿export async function onRequest(context) {
   const url = new URL(context.request.url);
   const host = url.hostname.toLowerCase();
-  if (host === "klausterra.blackhex.com.br" && (url.pathname === "/" || url.pathname === "")) {
-    url.pathname = "/links/";
-    return Response.redirect(url.toString(), 302);
+
+  // Old Hipercube personal URL → BlackHex
+  if (host === "klausterra.hipercube.ia.br") {
+    return Response.redirect("https://www.blackhex.com.br/", 301);
   }
+
   return context.next();
 }
