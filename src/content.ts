@@ -24,6 +24,7 @@ export const IDENTITY = {
   portraitAlt: 'Klaus Terra, executivo de tecnologia e founder',
   emblem: {
     src: '/images/brasao-terra.png',
+    srcWebp: '/images/brasao-terra.webp',
     srcJpeg: '/images/brasao-terra.jpg',
     srcSvg: '/images/brasao-terra.svg',
     alt: 'Brasão heráldico Terra — Virtute Stirpe Semper',

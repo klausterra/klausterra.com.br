@@ -1,4 +1,4 @@
-import { FIGURES, IDENTITY, ROLES } from '../content'
+import { FIGURES, IDENTITY } from '../content'
 import { CountUp } from './CountUp'
 import { Stack } from './Stack'
 
@@ -10,36 +10,22 @@ export function Hero() {
       <div className="shell hero-in">
         <div className="hero-cols">
           <div className="hero-left">
-            {/* Topo do Hero com Emblema e Foto Pessoal */}
-            <div className="hero-identity-header">
-              <div className="hero-emblem-badge" title="Emblema heráldico Terra">
+            <div className="byline">
+              <picture>
+                <source srcSet={IDENTITY.portraitWebp} type="image/webp" />
                 <img
-                  className="emblem-thumb"
-                  src={IDENTITY.emblem.src}
-                  alt={IDENTITY.emblem.alt}
-                  width={84}
-                  height={100}
+                  className="ph"
+                  src={IDENTITY.portrait}
+                  alt={IDENTITY.portraitAlt}
+                  width={76}
+                  height={76}
                   decoding="async"
                 />
-              </div>
-
-              <div className="byline">
-                <picture>
-                  <source srcSet={IDENTITY.portraitWebp} type="image/webp" />
-                  <img
-                    className="ph"
-                    src={IDENTITY.portrait}
-                    alt={IDENTITY.portraitAlt}
-                    width={76}
-                    height={76}
-                    decoding="async"
-                  />
-                </picture>
-                <div className="who">
-                  <b>{IDENTITY.name}</b>
-                  <span className="who-title">{IDENTITY.title}</span>
-                  <p className="eyebrow">{IDENTITY.eyebrow}</p>
-                </div>
+              </picture>
+              <div className="who">
+                <b>{IDENTITY.name}</b>
+                <span className="who-title">{IDENTITY.title}</span>
+                <p className="eyebrow">{IDENTITY.eyebrow}</p>
               </div>
             </div>
 
@@ -57,34 +43,15 @@ export function Hero() {
               <a className="hero-cta-btn primary" href="#grupo">
                 Conhecer o ecossistema →
               </a>
-              <a className="hero-cta-btn" href="#trajetoria">
-                Minha trajetória
-              </a>
               <a className="hero-cta-btn" href="#produtos">
                 Ventures & produtos
+              </a>
+              <a className="hero-cta-btn" href="#trajetoria">
+                Trajetória
               </a>
             </div>
 
             <p className="hero-who">{IDENTITY.who}</p>
-
-            <div className="roles">
-              {ROLES.map((item) => (
-                <div key={item.org}>
-                  <b>
-                    {item.href ? (
-                      <a href={item.href} target="_blank" rel="noopener">
-                        {item.org}
-                      </a>
-                    ) : (
-                      item.org
-                    )}
-                  </b>
-                  <span>
-                    <i>{item.role}.</i> {item.text}
-                  </span>
-                </div>
-              ))}
-            </div>
           </div>
 
           <Stack />

@@ -217,34 +217,8 @@ section[id],header[id]{scroll-margin-top:60px}
   background:radial-gradient(760px 380px at 8% -6%,var(--ochre-soft),transparent 66%)}
 .hero-in{position:relative;padding:clamp(40px,5.5vw,72px) 0 clamp(40px,5vw,60px);display:grid;gap:clamp(30px,4vw,44px)}
 
-.hero-identity-header{
-  display:flex;align-items:center;gap:20px;margin-bottom:4px;
-}
-.hero-emblem-badge{
-  flex:0 0 auto;
-  display:grid;place-items:center;
-  padding:6px 10px;
-  border-radius:12px;
-  border:1px solid color-mix(in srgb, var(--gold) 35%, var(--rule));
-  background:color-mix(in srgb, var(--gold-soft) 40%, var(--raise));
-  box-shadow:0 4px 16px -4px var(--gold-glow);
-  transition:transform .2s ease, border-color .2s ease, box-shadow .2s ease;
-}
-.hero-emblem-badge:hover{
-  transform:translateY(-1px) scale(1.02);
-  border-color:var(--gold);
-  box-shadow:0 6px 20px -3px var(--gold-glow);
-}
-.emblem-thumb{
-  display:block;
-  width:clamp(65px, 6vw, 84px);
-  height:auto;
-  object-fit:contain;
-  filter:drop-shadow(0 2px 6px rgba(0,0,0,.25));
-}
-
 h1{font-size:clamp(2.3rem,6.8vw,4.2rem);line-height:1.02;font-weight:800;letter-spacing:-.03em}
-.hero-thesis{font-size:clamp(1.125rem,2.1vw,1.45rem);line-height:1.45;color:var(--ink);max-width:38ch;
+.hero-thesis{font-size:clamp(1.125rem,2.1vw,1.45rem);line-height:1.45;color:var(--ink);max-width:42ch;
   font-family:var(--body);font-weight:400}
 .hero-thesis em{font-style:italic;color:var(--ochre-ink)}
 .hero-cols{display:grid;grid-template-columns:1fr;gap:32px}
@@ -256,7 +230,7 @@ h1{font-size:clamp(2.3rem,6.8vw,4.2rem);line-height:1.02;font-weight:800;letter-
 .byline .ph{display:block;width:72px;height:72px;border-radius:50%;object-fit:cover;
   object-position:50% 22%;background:var(--sink)}
 .byline .who{display:grid;gap:3px;min-width:0}
-.byline .who b{font:700 1.1rem/1.2 var(--display);letter-spacing:-.022em;color:var(--ink)}
+.byline .who b{font:700 1.15rem/1.2 var(--display);letter-spacing:-.022em;color:var(--ink)}
 .byline .who-title{font:600 12.5px/1.35 var(--mono);color:var(--ochre)}
 
 .hero-ctas{display:flex;flex-wrap:wrap;gap:10px;padding-top:4px}
@@ -381,9 +355,6 @@ h1{font-size:clamp(2.3rem,6.8vw,4.2rem);line-height:1.02;font-weight:800;letter-
   .tbtn{width:28px;height:28px}
 
   .hero-in{padding:clamp(28px,5vw,40px) 0;gap:22px}
-  .hero-identity-header{gap:14px}
-  .hero-emblem-badge{padding:4px 8px}
-  .emblem-thumb{width:60px}
   h1{font-size:clamp(2rem,8.2vw,2.55rem);line-height:1.06;letter-spacing:-.035em}
   .hero-thesis{font-size:1.0625rem;line-height:1.45;max-width:100%}
   .hero-cols{gap:24px}

@@ -16,6 +16,7 @@ export function Legacy() {
         <div className="legacy-emblem-wrap">
           <div className="legacy-emblem-halo" aria-hidden="true" />
           <picture>
+            <source srcSet={emblem.srcWebp} type="image/webp" />
             <source srcSet={emblem.src} type="image/png" />
             <img
               className="legacy-emblem-img"
