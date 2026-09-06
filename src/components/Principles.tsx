@@ -4,10 +4,10 @@ import { Section } from './Section'
 export function Principles() {
   return (
     <Section
-      id="engenharia"
-      eyebrow="Como eu construo"
-      title="Decisões que se repetem em todos os produtos."
-      lede="Não são slogans: são escolhas que aparecem no código de projeto atrás de projeto, e que dá para conferir nos repositórios abertos."
+      id="principios"
+      eyebrow="Princípios & Engenharia"
+      title="Diretrizes de arquitetura, dados e produto."
+      lede="Não são slogans: são decisões técnicas e estratégicas consolidadas projeto após projeto, comprovadas na prática e nos repositórios públicos."
     >
       <div className="prin">
         {PRINCIPLES.map((principle) => (

@@ -13,7 +13,7 @@ export function TopBar({ onToggleTheme }: { onToggleTheme: () => void }) {
     <div className="topbar">
       <div className="topbar-in">
         <a className="wordmark" href="#topo">
-          Klaus Quirino <span>Terra</span>
+          Klaus <span>Terra</span>
         </a>
         <nav className="navlinks" aria-label="Seções">
           {NAV.map((item) => (

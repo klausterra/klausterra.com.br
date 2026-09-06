@@ -4,13 +4,14 @@ import { Contact } from './components/Contact'
 import { Education } from './components/Education'
 import { Footer } from './components/Footer'
 import { Hero } from './components/Hero'
+import { Legacy } from './components/Legacy'
 import { Offer } from './components/Offer'
 import { OpenSource } from './components/OpenSource'
 import { Orgs } from './components/Orgs'
 import { Principles } from './components/Principles'
 import { Products } from './components/Products'
-import { Track } from './components/Track'
 import { TopBar } from './components/TopBar'
+import { Track } from './components/Track'
 import { WhatsAppButton } from './components/WhatsAppButton'
 import { useTheme } from './useTheme'
 
@@ -19,7 +20,7 @@ export default function App() {
 
   useEffect(() => {
     const onPointerMove = (e: PointerEvent) => {
-      const target = (e.target as HTMLElement)?.closest('.prod, .os, .fig, .org, .layer') as HTMLElement | null
+      const target = (e.target as HTMLElement)?.closest('.prod, .os, .fig, .org, .layer, .legacy-card') as HTMLElement | null
       if (target) {
         const rect = target.getBoundingClientRect()
         target.style.setProperty('--spot-x', `${e.clientX - rect.left}px`)
@@ -36,10 +37,11 @@ export default function App() {
       <TopBar onToggleTheme={toggle} />
       <Hero />
       <Products />
-      <Principles />
       <Track />
-      <Education />
+      <Legacy />
       <Orgs />
+      <Principles />
+      <Education />
       <OpenSource />
       <Offer />
       <Contact />

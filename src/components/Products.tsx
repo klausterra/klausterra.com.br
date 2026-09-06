@@ -6,16 +6,32 @@ export function Products() {
   return (
     <Section
       id="produtos"
-      eyebrow="Evidência"
-      title="Treze produtos com cliente usando."
-      lede="Não é catálogo de venda: está aqui para mostrar alcance. Casa, agro, saúde, obra, finanças e operação — todos no ar, com domínio próprio e cliente usando. É a diferença entre falar de tecnologia e ter tecnologia rodando."
+      eyebrow="Ventures & Produtos"
+      title="Construindo tecnologia e negócios de ponta a ponta."
+      lede="Não se trata de catálogo comercial, mas de comprovação empírica de execução. Soluções em inteligência artificial, engenharia, saúde, agronegócio e automação com clientes reais e infraestrutura em produção."
     >
       <div className="prods">
         {PRODUCTS.map((product) => (
           <article className={product.featured ? 'prod feat' : 'prod'} key={product.name}>
-            <span className="by">{product.by}</span>
+            <div className="prod-header">
+              <span className="by">{product.by}</span>
+              {product.klausRole && <span className="klaus-role-badge">{product.klausRole}</span>}
+            </div>
+
             <h3>{product.name}</h3>
-            <p>{product.text}</p>
+
+            {product.problem && (
+              <div className="prod-problem">
+                <span className="problem-label">Problema:</span>
+                <p>{product.problem}</p>
+              </div>
+            )}
+
+            <div className="prod-solution">
+              {product.problem && <span className="solution-label">Solução:</span>}
+              <p>{product.text}</p>
+            </div>
+
             {product.offers ? (
               <ul className="offers">
                 {product.offers.map((offer) => (
@@ -23,6 +39,7 @@ export function Products() {
                 ))}
               </ul>
             ) : null}
+
             {product.href ? (
               product.cta ? (
                 <a
@@ -46,7 +63,10 @@ export function Products() {
                 </a>
               )
             ) : null}
-            <p className="tech">{product.tech}</p>
+
+            <p className="tech">
+              <span className="tech-label">Stack:</span> {product.tech}
+            </p>
           </article>
         ))}
       </div>

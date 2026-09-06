@@ -1,15 +1,16 @@
 /** Todo o conteúdo da página. Editar aqui, não no JSX. */
 
 export const IDENTITY = {
-  name: 'Klaus Quirino Terra',
-  title: 'Engenheiro · Executivo de tecnologia e produto',
-  eyebrow: 'Brasil',
-  headline: ['Do silício', 'ao agente.'],
+  name: 'Klaus Terra',
+  fullName: 'Klaus Quirino Terra',
+  title: 'Executivo de Tecnologia, Produto & IA',
+  eyebrow: 'Founder & Executivo · Brasil',
+  headline: ['Transformando engenharia, software e inteligência artificial', 'em produtos, empresas e negócios.'],
   thesis:
     'Eu projeto o sistema inteiro: o chip dentro do sensor, a rede que o conecta, o servidor que guarda o dado, o aplicativo na mão da pessoa e a inteligência que decide o que fazer.',
-  thesisEmphasis: 'Oito camadas — e eu escrevo em todas elas.',
+  thesisEmphasis: 'Oito camadas integradas — da infraestrutura de base à aplicação final.',
   who:
-    'Sou engenheiro eletricista. Passei vinte anos em obra, mineração e sistemas críticos antes de construir software — e nunca parei de escrever código. Hoje lidero tecnologia e produto nas empresas que fundei.',
+    'Engenheiro eletricista com duas décadas de experiência em sistemas críticos, infraestrutura e inovação. Da liderança em megaprojetos industriais à criação de plataformas digitais, firmware e IA em produção: hoje atuo como founder e executivo liderando tecnologia, produtos e estratégias no ecossistema de empresas que fundei.',
   email: 'klaus@hipercube.ia.br',
   github: 'https://github.com/klausterra',
   linkedin: 'https://www.linkedin.com/in/klausterra',
@@ -20,20 +21,31 @@ export const IDENTITY = {
   site: 'https://klausterra.blackhex.com.br',
   portrait: '/klaus-terra.jpg',
   portraitWebp: '/klaus-terra.webp',
-  portraitAlt: 'Klaus Quirino Terra, de perfil, terno cinza e camisa branca',
+  portraitAlt: 'Klaus Terra, executivo de tecnologia e founder',
+  emblem: {
+    src: '/images/brasao-terra.png',
+    srcJpeg: '/images/brasao-terra.jpg',
+    srcSvg: '/images/brasao-terra.svg',
+    alt: 'Brasão heráldico Terra — Virtute Stirpe Semper',
+    title: 'Brasão Heráldico Terra',
+    subtitle: 'Virtute · Stirpe · Semper',
+    text: 'Símbolo de legado, continuidade e construção. Utilizado como elemento de identidade familiar e pessoal, representa tradição, responsabilidade e visão de longo prazo.',
+    secondaryText:
+      'A disciplina e a permanência da engenharia encontram a inovação contínua do software e da inteligência artificial. Um selo institucional que reflete solidez, compromisso e responsabilidade na construção de negócios perenes.',
+  },
 } as const
 
 export type Role = { org: string; role: string; text: string; href?: string }
 export const ROLES: Role[] = [
-  { org: 'BlackHex', role: 'CEO & Founder', text: 'Grupo de investimento em tecnologias disruptivas — a holding por trás das empresas abaixo.', href: 'https://blackhex.com.br' },
-  { org: 'Hipercube', role: 'CEO & Founder', text: 'Empresa de aplicativos e desenvolvimento: app, sistema, plataforma e time de engenharia sob medida.', href: 'https://hipercube.ia.br' },
-  { org: 'Hiperenge', role: 'CEO', text: 'Engenharia elétrica, telecomunicações, automação e sistemas críticos — e a Maya, a linha de casa inteligente com IA.', href: 'https://www.hiperenge.com.br' },
+  { org: 'BlackHex', role: 'Founder & CEO', text: 'Holding e ecossistema de investimentos em tecnologia, software e inteligência artificial.', href: 'https://blackhex.com.br' },
+  { org: 'Hipercube', role: 'Founder & CEO', text: 'Desenvolvimento de software, aplicativos, plataformas escaláveis e IA aplicada sob medida.', href: 'https://hipercube.ia.br' },
+  { org: 'Hiperenge', role: 'CEO', text: 'Engenharia de energia, automação e sistemas críticos — 20+ anos de solidez e linha Maya.', href: 'https://www.hiperenge.com.br' },
 ]
 
 /** A pilha, do topo (agente) para a base (silício). O nível é a posição física real. */
 export type Layer = { level: string; name: string; tech: string; product: string }
 export const LAYERS: Layer[] = [
-  { level: 'L7', name: 'Agente', tech: 'Gemini 2.5 Pro · RAG · voz · WhatsApp / Telegram', product: 'Hermes — a assistente que também programa' },
+  { level: 'L7', name: 'Agente', tech: 'Gemini 2.5 Pro · RAG · voz · WhatsApp / Telegram', product: 'Hermes — assistente autônoma e engenharia de software' },
   { level: 'L6', name: 'Aplicação', tech: 'React 19 · Vite · Next.js 14 · Kotlin + Compose', product: 'Athos, Meds, Money Day, Maya Home' },
   { level: 'L5', name: 'Borda', tech: 'Cloudflare Pages · Workers · D1 · Tunnel', product: 'proxy same-origin, cookies HttpOnly, CSP restrito' },
   { level: 'L4', name: 'Serviço', tech: 'FastAPI · Express · Cloud Run · PostgreSQL 16 · Firestore', product: 'APIs multi-tenant com segredo cifrado por cliente' },
@@ -49,147 +61,296 @@ export const FIGURES: Figure[] = [
   { value: '8', label: 'camadas da pilha' },
   { value: '113', label: 'repositórios' },
   { value: '10', label: 'formações' },
-  { value: '3', label: 'empresas' },
+  { value: '3', label: 'empresas líderes' },
 ]
 
 export type Product = {
   by: string
   name: string
+  klausRole?: string
+  problem?: string
   text: string
   tech: string
   href?: string
   hrefLabel?: string
-  /** card em evidência: ocupa duas colunas e lista o que a plataforma entrega */
   featured?: boolean
   offers?: string[]
   cta?: string
 }
 export const PRODUCTS: Product[] = [
-  { by: 'Grupo BlackHex', name: 'EmpreenderIA', featured: true,
-    text: 'A plataforma de formação do grupo, para quem empreende e para o time que precisa executar. Não é biblioteca de vídeo: junta conteúdo, gente e mentoria no mesmo lugar — e a mentora de IA foi treinada em estratégia de negócio, não em motivação genérica.',
+  {
+    by: 'Grupo BlackHex',
+    name: 'EmpreenderIA',
+    klausRole: 'Founder & Estratégia de Produto',
+    featured: true,
+    problem: 'Empreendedores e executivos enfrentam sobrecarga de ferramentas e falta de orientação prática e contextualizada para aplicar IA em seus negócios.',
+    text: 'A plataforma de formação e ecossistema de negócios do grupo. Une formação executiva, comunidade de networking e mentoria estratégica com IA treinada em modelos reais de negócio.',
     offers: [
-      'Cursos de alta qualidade, com acesso individual ou por assinatura',
-      'Palestras corporativas presenciais ou ao vivo online, customizadas para a empresa',
-      'E-books e conteúdos avulsos, para quem quer só um tema',
-      'Networking Club: comunidade de troca de experiência e negócio entre empreendedores',
-      'IA mentora de estratégia: responde sobre o seu negócio, não sobre negócio em geral',
-      'Plano Corporate Premium com acompanhamento e atendimento personalizado',
+      'Cursos executivos e trilhas práticas de implementação de IA',
+      'Palestras corporativas presenciais e imersões estratégicas',
+      'E-books e frameworks práticos de tomada de decisão',
+      'Networking Club: comunidade exclusiva entre founders e líderes',
+      'IA mentora de estratégia: orientações sobre o negócio do usuário com privacidade',
+      'Programa Corporate Premium para empresas e equipes de alta performance',
     ],
     cta: 'Conhecer a EmpreenderIA',
     tech: 'React · Vite · Firebase · Cloudflare',
-    // Endereço oficial: empreenderia.ia.br — temporariamente em empreenderia.hipercube.ia.br
-    href: 'https://empreenderia.hipercube.ia.br', hrefLabel: 'empreenderia.hipercube.ia.br' },
-
-  { by: 'Hiperenge', name: 'Maya Home',
-    text: 'A casa aprende a rotina de quem mora nela e passa a agir sozinha — luz, clima, irrigação, som, energia e segurança. Você fala em português e ela entende. Se a internet cair, continua funcionando: o cérebro fica dentro da casa, não numa nuvem lá fora.',
+    href: 'https://empreenderia.hipercube.ia.br',
+    hrefLabel: 'empreenderia.hipercube.ia.br',
+  },
+  {
+    by: 'Hiperenge',
+    name: 'Maya Home',
+    klausRole: 'Founder & Arquitetura de Produto',
+    problem: 'Sistemas de automação dependentes de nuvens externas quebram a privacidade, sofrem com latência e param de funcionar quando a internet cai.',
+    text: 'Automação residencial inteligente com aprendizado contínuo de rotina e processamento 100% on-premise. Controle por voz em português com privacidade absoluta e operação ininterrupta.',
     tech: 'Home Assistant · integrações próprias · Cloud Run · Firestore',
-    href: 'https://www.mayahome.ia.br', hrefLabel: 'mayahome.ia.br' },
-
-  { by: 'Hipercube', name: 'Hermes',
-    text: 'Uma assistente que atende no WhatsApp, por texto ou por voz, e lembra do que já foi conversado antes. Para a equipe técnica ela vai além: escreve e corrige código sozinha, no servidor, sem ninguém abrir o editor.',
+    href: 'https://www.mayahome.ia.br',
+    hrefLabel: 'mayahome.ia.br',
+  },
+  {
+    by: 'Hipercube',
+    name: 'Hermes',
+    klausRole: 'Founder & Engenharia de IA',
+    problem: 'Comunicação corporativa dispersa e lentidão na execução técnica entre times de produto, atendimento e desenvolvimento.',
+    text: 'Assistente inteligente multimodal que atende por texto e voz no WhatsApp/Telegram, mantém memória de longo prazo e executa rotinas técnicas e correções de código no servidor de forma autônoma.',
     tech: 'PWA · Gemini 2.5 Pro · FastAPI · Cloud Run · RAG',
-    href: 'https://maya.hipercube.ia.br', hrefLabel: 'maya.hipercube.ia.br' },
-
-  { by: 'Hiperenge', name: 'Maya Knox',
-    text: 'Câmeras que entendem o que estão vendo e avisam só quando importa: pessoa no perímetro, não folha caindo. A análise roda num computador dentro do próprio imóvel — nenhuma imagem sai da rede do cliente.',
+    href: 'https://maya.hipercube.ia.br',
+    hrefLabel: 'maya.hipercube.ia.br',
+  },
+  {
+    by: 'Hiperenge',
+    name: 'Maya Knox',
+    klausRole: 'Founder & Visão Computacional',
+    problem: 'Sistemas tradicionais de vigilância disparam alarmes falsos com folhas e animais, além de enviar vídeos privados para servidores externos.',
+    text: 'Vigilância perimetral de alta precisão com IA que filtra apenas detecções relevantes. Processamento em tempo real com hardware local de alta performance — nenhum vídeo deixa a rede do cliente.',
     tech: 'Frigate · YOLOv9 · ONNX · NVIDIA TensorRT',
-    href: 'https://knox.mayahome.ia.br', hrefLabel: 'knox.mayahome.ia.br' },
-
-  { by: 'Grupo BlackHex', name: 'Maya Vet Anest',
-    text: 'Assistente para o veterinário anestesista na hora do procedimento: calcula a dose pelo peso do animal, monta a ficha anestésica e deixa o protocolo farmacológico à mão. Substitui a tabela impressa e a conta no papel.',
-    tech: 'React · Express · Firebase · agente Gemini por tenant',
-    href: 'https://mayavetanest.ia.br', hrefLabel: 'mayavetanest.ia.br' },
-
-  { by: 'Atimus Agro', name: 'Lei do Bem',
-    text: 'A Lei do Bem devolve imposto para a empresa que investe em pesquisa — mas exige comprovar nota por nota. O sistema lê as notas fiscais, inclusive as escaneadas, separa o que é elegível e entrega a planilha pronta para o contador. Semanas de conferência manual viram horas.',
-    tech: 'FastAPI · OCR · React · Cloud Run' },
-
-  { by: 'Atimus Agro', name: 'Athos',
-    text: 'O software que organiza a operação da consultoria: o cliente acompanha o andamento do próprio projeto num portal, e a equipe controla prazo, documento e entrega num painel único.',
-    tech: 'FastAPI · PostgreSQL 16 · Alembic · React 19 · GCP' },
-
-  { by: 'Atimus Agro · Hipercube', name: 'BrandPulse',
-    text: 'Acompanha o que se fala da marca da empresa e devolve isso em painel, sem depender de alguém garimpando menção na mão. Cada cliente tem seu espaço isolado, com os dados dele separados dos demais.',
-    tech: 'FastAPI · Fernet · Secret Manager · Next.js 14',
-    href: 'https://brandpulse.atimus.agr.br', hrefLabel: 'brandpulse.atimus.agr.br' },
-
-  { by: 'Grupo BlackHex · Hipercube', name: 'Meds · MedEvidence',
-    text: 'Consulta para o médico à beira do leito: pergunta em português e recebe a resposta com a diretriz citada, incluindo dose e protocolo de sala. Não dá diagnóstico e não receita — mostra a fonte, e a decisão continua sendo do profissional. Cada especialidade só é liberada quando existe um médico revisor responsável por ela.',
+    href: 'https://knox.mayahome.ia.br',
+    hrefLabel: 'knox.mayahome.ia.br',
+  },
+  {
+    by: 'Grupo BlackHex · Hipercube',
+    name: 'Meds · MedEvidence',
+    klausRole: 'Founder & Estratégia de Produto',
+    problem: 'Médicos e plantonistas necessitam de respostas rápidas e seguras sobre diretrizes clínicas, doses e protocolos de sala à beira do leito.',
+    text: 'Plataforma de consulta clínica rápida com IA referenciada exclusivamente em diretrizes oficiais e acervo médico curado por especialistas responsáveis por cada área.',
     tech: 'PWA · Vite + React · Cloud Run · RAG sobre acervo curado',
-    href: 'https://meds.ia.br', hrefLabel: 'meds.ia.br' },
-
-  { by: 'Hipercube', name: 'Hipercube Academy',
-    text: 'A frente de formação da Hipercube: treina o time do cliente para colocar IA em uso de verdade na operação, em vez de assistir a mais uma demonstração e voltar para a planilha.',
-    tech: 'Next.js 14 · Cloudflare Pages',
-    href: 'https://hipercube.ia.br/academy', hrefLabel: 'hipercube.ia.br/academy' },
-
-  { by: 'Grupo BlackHex', name: 'Money Day',
-    text: 'App de finanças pessoais para quem nunca conseguiu manter uma planilha. Orçamento por semana em vez de por mês, sem culpa e sem cobrança — pensado para gente ocupada e para quem se perde em controle complicado.',
+    href: 'https://meds.ia.br',
+    hrefLabel: 'meds.ia.br',
+  },
+  {
+    by: 'Grupo BlackHex',
+    name: 'Maya Vet Anest',
+    klausRole: 'Founder & Concepção',
+    problem: 'Cálculos manuais de doses anestésicas veterinárias em emergências aumentam o risco de erro e consomem tempo crítico.',
+    text: 'Assistente digital veterinário que calcula dosagens por peso e espécie, gera fichas anestésicas completas e disponibiliza protocolos farmacológicos em segundos.',
+    tech: 'React · Express · Firebase · agente Gemini por tenant',
+    href: 'https://mayavetanest.ia.br',
+    hrefLabel: 'mayavetanest.ia.br',
+  },
+  {
+    by: 'Atimus Agro',
+    name: 'Athos',
+    klausRole: 'Tecnologia & Produto (Gestão Anterior)',
+    problem: 'Consultorias de alta complexidade sofrem com falta de rastreabilidade de entregas, documentos e controle de prazos entre equipes e clientes.',
+    text: 'Plataforma digital para gestão de consultoria técnica: portal do cliente com acompanhamento em tempo real, painel de controle operacional e controle rigoroso de compliance documental.',
+    tech: 'FastAPI · PostgreSQL 16 · Alembic · React 19 · GCP',
+  },
+  {
+    by: 'Atimus Agro',
+    name: 'Lei do Bem',
+    klausRole: 'Engenharia de IA & Automação (Gestão Anterior)',
+    problem: 'Comprovação manual de milhares de notas fiscais de P&D para incentivos fiscais exige semanas de trabalho contábil exaustivo.',
+    text: 'Pipeline inteligente de OCR e IA fiscal que analisa documentos escaneados, classifica itens elegíveis com rigor técnico e gera planilhas prontas para apuração contábil em minutos.',
+    tech: 'FastAPI · OCR · React · Cloud Run',
+  },
+  {
+    by: 'Grupo BlackHex',
+    name: 'Money Day',
+    klausRole: 'Founder & Produto',
+    problem: 'A maioria dos aplicativos de finanças mensais é complexa e gera abandono por excesso de fricção no registro de despesas.',
+    text: 'App de finanças pessoais focado em ciclos semanais de orçamento, proporcionando controle intuitivo e sem sobrecarga para o usuário moderno.',
     tech: 'Kotlin + Jetpack Compose · React · Firebase · Open Finance',
-    href: 'https://moneyday.ia.br', hrefLabel: 'moneyday.ia.br' },
-
-  { by: 'Hiperenge · Grupo BlackHex', name: 'Tesserion e HiperGED',
-    text: 'O Tesserion mostra a obra por dentro: o que foi executado e quanto custou, lado a lado, em vez de duas planilhas que nunca fecham. O HiperGED guarda os documentos do projeto e sabe quem viu qual revisão — é o que resolve discussão de responsabilidade meses depois.',
-    tech: 'Next.js 14 · Express · Prisma · Supabase' },
-
-  { by: 'Hipercube', name: 'Marketing autônomo',
-    text: 'Um sistema que cuida das redes sociais da empresa sozinho: lê as notícias do setor, escreve o post, cria a imagem já com a marca aplicada e publica no Instagram e no LinkedIn, três vezes por dia. Ninguém aprova no meio do caminho.',
-    tech: 'Gemini · Imagen 4 · n8n · FastAPI · LXC' },
+    href: 'https://moneyday.ia.br',
+    hrefLabel: 'moneyday.ia.br',
+  },
+  {
+    by: 'Hiperenge · Grupo BlackHex',
+    name: 'Tesserion & HiperGED',
+    klausRole: 'Founder & Arquitetura',
+    problem: 'Divergências crônicas entre o que foi executado na obra e o custo real registrado, somadas a versões desatualizadas de projetos de engenharia.',
+    text: 'Solução integrada para engenharia: o Tesserion cruza execução física com medições orçamentárias, enquanto o HiperGED audita acessos e revisões de arquivos técnicos.',
+    tech: 'Next.js 14 · Express · Prisma · Supabase',
+  },
+  {
+    by: 'Hipercube',
+    name: 'Hipercube Academy',
+    klausRole: 'Founder & Liderança Educacional',
+    problem: 'Treinamentos genéricos de IA geram demonstrações teóricas sem impacto real na produtividade operacional das empresas.',
+    text: 'Formação técnica e prática para capacitar equipes corporativas a aplicar inteligência artificial, automação e ferramentas modernas no dia a dia da operação.',
+    tech: 'Next.js 14 · Cloudflare Pages',
+    href: 'https://hipercube.ia.br/academy',
+    hrefLabel: 'hipercube.ia.br/academy',
+  },
+  {
+    by: 'Atimus Agro · Hipercube',
+    name: 'BrandPulse',
+    klausRole: 'Arquitetura de Dados & Segurança',
+    problem: 'Monitoramento manual de menções e sentimento de marca em múltiplos canais sem proteção de dados de clientes.',
+    text: 'Painel de inteligência de marca com monitoramento automatizado, relatórios sintéticos e isolamento criptográfico por tenant.',
+    tech: 'FastAPI · Fernet · Secret Manager · Next.js 14',
+    href: 'https://brandpulse.atimus.agr.br',
+    hrefLabel: 'brandpulse.atimus.agr.br',
+  },
+  {
+    by: 'Hipercube',
+    name: 'Marketing Autônomo',
+    klausRole: 'Engenharia de Automação & IA',
+    problem: 'Criação constante de conteúdo corporativo consome horas de profissionais que deveriam focar em produto e estratégia.',
+    text: 'Sistema autônomo que monitora tendências de mercado, redige artigos técnicos, gera imagens vetorizadas com a identidade da marca e programa publicações automaticamente.',
+    tech: 'Gemini · Imagen 4 · n8n · FastAPI · LXC',
+  },
 ]
 
 export type Principle = { title: string; text: string }
 export const PRINCIPLES: Principle[] = [
-  { title: 'Dado sensível não viaja',
-    text: 'A análise das câmeras acontece num computador dentro do imóvel do cliente, não numa nuvem de terceiro. O aplicativo de saúde processa tudo no próprio celular e nem tem servidor. É mais trabalhoso de construir e é a única forma de prometer privacidade sem asterisco.' },
-  { title: 'Onde a decisão é grave, há uma pessoa respondendo',
-    text: 'No produto de saúde, cada especialidade fica bloqueada até existir um médico revisor com nome próprio por ela. O sistema mostra a fonte e a conclusão é do profissional. Automatizar a decisão seria mais fácil de vender e mais difícil de defender numa auditoria.' },
-  { title: 'IA não conserta bagunça de documento',
-    text: 'Se o acervo tem procedimento revogado e três versões do mesmo contrato, a IA cita com precisão o documento errado — e entrega resposta errada com fonte, o que aumenta a confiança em vez de reduzir. Antes de falar de tecnologia: qual é a versão vigente, quem a mantém, e o que já foi revogado e continua circulando.' },
-  { title: 'Projeto de IA se orça em consumo, não em usuário',
-    text: 'Muito piloto fecha bem na planilha e desanda quando cresce, porque foi estimado por número de usuário e volume de página. Eu peço três linhas antes de aprovar: consumo por operação, volume no mês e custo unitário. Texto técnico em português consome mais que o equivalente em inglês — isso entra na conta no primeiro mês, não no terceiro.' },
-  { title: 'Uma base comum, cada cliente isolado',
-    text: 'A plataforma de IA tem um núcleo só, replicado para cada segmento — casa, clínica veterinária, consultório, jurídico. Cada um roda separado, com seus dados e seu deploy. Dá mais trabalho e garante que problema em um cliente não alcança os outros.' },
-  { title: 'O que publico sai limpo',
-    text: 'Tutoriais e projetos de referência vão para fora sem endereço de rede, número de série ou nome de cliente. A versão que ensina não é a versão que expõe.' },
+  {
+    title: 'Dado sensível não viaja sem necessidade',
+    text: 'A análise de vídeo e visão computacional ocorre no servidor local do cliente, nunca em nuvem de terceiros. Aplicações sensíveis processam dados na borda ou no próprio dispositivo, garantindo privacidade real por arquitetura, não por promessa contratual.',
+  },
+  {
+    title: 'Onde a decisão é crítica, o ser humano é soberano',
+    text: 'Em produtos de saúde e sistemas operacionais, a IA atua como ferramenta de ampliação e evidência, citando fontes canônicas. A decisão final pertence sempre ao profissional responsável.',
+  },
+  {
+    title: 'Inteligência artificial não corrige governança desorganizada',
+    text: 'Se a base de conhecimento contém documentos revogados e versões divergentes, a IA entregará erros com alta convicção. Antes do algoritmo, consolidamos a verdade documental e os critérios de validação.',
+  },
+  {
+    title: 'IA se orça em consumo unitário, não em licença estática',
+    text: 'Projetos escaláveis exigem previsibilidade de custo por operação, latência e volume de tokens. A arquitetura é desenhada com medição em tempo real e guardrails desde o dia zero.',
+  },
+  {
+    title: 'Base arquitetural sólida, clientes estritamente isolados',
+    text: 'Nossos ecossistemas compartilham padrões de engenharia de excelência, mas cada operação corporativa mantém seus dados, segredos e instâncias em ambientes segregados e protegidos.',
+  },
+  {
+    title: 'Transparência e proteção de segredo industrial',
+    text: 'O conhecimento e frameworks que compartilhamos publicamente são rigorosamente higienizados de dados confidenciais, chaves e topologias de clientes.',
+  },
 ]
 
-export type Stop = { period: string; org: string; role: string; text: string }
+export type Stop = {
+  phase: string
+  period: string
+  org: string
+  role: string
+  text: string
+}
 export const TRACK: Stop[] = [
-  { period: '2009 – 2018', org: 'Grupo Quirino Terra', role: 'Fundador',
-    text: 'Comissionamento elétrico e infraestrutura, com equipes de até 250 profissionais entre engenheiros, técnicos de campo e staff. Rede aérea, mobilização, fornecedores e start de obra — entrega no prazo em operação de alta complexidade.' },
-  { period: '2018 – 2020', org: 'SM&A Sistemas Elétricos', role: 'Engenheiro de automação e controle',
-    text: 'Comissionamento de salas elétricas: checagem, parametrização e testes a frio e a quente, garantindo partida segura de sistemas de potência e controle.' },
-  { period: '2020 – 2023', org: 'Progen S.A.', role: 'Engenheiro eletricista',
-    text: 'Elétrica, automação, instrumentação e telecomunicações no Projeto New Steel, de separação magnética a seco, com orçamento previsto de R$ 2 bilhões. Controle de Capex e Opex em projetos estratégicos de mineração e indústria pesada.' },
-  { period: '2023 – 2024', org: 'Vale · Anglo American', role: 'Engenheiro eletricista · Owner Team',
-    text: 'Projeto de Recursos Hídricos da Vale no complexo Vargem Grande e disciplinas técnicas no Owner Team da Anglo American — interface técnica, qualidade de projeto e alinhamento entre engenharia, operação e entrega.' },
-  { period: 'Atuação anterior', org: 'Atimus Agro', role: 'CTO e CPO · posição encerrada',
-    text: 'Liderei tecnologia e produto na consultoria de inovação e incentivos fiscais à P&D para o agronegócio, incluindo plataformas digitais para a operação e para os clientes.' },
-  { period: '2023 →', org: 'Hiperenge · Maya · Hipercube · BlackHex', role: 'CEO & Founder',
-    text: 'A mesma disciplina de campo aplicada a produto digital: sistemas críticos, prazo, risco e Capex agora em plataformas de IA, automação e agro.' },
+  {
+    phase: 'ENGENHARIA & INFRAESTRUTURA',
+    period: '2009 – 2018',
+    org: 'Grupo Quirino Terra',
+    role: 'Fundador & Engenheiro Eletricista',
+    text: 'Comissionamento elétrico de alta complexidade e infraestrutura pesada, liderando equipes de até 250 profissionais em subestações, redes de média/alta tensão e partidas de plantas com disciplina de prazo e segurança.',
+  },
+  {
+    phase: 'AUTOMAÇÃO & CONTROLE',
+    period: '2018 – 2020',
+    org: 'SM&A Sistemas Elétricos',
+    role: 'Engenheiro de Automação e Controle',
+    text: 'Comissionamento técnico de salas elétricas industriais: checagem detalhada de malhas, parametrização de relés digitais e testes a frio e a quente para sistemas de potência e automação.',
+  },
+  {
+    phase: 'SISTEMAS CRÍTICOS & MINERAÇÃO',
+    period: '2020 – 2023',
+    org: 'Progen S.A.',
+    role: 'Engenheiro Eletricista Especialista',
+    text: 'Engenharia elétrica, telecomunicações, instrumentação e automação no megaprojeto New Steel (separação magnética a seco com orçamento de R$ 2 bilhões). Gestão de Capex/Opex e conformidade de engenharia.',
+  },
+  {
+    phase: 'GESTÃO ESTRATÉGICA & OWNER TEAM',
+    period: '2023 – 2024',
+    org: 'Vale · Anglo American',
+    role: 'Engenheiro Eletricista · Owner Team',
+    text: 'Projetos estratégicos de infraestrutura hídrica e disciplinas eletrotécnicas para plantas de grande porte, alinhando engenharia executiva, governança de risco e excelência operacional.',
+  },
+  {
+    phase: 'TECNOLOGIA & PRODUTO',
+    period: 'Atuação Anterior',
+    org: 'Atimus Agro',
+    role: 'CPO & CTO (Transição Concluída)',
+    text: 'Liderança técnica e de produto em consultoria de inovação para o agronegócio, desenvolvendo plataformas de inteligência de dados, OCR fiscal para a Lei do Bem e automações corporativas.',
+  },
+  {
+    phase: 'FOUNDER & LIDERANÇA EXECUTIVA',
+    period: '2023 → Atual',
+    org: 'BlackHex · Hipercube · Hiperenge · Maya',
+    role: 'CEO & Founder',
+    text: 'Liderança executiva de ecossistema integrado: aplicando o rigor de vinte anos de engenharia de campo e sistemas críticos à criação de empresas de software, produtos com IA e plataformas de alto valor.',
+  },
 ]
 
 export type Degree = { period: string; course: string; school: string; current?: boolean }
 export const EDUCATION: Degree[] = [
   { period: '1999 – 2004', course: 'Engenharia Elétrica com ênfase em Telecomunicações', school: 'Universidade de Uberaba' },
   { period: '2005 – 2006', course: 'Especialização em Automação de Processos Industriais', school: 'Universidade de Uberaba' },
-  { period: '2007 – 2008', course: 'MGA — Gestão Estratégica Empresarial', school: 'FGV' },
-  { period: '2010 – 2011', course: 'MBA Executivo Internacional em Gerenciamento de Projetos', school: 'FGV' },
+  { period: '2007 – 2008', course: 'MGA — Gestão Estratégica Empresarial', school: 'FGV - Fundação Getulio Vargas' },
+  { period: '2010 – 2011', course: 'MBA Executivo Internacional em Gerenciamento de Projetos', school: 'FGV - Fundação Getulio Vargas' },
   { period: '2016 – 2017', course: 'Especialização em Engenharia e Gerenciamento de Manutenção', school: 'UCAM · Universidad Católica San Antonio de Murcia' },
-  { period: '2017 – 2018', course: 'Especialização em Finanças, Investimentos e Banking', school: 'PUCRS' },
+  { period: '2017 – 2018', course: 'Especialização em Finanças, Investimentos e Banking', school: 'PUCRS - Pontifícia Universidade Católica do Rio Grande do Sul' },
   { period: '2019 – 2020', course: 'Pós-graduação em Cibersegurança Ofensiva', school: 'Acadi-TI' },
-  { period: '2021 – 2022', course: 'MBA em Liderança, Gestão de Equipes e Produtividade', school: 'PUCRS' },
+  { period: '2021 – 2022', course: 'MBA em Liderança, Gestão de Equipes e Produtividade', school: 'PUCRS - Pontifícia Universidade Católica do Rio Grande do Sul' },
   { period: '2025 – 2026', course: 'Pós-graduação em IA aplicada à Engenharia e Arquitetura', school: 'EBPÓS · Escola Brasileira de Pós-Graduação' },
   { period: '2026 – 2027', course: 'Pós-graduação em Engenharia de Inteligência Artificial', school: 'UNIPDS', current: true },
 ]
 
-export type Org = { role: string; name: string; text: string; href?: string; label?: string }
+export type Org = { role: string; name: string; text: string; href?: string; label?: string; highlight?: boolean }
 export const ORGS: Org[] = [
-  { role: 'CEO & Founder · holding', name: 'BlackHex', text: 'Grupo de investimento em tecnologias disruptivas para os mercados residencial, corporativo e digital. Reúne as empresas e os produtos abaixo sob uma arquitetura técnica comum.', href: 'https://blackhex.com.br', label: 'blackhex.com.br' },
-  { role: 'CEO & Founder', name: 'Hipercube', text: 'Empresa de aplicativos e desenvolvimento. Constrói app, sistema, plataforma e automação sob medida — e treina o time do cliente na Academy.', href: 'https://hipercube.ia.br', label: 'hipercube.ia.br' },
-  { role: 'CEO', name: 'Hiperenge', text: 'Engenharia de energia, telecomunicações e automação, com 20+ anos em sistemas críticos. É dela a linha Maya, de casa inteligente com IA.', href: 'https://www.hiperenge.com.br', label: 'hiperenge.com.br' },
-  { role: 'linha de produto · Hiperenge', name: 'Maya', text: 'Casa inteligente com IA para residências de alto padrão: automação que aprende a rotina, e vigilância que analisa a imagem dentro do próprio imóvel.', href: 'https://www.mayahome.ia.br', label: 'mayahome.ia.br' },
-  { role: 'portfólio da holding', name: 'EmpreenderIA · Maya Vet Anest · Money Day · HiperGED · Alpha-se', text: 'Formação e mentoria de negócio com IA, assistência em anestesia veterinária, finanças pessoais, gestão de documentos e classificados digitais.', href: 'https://empreenderia.hipercube.ia.br', label: 'empreenderia.hipercube.ia.br' },
+  {
+    role: 'Holding · Ecossistema Empresarial',
+    name: 'BlackHex',
+    text: 'Grupo de investimento e venture builder em tecnologias disruptivas. Atua como a holding e plataforma que estrutura, conecta e impulsiona as empresas e produtos do ecossistema sob arquitetura técnica e governança compartilhadas.',
+    href: 'https://blackhex.com.br',
+    label: 'blackhex.com.br',
+    highlight: true,
+  },
+  {
+    role: 'Software · Aplicativos & IA',
+    name: 'Hipercube',
+    text: 'Empresa de tecnologia focada no desenvolvimento ágil de produtos digitais, aplicativos móveis, plataformas corporativas sob medida e inteligência artificial aplicada à produtividade.',
+    href: 'https://hipercube.ia.br',
+    label: 'hipercube.ia.br',
+  },
+  {
+    role: 'Engenharia · Sistemas Críticos & Energia',
+    name: 'Hiperenge',
+    text: 'Engenharia elétrica, automação predial e industrial, telecomunicações e infraestrutura crítica com mais de 20 anos de experiência consolidada em projetos de alta complexidade.',
+    href: 'https://www.hiperenge.com.br',
+    label: 'hiperenge.com.br',
+  },
+  {
+    role: 'Educação Executiva & Builders',
+    name: 'Hiperbuild',
+    text: 'Braço educacional e comunidade de builders focado em capacitar profissionais e líderes a conceber, construir e escalar soluções reais utilizando ferramentas modernas de IA.',
+    href: 'https://hiperbuild.ia.br',
+    label: 'hiperbuild.ia.br',
+  },
+  {
+    role: 'Linha de Produtos · Casa Inteligente',
+    name: 'Maya',
+    text: 'Linha de produtos para automação residencial premium e segurança inteligente, integrando IA on-premise com proteção rigorosa da privacidade.',
+    href: 'https://www.mayahome.ia.br',
+    label: 'mayahome.ia.br',
+  },
+  {
+    role: 'Portfólio de Ventures',
+    name: 'Ventures do Ecossistema',
+    text: 'EmpreenderIA (educação executiva & mentoria), Meds / MedEvidence (suporte clínico com IA), Money Day (finanças pessoais), Maya Vet Anest (anestesiologia veterinária) e HiperGED / Tesserion (engenharia & compliance).',
+    href: 'https://blackhex.com.br',
+    label: 'ecossistema blackhex',
+  },
 ]
 
 export type Repo = { name: string; text: string; label: string; href: string }
@@ -213,21 +374,21 @@ export const SOCIAL: Social[] = [
 ]
 
 export const OFFER = {
-  eyebrow: 'Se você veio contratar',
-  title: 'Sua empresa precisa de um app, um sistema ou um time de desenvolvimento?',
+  eyebrow: 'Parcerias & Novos Negócios',
+  title: 'Sua empresa precisa de software, inteligência artificial ou um time de tecnologia de alta performance?',
   text:
-    'Isso é a Hipercube, a empresa de aplicativos e desenvolvimento do grupo. Levamos do diagnóstico ao produto no ar: aplicativo, plataforma interna, automação de processo e IA aplicada onde ela realmente resolve — com a mesma engenharia que sustenta os produtos desta página.',
+    'Por meio da Hipercube e do ecossistema BlackHex, transformamos diagnósticos estratégicos em produtos de software no ar: aplicativos móveis, plataformas corporativas escaláveis, automação inteligente de processos e agentes de IA — sustentados pela mesma engenharia de excelência apresentada neste site.',
   href: 'https://hipercube.ia.br',
   label: 'hipercube.ia.br',
 } as const
 
 export const NAV = [
   { href: '#pilha', label: 'a pilha' },
-  { href: '#produtos', label: 'produtos' },
-  { href: '#engenharia', label: 'engenharia' },
+  { href: '#produtos', label: 'ventures & produtos' },
   { href: '#trajetoria', label: 'trajetória' },
+  { href: '#legado', label: 'legado' },
+  { href: '#grupo', label: 'blackhex' },
+  { href: '#principios', label: 'princípios' },
   { href: '#formacao', label: 'formação' },
-  { href: '#grupo', label: 'grupo' },
-  { href: '#contratar', label: 'contratar' },
   { href: '#contato', label: 'contato' },
 ] as const
