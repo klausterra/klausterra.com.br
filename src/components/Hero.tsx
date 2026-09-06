@@ -28,7 +28,7 @@ export function Hero() {
               </div>
             </div>
 
-            <h1 className="hero-title-shimmer">
+            <h1 className="hero-title">
               {line1}
               <br />
               {line2}
