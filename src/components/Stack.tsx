@@ -48,7 +48,6 @@ export function Stack() {
               <span className="lb">
                 <span className="ln">{layer.name}</span>
                 <span className="lt">{layer.tech}</span>
-                <span className="lp">{layer.product}</span>
               </span>
             </div>
           )

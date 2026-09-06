@@ -17,15 +17,14 @@ export function Hero() {
                   className="ph"
                   src={IDENTITY.portrait}
                   alt={IDENTITY.portraitAlt}
-                  width={76}
-                  height={76}
+                  width={68}
+                  height={68}
                   decoding="async"
                 />
               </picture>
               <div className="who">
                 <b>{IDENTITY.name}</b>
                 <span className="who-title">{IDENTITY.title}</span>
-                <p className="eyebrow">{IDENTITY.eyebrow}</p>
               </div>
             </div>
 
@@ -36,7 +35,7 @@ export function Hero() {
             </h1>
 
             <p className="hero-thesis">
-              {IDENTITY.thesis} <em>{IDENTITY.thesisEmphasis}</em>
+              {IDENTITY.thesis}
             </p>
 
             <div className="hero-ctas">
@@ -46,12 +45,7 @@ export function Hero() {
               <a className="hero-cta-btn" href="#produtos">
                 Ventures & produtos
               </a>
-              <a className="hero-cta-btn" href="#trajetoria">
-                Trajetória
-              </a>
             </div>
-
-            <p className="hero-who">{IDENTITY.who}</p>
           </div>
 
           <Stack />
