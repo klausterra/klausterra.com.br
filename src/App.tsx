@@ -2,17 +2,19 @@ import { useEffect } from 'react'
 import { CircuitBackground } from './components/CircuitBackground'
 import { Contact } from './components/Contact'
 import { Education } from './components/Education'
+import { Ecosystem } from './components/Ecosystem'
+import { FeaturedCases } from './components/FeaturedCases'
 import { Footer } from './components/Footer'
 import { Hero } from './components/Hero'
-import { Legacy } from './components/Legacy'
+import { Laboratory } from './components/Laboratory'
 import { Offer } from './components/Offer'
 import { OpenSource } from './components/OpenSource'
-import { Orgs } from './components/Orgs'
 import { Principles } from './components/Principles'
-import { Products } from './components/Products'
+import { Problems } from './components/Problems'
 import { TopBar } from './components/TopBar'
 import { Track } from './components/Track'
 import { WhatsAppButton } from './components/WhatsAppButton'
+import { WorkModes } from './components/WorkModes'
 import { useTheme } from './useTheme'
 
 export default function App() {
@@ -20,7 +22,9 @@ export default function App() {
 
   useEffect(() => {
     const onPointerMove = (e: PointerEvent) => {
-      const target = (e.target as HTMLElement)?.closest('.prod, .os, .fig, .org, .layer, .legacy-card') as HTMLElement | null
+      const target = (e.target as HTMLElement)?.closest(
+        '.problem-card, .case-card, .work-card, .lab-card, .ecosystem-card, .os, .fig, .legacy-card',
+      ) as HTMLElement | null
       if (target) {
         const rect = target.getBoundingClientRect()
         target.style.setProperty('--spot-x', `${e.clientX - rect.left}px`)
@@ -36,13 +40,15 @@ export default function App() {
       <CircuitBackground />
       <TopBar onToggleTheme={toggle} />
       <Hero />
-      <Products />
+      <Problems />
+      <FeaturedCases />
+      <WorkModes />
       <Track />
-      <Legacy />
-      <Orgs />
+      <Ecosystem />
       <Principles />
-      <Education />
+      <Laboratory />
       <OpenSource />
+      <Education />
       <Offer />
       <Contact />
       <Footer />

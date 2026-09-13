@@ -1,5 +1,6 @@
-import { IDENTITY, SOCIAL } from '../content'
+import { SOCIAL } from '../content'
 import { analytics } from '../lib/analytics'
+import { POSITIONING } from '../strategyContent'
 import { Section } from './Section'
 import { GitHubIcon, InstagramIcon, LinkedInIcon, MailIcon, WhatsIcon, YouTubeIcon } from './icons'
 
@@ -16,26 +17,26 @@ export function Contact() {
       id="contato"
       className="contact"
       eyebrow="Contato"
-      title="Vamos conversar."
-      lede="Automação da sua casa, plataforma para o agro, produto digital para tirar do papel, time de engenharia para montar ou uma conversa sobre onde IA realmente ajuda — me chame e eu respondo."
+      title="Tecnologia com mais clareza."
+      lede="Para projetos, advisory, arquitetura, produto ou IA aplicada, envie o contexto do problema. Quanto mais concreto o desafio, melhor a conversa."
     >
       <div className="cta">
         <a
           className="key"
-          href={`mailto:${IDENTITY.email}`}
+          href={`mailto:${POSITIONING.email}`}
           onClick={() => analytics.contactClick('email')}
         >
           <MailIcon />
-          {IDENTITY.email}
+          {POSITIONING.email}
         </a>
         <a
-          href={IDENTITY.whatsapp}
+          href={POSITIONING.whatsapp}
           target="_blank"
           rel="noopener"
           onClick={() => analytics.contactClick('whatsapp')}
         >
           <WhatsIcon />
-          {IDENTITY.whatsappLabel}
+          {POSITIONING.whatsappLabel}
         </a>
       </div>
       <div className="cta cta-social">

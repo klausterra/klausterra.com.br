@@ -1,4 +1,5 @@
-import { NAV, SOCIAL } from '../content'
+import { SOCIAL } from '../content'
+import { STRATEGY_NAV } from '../strategyContent'
 import { GitHubIcon, InstagramIcon, LinkedInIcon, MoonIcon, YouTubeIcon } from './icons'
 
 const GLYPH = {
@@ -16,7 +17,7 @@ export function TopBar({ onToggleTheme }: { onToggleTheme: () => void }) {
           Klaus <span>Terra</span>
         </a>
         <nav className="navlinks" aria-label="Seções">
-          {NAV.map((item) => (
+          {STRATEGY_NAV.map((item) => (
             <a key={item.href} href={item.href}>
               {item.label}
             </a>
@@ -39,6 +40,9 @@ export function TopBar({ onToggleTheme }: { onToggleTheme: () => void }) {
             )
           })}
         </div>
+        <a className="topbar-cta" href="#contratar">
+          Projeto
+        </a>
         <button className="tbtn" onClick={onToggleTheme} title="Alternar tema" aria-label="Alternar tema">
           <MoonIcon />
         </button>

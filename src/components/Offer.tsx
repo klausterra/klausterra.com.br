@@ -1,23 +1,37 @@
-import { IDENTITY, OFFER } from '../content'
+import { analytics } from '../lib/analytics'
+import { COMMERCIAL, POSITIONING } from '../strategyContent'
 import { WhatsIcon } from './icons'
 
-/** Um caminho de ação, não quatro: quem veio contratar vai para a Hipercube. */
 export function Offer() {
   return (
-    <section className="offer" id="contratar">
-      <div className="shell offer-in">
+    <section className="offer offer-strategy" id="contratar">
+      <div className="shell offer-in offer-in-strategy">
         <div className="offer-txt">
-          <p className="eyebrow">{OFFER.eyebrow}</p>
-          <h2>{OFFER.title}</h2>
-          <p className="lede">{OFFER.text}</p>
+          <p className="eyebrow">{COMMERCIAL.eyebrow}</p>
+          <h2>{COMMERCIAL.title}</h2>
+          <p className="lede">{COMMERCIAL.text}</p>
+          <p className="offer-filter">
+            Founder-led, escopo seletivo e foco em problemas nos quais estratégia, produto e engenharia precisam conversar.
+          </p>
         </div>
         <div className="offer-cta">
-          <a className="key" href={OFFER.href} target="_blank" rel="noopener">
-            Conhecer a Hipercube →
-          </a>
-          <a href={IDENTITY.whatsapp} target="_blank" rel="noopener">
+          <a
+            className="key"
+            href={POSITIONING.whatsapp}
+            target="_blank"
+            rel="noopener"
+            onClick={() => analytics.contactClick('project_whatsapp')}
+          >
             <WhatsIcon />
-            Falar comigo agora
+            {COMMERCIAL.primaryLabel}
+          </a>
+          <a
+            href={COMMERCIAL.secondaryHref}
+            target="_blank"
+            rel="noopener"
+            onClick={() => analytics.contactClick('hipercube')}
+          >
+            {COMMERCIAL.secondaryLabel} →
           </a>
         </div>
       </div>
