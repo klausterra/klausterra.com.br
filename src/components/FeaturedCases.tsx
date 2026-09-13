@@ -3,19 +3,28 @@ import { analytics } from '../lib/analytics'
 import { Section } from './Section'
 
 export function FeaturedCases() {
+  const cases = [...FEATURED_CASES].sort((a, b) => {
+    if (a.name === 'Maya Vet Anest') return -1
+    if (b.name === 'Maya Vet Anest') return 1
+    return 0
+  })
+
   return (
     <Section
       id="cases"
       eyebrow="Cases selecionados"
       title="Problemas que transformei em produtos e sistemas."
-      lede="Menos catálogo, mais contexto. Estes casos mostram como eu conecto problema, decisão de produto e arquitetura para chegar a algo que funciona em operação."
+      lede="Produtos reais são a melhor prova de execução. O Maya Vet Anest aparece em destaque porque representa bem a combinação entre conhecimento de domínio, produto, engenharia e inteligência artificial aplicada a uma rotina crítica."
     >
       <div className="case-grid">
-        {FEATURED_CASES.map((item, index) => (
+        {cases.map((item, index) => (
           <article className={index === 0 ? 'case-card case-card-featured' : 'case-card'} key={item.name}>
             <div className="case-topline">
               <span className="case-by">{item.by}</span>
-              <span className="case-category">{item.category}</span>
+              <span className="case-category">
+                {item.name === 'Maya Vet Anest' ? 'PRODUTO EM DESTAQUE · ' : ''}
+                {item.category}
+              </span>
             </div>
             <h3>{item.name}</h3>
 
