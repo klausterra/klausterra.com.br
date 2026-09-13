@@ -67,6 +67,26 @@ export type FeaturedCase = {
 
 export const FEATURED_CASES: FeaturedCase[] = [
   {
+    by: 'Grupo BlackHex',
+    name: 'Maya Vet Anest',
+    category: 'Vertical AI · Saúde Veterinária',
+    problem: 'Rotinas anestésicas acumulam cálculo, documentação e registros justamente quando a atenção do profissional precisa estar no paciente.',
+    decision: 'Transformar o fluxo clínico em um produto vertical, automatizando tarefas repetitivas e organizando informação sem retirar do profissional a decisão clínica.',
+    outcome: 'IA aplicada a um problema real de domínio: produto, engenharia, experiência e responsabilidade trabalhando juntos.',
+    href: 'https://mayavetanest.ia.br',
+    hrefLabel: 'Conhecer Maya Vet Anest',
+  },
+  {
+    by: 'Grupo BlackHex',
+    name: 'HiperBuild',
+    category: 'Mentoria · Produto · IA',
+    problem: 'Muita gente aprende ferramentas de IA, mas continua sem saber transformar uma ideia em produto, software funcional e negócio sustentável.',
+    decision: 'Criar uma formação prática baseada em construção real: problema, produto, arquitetura, IA, software, validação e modelo de negócio na mesma jornada.',
+    outcome: 'Capacidade de transformar experiência prática de engenharia e construção de produtos em método, formação e geração de novos builders.',
+    href: 'https://hiperbuild.ia.br',
+    hrefLabel: 'Conhecer HiperBuild',
+  },
+  {
     by: 'Hipercube',
     name: 'Maya One',
     category: 'IA · Agentes · Automação',
@@ -75,16 +95,6 @@ export const FEATURED_CASES: FeaturedCase[] = [
     outcome: 'IA tratada como interface operacional, e não apenas como chatbot isolado.',
     href: 'https://maya.hipercube.ia.br',
     hrefLabel: 'Conhecer Maya One',
-  },
-  {
-    by: 'Grupo BlackHex',
-    name: 'Maya Vet Anest',
-    category: 'Vertical AI · Saúde Veterinária',
-    problem: 'Rotinas anestésicas acumulam cálculo, documentação e registros justamente quando a atenção do profissional precisa estar no paciente.',
-    decision: 'Transformar o fluxo clínico em produto vertical, automatizando tarefas repetitivas sem retirar do profissional a decisão clínica.',
-    outcome: 'Um caso de IA vertical desenhado a partir do processo de trabalho, não a partir do modelo de linguagem.',
-    href: 'https://mayavetanest.ia.br',
-    hrefLabel: 'Conhecer Maya Vet Anest',
   },
   {
     by: 'Grupo BlackHex · Hipercube',
@@ -124,12 +134,6 @@ export type LabProject = {
 }
 
 export const LAB_PROJECTS: LabProject[] = [
-  {
-    name: 'HiperBuild',
-    area: 'Educação · Mentoria · Builders',
-    text: 'Formação prática para transformar ideias em produtos e software com IA, conectando engenharia, produto e negócio.',
-    href: 'https://hiperbuild.ia.br',
-  },
   {
     name: 'Maya Home',
     area: 'Casa Inteligente · IA local',
