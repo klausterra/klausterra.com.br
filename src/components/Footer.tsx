@@ -1,4 +1,5 @@
 import { IDENTITY } from '../content'
+import { POSITIONING } from '../strategyContent'
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
@@ -21,17 +22,17 @@ export function Footer() {
 
           <div className="footer-text-block">
             <div className="footer-name">
-              <b>{IDENTITY.name}</b>
-              <span className="footer-role">Executivo de Tecnologia, Produto & IA · Founder / BlackHex</span>
+              <b>{POSITIONING.name}</b>
+              <span className="footer-role">{POSITIONING.title}</span>
             </div>
             <p className="footer-canonical">
-              © {currentYear} Klaus Terra · <a href="https://klausterra.blackhex.com.br">klausterra.blackhex.com.br</a> · Todos os direitos reservados.
+              {POSITIONING.signature} · © {currentYear} Klaus Terra · <a href="https://klausterra.blackhex.com.br">klausterra.blackhex.com.br</a>
             </p>
           </div>
         </div>
 
         <p className="footer-audit">
-          Dados e métricas auditados. Nomes de repositórios confidenciais, endpoints internos e dados sensíveis de clientes não constam deste site público.
+          Pessoas. Ideias. Software. Um futuro melhor. Informações públicas preservam dados confidenciais, segredos industriais e detalhes sensíveis de clientes.
         </p>
       </div>
     </footer>
