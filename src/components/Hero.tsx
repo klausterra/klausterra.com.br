@@ -1,65 +1,73 @@
-import { FIGURES, IDENTITY } from '../content'
-import { CountUp } from './CountUp'
-import { Stack } from './Stack'
+import { POSITIONING } from '../strategyContent'
 
 export function Hero() {
-  const [line1, line2] = IDENTITY.headline
+  const [line1, line2] = POSITIONING.headline
 
   return (
     <header className="hero" id="topo">
       <div className="shell hero-in">
-        <div className="hero-cols">
+        <div className="hero-cols hero-cols-strategy">
           <div className="hero-left">
             <div className="byline">
               <picture>
-                <source srcSet={IDENTITY.portraitWebp} type="image/webp" />
+                <source srcSet={POSITIONING.portraitWebp} type="image/webp" />
                 <img
                   className="ph"
-                  src={IDENTITY.portrait}
-                  alt={IDENTITY.portraitAlt}
-                  width={68}
-                  height={68}
+                  src={POSITIONING.portrait}
+                  alt={POSITIONING.portraitAlt}
+                  width={72}
+                  height={72}
                   decoding="async"
                 />
               </picture>
               <div className="who">
-                <b>{IDENTITY.name}</b>
-                <span className="who-title">{IDENTITY.title}</span>
+                <b>{POSITIONING.name}</b>
+                <span className="who-title">{POSITIONING.title}</span>
               </div>
             </div>
+
+            <p className="hero-kicker">{POSITIONING.signature}</p>
 
             <h1 className="hero-title">
               {line1}
               <br />
-              {line2}
+              <span>{line2}</span>
             </h1>
 
-            <p className="hero-thesis">
-              {IDENTITY.thesis}
-            </p>
+            <p className="hero-thesis hero-thesis-strategy">{POSITIONING.subheadline}</p>
 
             <div className="hero-ctas">
-              <a className="hero-cta-btn primary" href="#grupo">
-                Conhecer o ecossistema →
+              <a className="hero-cta-btn primary" href="#contratar">
+                Discutir um projeto →
               </a>
-              <a className="hero-cta-btn" href="#produtos">
-                Ventures & produtos
+              <a className="hero-cta-btn" href="#cases">
+                Ver cases
               </a>
             </div>
           </div>
 
-          <Stack />
-        </div>
-
-        <div className="figs">
-          {FIGURES.map((fig) => (
-            <div className="fig" key={fig.label}>
-              <b>
-                <CountUp value={fig.value} />
-              </b>
-              <small>{fig.label}</small>
+          <aside className="hero-proof" aria-label="Resumo de posicionamento">
+            <span className="hero-proof-label">Engenharia antes do hype</span>
+            <p>{POSITIONING.proof}</p>
+            <div className="hero-proof-grid">
+              <div>
+                <b>20+</b>
+                <span>anos em engenharia e tecnologia</span>
+              </div>
+              <div>
+                <b>End-to-end</b>
+                <span>do problema de negócio à operação</span>
+              </div>
+              <div>
+                <b>IA aplicada</b>
+                <span>produto, agentes, automação e integração</span>
+              </div>
+              <div>
+                <b>Founder-led</b>
+                <span>acesso direto a quem decide e constrói</span>
+              </div>
             </div>
-          ))}
+          </aside>
         </div>
       </div>
     </header>
