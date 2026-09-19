@@ -1,4 +1,6 @@
+import { IDENTITY } from '../content'
 import { POSITIONING } from '../strategyContent'
+import { FileDownIcon } from './icons'
 
 export function Hero() {
   const [line1, line2] = POSITIONING.headline
@@ -42,6 +44,16 @@ export function Hero() {
               </a>
               <a className="hero-cta-btn" href="#cases">
                 Ver cases
+              </a>
+              <a
+                className="hero-cta-btn subtle"
+                href={IDENTITY.executiveBriefPdf}
+                target="_blank"
+                rel="noopener"
+                title="Abrir Bio Executiva e Resumo Profissional em PDF"
+              >
+                <FileDownIcon />
+                Bio Executiva (PDF)
               </a>
             </div>
           </div>

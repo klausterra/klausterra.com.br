@@ -236,6 +236,8 @@ h1{font-size:clamp(2.15rem,5.2vw,3.6rem);line-height:1.08;font-weight:750;letter
 .hero-cta-btn:hover{border-color:var(--ochre);color:var(--ochre);transform:translateY(-1px)}
 .hero-cta-btn.primary{background:var(--ochre);border-color:var(--ochre);color:#0B1418}
 .hero-cta-btn.primary:hover{background:var(--ochre-ink);border-color:var(--ochre-ink);color:#0B1418}
+.hero-cta-btn.subtle{background:color-mix(in srgb,var(--signal) 8%,var(--raise));border-color:color-mix(in srgb,var(--signal) 30%,var(--rule2));color:var(--ink)}
+.hero-cta-btn.subtle:hover{border-color:var(--signal);color:var(--signal)}
 
 /* ---------- pilha (hero diagram) & circuito elétrico ---------- */
 .stack{display:grid;gap:2px;border:1px solid var(--rule);border-radius:12px;overflow:hidden;background:var(--rule);position:relative}
@@ -395,6 +397,7 @@ h1{font-size:clamp(2.15rem,5.2vw,3.6rem);line-height:1.08;font-weight:750;letter
 .fig b{font:800 clamp(1.7rem,3.6vw,2.3rem)/1 var(--display);letter-spacing:-.035em;color:var(--ink);transition:color .2s}
 .fig:hover b{color:var(--signal)}
 .fig small{font:500 10px/1.4 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink3)}
+.fig .fig-sub{font:400 11px/1.35 var(--mono);color:var(--ochre);margin-top:2px}
 
 /* ---------- empresas ---------- */
 .orgs{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px}
@@ -430,6 +433,10 @@ h1{font-size:clamp(2.15rem,5.2vw,3.6rem);line-height:1.08;font-weight:750;letter
 .prod-solution{display:grid;gap:2px}
 .solution-label{font:700 9.5px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--signal)}
 .prod-solution p{font-size:.9rem;color:var(--ink2);line-height:1.5}
+
+.prod-impact{display:grid;gap:2px;background:color-mix(in srgb,var(--signal) 8%,transparent);padding:8px 10px;border-radius:6px;border-left:2.5px solid var(--signal)}
+.impact-label{font:700 9.5px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--signal)}
+.prod-impact p{font-size:.855rem;color:var(--ink);line-height:1.45;font-weight:500}
 
 .prod .tech{margin-top:auto;padding-top:8px;font:400 11px/1.6 var(--mono);color:var(--signal);border-top:1px dashed var(--rule)}
 .tech-label{font-weight:700;color:var(--ink3)}

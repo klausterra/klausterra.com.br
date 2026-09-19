@@ -26,7 +26,7 @@ export function Footer() {
               <span className="footer-role">{POSITIONING.title}</span>
             </div>
             <p className="footer-canonical">
-              {POSITIONING.signature} · © {currentYear} Klaus Terra · <a href="https://klausterra.blackhex.com.br">klausterra.blackhex.com.br</a>
+              {POSITIONING.signature} · © {currentYear} Klaus Terra · <a href="https://klausterra.com.br">klausterra.com.br</a>
             </p>
           </div>
         </div>

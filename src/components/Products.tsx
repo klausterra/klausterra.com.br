@@ -32,6 +32,13 @@ export function Products() {
               <p>{product.text}</p>
             </div>
 
+            {product.impact && (
+              <div className="prod-impact">
+                <span className="impact-label">Impacto & Tração:</span>
+                <p>{product.impact}</p>
+              </div>
+            )}
+
             {product.offers ? (
               <ul className="offers">
                 {product.offers.map((offer) => (

@@ -18,7 +18,8 @@ export const IDENTITY = {
   instagram: 'https://www.instagram.com/klausterra',
   whatsapp: 'https://wa.me/5531995557007',
   whatsappLabel: '+55 31 99555-7007',
-  site: 'https://klausterra.blackhex.com.br',
+  site: 'https://klausterra.com.br',
+  executiveBriefPdf: '/klaus-terra-bio-executiva.pdf',
   portrait: '/klaus-terra.jpg',
   portraitWebp: '/klaus-terra.webp',
   portraitAlt: 'Klaus Terra, executivo de tecnologia e founder',
@@ -46,7 +47,7 @@ export const ROLES: Role[] = [
 /** A pilha, do topo (agente) para a base (silício). O nível é a posição física real. */
 export type Layer = { level: string; name: string; tech: string; product: string }
 export const LAYERS: Layer[] = [
-  { level: 'L7', name: 'Agente', tech: 'Gemini 2.5 Pro · RAG · voz · WhatsApp / Telegram', product: 'Hermes — assistente autônoma e engenharia de software' },
+  { level: 'L7', name: 'Agente', tech: 'Gemini 2.5 Pro · RAG · voz · WhatsApp / Telegram', product: 'Maya One — assistente autônoma e engenharia de software' },
   { level: 'L6', name: 'Aplicação', tech: 'React 19 · Vite · Next.js 14 · Kotlin + Compose', product: 'Athos, Meds, Money Day, Maya Home' },
   { level: 'L5', name: 'Borda', tech: 'Cloudflare Pages · Workers · D1 · Tunnel', product: 'proxy same-origin, cookies HttpOnly, CSP restrito' },
   { level: 'L4', name: 'Serviço', tech: 'FastAPI · Express · Cloud Run · PostgreSQL 16 · Firestore', product: 'APIs multi-tenant com segredo cifrado por cliente' },
@@ -56,13 +57,13 @@ export const LAYERS: Layer[] = [
   { level: 'L0', name: 'Silício', tech: 'ESP32-C6 em C / ESP-IDF · M5Stack · NVIDIA TensorRT', product: 'servidor web com OTA e captive portal em 4 MB de flash' },
 ]
 
-export type Figure = { value: string; label: string }
+export type Figure = { value: string; label: string; sub?: string }
 export const FIGURES: Figure[] = [
-  { value: '20+', label: 'anos de engenharia' },
-  { value: '8', label: 'camadas da pilha' },
-  { value: '113', label: 'repositórios' },
-  { value: '10', label: 'formações' },
-  { value: '3', label: 'empresas líderes' },
+  { value: '20+', label: 'anos de liderança', sub: 'engenharia & tecnologia' },
+  { value: 'R$ 2B+', label: 'em capex gerido', sub: 'sistemas críticos & infra' },
+  { value: '250+', label: 'profissionais liderados', sub: 'equipes multidisciplinares' },
+  { value: '3', label: 'empresas ativas', sub: 'ecossistema em expansão' },
+  { value: '8', label: 'camadas integradas', sub: 'do silício à IA em produção' },
 ]
 
 export type Product = {
@@ -70,6 +71,7 @@ export type Product = {
   name: string
   klausRole?: string
   problem?: string
+  impact?: string
   text: string
   tech: string
   href?: string
@@ -81,10 +83,11 @@ export type Product = {
 export const PRODUCTS: Product[] = [
   {
     by: 'Grupo BlackHex',
-    name: 'EmpreenderIA',
+    name: 'HiperBuild',
     klausRole: 'Founder & Estratégia de Produto',
     featured: true,
     problem: 'Empreendedores e executivos enfrentam sobrecarga de ferramentas e falta de orientação prática e contextualizada para aplicar IA em seus negócios.',
+    impact: 'Plataforma líder em formação executiva e comunidade de builders com mentoria contextualizada por IA proprietária.',
     text: 'A plataforma de formação e ecossistema de negócios do grupo. Une formação executiva, comunidade de networking e mentoria estratégica com IA treinada em modelos reais de negócio.',
     offers: [
       'Cursos executivos e trilhas práticas de implementação de IA',
@@ -94,16 +97,17 @@ export const PRODUCTS: Product[] = [
       'IA mentora de estratégia: orientações sobre o negócio do usuário com privacidade',
       'Programa Corporate Premium para empresas e equipes de alta performance',
     ],
-    cta: 'Conhecer a EmpreenderIA',
+    cta: 'Conhecer a HiperBuild',
     tech: 'React · Vite · Firebase · Cloudflare',
-    href: 'https://empreenderia.hipercube.ia.br',
-    hrefLabel: 'empreenderia.hipercube.ia.br',
+    href: 'https://hiperbuild.ia.br',
+    hrefLabel: 'hiperbuild.ia.br',
   },
   {
     by: 'Hiperenge',
     name: 'Maya Home',
     klausRole: 'Founder & Arquitetura de Produto',
     problem: 'Sistemas de automação dependentes de nuvens externas quebram a privacidade, sofrem com latência e param de funcionar quando a internet cai.',
+    impact: 'Operação 100% autônoma on-premise com zero vazamento de telemetria residencial e latência inferior a 150ms em comandos locais.',
     text: 'Automação residencial inteligente com aprendizado contínuo de rotina e processamento 100% on-premise. Controle por voz em português com privacidade absoluta e operação ininterrupta.',
     tech: 'Home Assistant · integrações próprias · Cloud Run · Firestore',
     href: 'https://www.mayahome.ia.br',
@@ -111,9 +115,10 @@ export const PRODUCTS: Product[] = [
   },
   {
     by: 'Hipercube',
-    name: 'Hermes',
+    name: 'Maya One',
     klausRole: 'Founder & Engenharia de IA',
     problem: 'Comunicação corporativa dispersa e lentidão na execução técnica entre times de produto, atendimento e desenvolvimento.',
+    impact: 'Redução drástica no ciclo de atendimento e automação de rotinas de engenharia de software com memória de longo prazo.',
     text: 'Assistente inteligente multimodal que atende por texto e voz no WhatsApp/Telegram, mantém memória de longo prazo e executa rotinas técnicas e correções de código no servidor de forma autônoma.',
     tech: 'PWA · Gemini 2.5 Pro · FastAPI · Cloud Run · RAG',
     href: 'https://maya.hipercube.ia.br',
@@ -124,6 +129,7 @@ export const PRODUCTS: Product[] = [
     name: 'Maya Knox',
     klausRole: 'Founder & Visão Computacional',
     problem: 'Sistemas tradicionais de vigilância disparam alarmes falsos com folhas e animais, além de enviar vídeos privados para servidores externos.',
+    impact: '99% de assertividade na detecção perimetral com processamento em GPU dedicada local, sem streaming para nuvens públicas.',
     text: 'Vigilância perimetral de alta precisão com IA que filtra apenas detecções relevantes. Processamento em tempo real com hardware local de alta performance — nenhum vídeo deixa a rede do cliente.',
     tech: 'Frigate · YOLOv9 · ONNX · NVIDIA TensorRT',
     href: 'https://knox.mayahome.ia.br',
@@ -134,6 +140,7 @@ export const PRODUCTS: Product[] = [
     name: 'Meds · MedEvidence',
     klausRole: 'Founder & Estratégia de Produto',
     problem: 'Médicos e plantonistas necessitam de respostas rápidas e seguras sobre diretrizes clínicas, doses e protocolos de sala à beira do leito.',
+    impact: 'Base de conhecimento médico de alta fidedignidade com redução a zero de alucinação via citação canônica e rastreabilidade total.',
     text: 'Plataforma de consulta clínica rápida com IA referenciada exclusivamente em diretrizes oficiais e acervo médico curado por especialistas responsáveis por cada área.',
     tech: 'PWA · Vite + React · Cloud Run · RAG sobre acervo curado',
     href: 'https://meds.ia.br',
@@ -195,21 +202,13 @@ export const PRODUCTS: Product[] = [
   },
   {
     by: 'Atimus Agro · Hipercube',
-    name: 'BrandPulse',
-    klausRole: 'Arquitetura de Dados & Segurança',
-    problem: 'Monitoramento manual de menções e sentimento de marca em múltiplos canais sem proteção de dados de clientes.',
-    text: 'Painel de inteligência de marca com monitoramento automatizado, relatórios sintéticos e isolamento criptográfico por tenant.',
-    tech: 'FastAPI · Fernet · Secret Manager · Next.js 14',
+    name: 'Brandpulse',
+    klausRole: 'Arquitetura de Dados, Automação & Segurança',
+    problem: 'Monitoramento manual de menções, sentimento e produção recorrente de conteúdo consome horas e fragmenta a inteligência de marca.',
+    text: 'Plataforma de inteligência de marca que monitora tendências e menções, produz relatórios, redige conteúdo, gera imagens e programa publicações com isolamento criptográfico por tenant.',
+    tech: 'FastAPI · Next.js 14 · Gemini · Imagen 4 · n8n · Fernet · Secret Manager',
     href: 'https://brandpulse.atimus.agr.br',
     hrefLabel: 'brandpulse.atimus.agr.br',
-  },
-  {
-    by: 'Hipercube',
-    name: 'Marketing Autônomo',
-    klausRole: 'Engenharia de Automação & IA',
-    problem: 'Criação constante de conteúdo corporativo consome horas de profissionais que deveriam focar em produto e estratégia.',
-    text: 'Sistema autônomo que monitora tendências de mercado, redige artigos técnicos, gera imagens vetorizadas com a identidade da marca e programa publicações automaticamente.',
-    tech: 'Gemini · Imagen 4 · n8n · FastAPI · LXC',
   },
 ]
 
@@ -275,21 +274,21 @@ export const TRACK: Stop[] = [
     period: '2023 – 2024',
     org: 'Vale · Anglo American',
     role: 'Engenheiro Eletricista · Owner Team',
-    text: 'Projetos estratégicos de infraestrutura hídrica e disciplinas eletrotécnicas para plantas de grande porte, alinhando engenharia executiva, governança de risco e excelência operacional.',
+    text: 'Projetos estratégicos de infraestrutura hídrica e disciplinas eletrotécnicas para plantas de grande porte, alinhando engenharia executiva, gestão de risco de capital, mitigação de Capex e governança corporativa de padrão global.',
   },
   {
-    phase: 'TECNOLOGIA & PRODUTO',
+    phase: 'TECNOLOGIA & PRODUTO (C-LEVEL)',
     period: 'Atuação Anterior',
     org: 'Atimus Agro',
     role: 'CPO & CTO (Transição Concluída)',
-    text: 'Liderança técnica e de produto em consultoria de inovação para o agronegócio, desenvolvendo plataformas de inteligência de dados, OCR fiscal para a Lei do Bem e automações corporativas.',
+    text: 'Direção executiva de tecnologia e produto: estruturação de times ágeis de engenharia, arquitetura de plataformas de dados fiscais para Lei do Bem e automação analítica corporativa em escala.',
   },
   {
     phase: 'FOUNDER & LIDERANÇA EXECUTIVA',
     period: '2023 → Atual',
     org: 'BlackHex · Hipercube · Hiperenge · Maya',
     role: 'CEO & Founder',
-    text: 'Liderança executiva de ecossistema integrado: aplicando o rigor de vinte anos de engenharia de campo e sistemas críticos à criação de empresas de software, produtos com IA e plataformas de alto valor.',
+    text: 'Liderança executiva do ecossistema BlackHex: unindo governança de capital, formação de times de alta densidade técnica e escala de produtos digitais próprios com inteligência artificial e alta rentabilidade.',
   },
 ]
 
@@ -333,7 +332,7 @@ export const ORGS: Org[] = [
   },
   {
     role: 'Educação Executiva & Builders',
-    name: 'Hiperbuild',
+    name: 'HiperBuild',
     text: 'Braço educacional e comunidade de builders focado em capacitar profissionais e líderes a conceber, construir e escalar soluções reais utilizando ferramentas modernas de IA.',
     href: 'https://hiperbuild.ia.br',
     label: 'hiperbuild.ia.br',
@@ -348,7 +347,7 @@ export const ORGS: Org[] = [
   {
     role: 'Portfólio de Ventures',
     name: 'Ventures do Ecossistema',
-    text: 'EmpreenderIA (educação executiva & mentoria), Meds / MedEvidence (suporte clínico com IA), Money Day (finanças pessoais), Maya Vet Anest (anestesiologia veterinária) e HiperGED / Tesserion (engenharia & compliance).',
+    text: 'HiperBuild (educação executiva & mentoria), Meds / MedEvidence (suporte clínico com IA), Money Day (finanças pessoais), Maya Vet Anest (anestesiologia veterinária) e HiperGED / Tesserion (engenharia & compliance).',
     href: 'https://blackhex.com.br',
     label: 'ecossistema blackhex',
   },
@@ -375,10 +374,10 @@ export const SOCIAL: Social[] = [
 ]
 
 export const OFFER = {
-  eyebrow: 'Parcerias & Novos Negócios',
-  title: 'Sua empresa precisa de software, inteligência artificial ou um time de tecnologia de alta performance?',
+  eyebrow: 'Parcerias, M&A & Advisory Executivo',
+  title: 'Buscando liderança técnica de alto nível, governança de produto ou investimentos estratégicos?',
   text:
-    'Por meio da Hipercube e do ecossistema BlackHex, transformamos diagnósticos estratégicos em produtos de software no ar: aplicativos móveis, plataformas corporativas escaláveis, automação inteligente de processos e agentes de IA — sustentados pela mesma engenharia de excelência apresentada neste site.',
+    'Atuo tanto como conselheiro e executivo sênior (Advisory / Board) para empresas e fundos, quanto na estruturação de novos negócios, joint ventures e entrega de produtos escaláveis através do ecossistema BlackHex e Hipercube.',
   href: 'https://hipercube.ia.br',
   label: 'hipercube.ia.br',
 } as const
