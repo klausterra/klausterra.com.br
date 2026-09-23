@@ -19,4 +19,5 @@ export const analytics = {
   whatsappClick: () => trackEvent('cta', 'whatsapp_click', 'floating'),
   productCta: (product: string) => trackEvent('cta', 'product_click', product),
   contactClick: (channel: string) => trackEvent('cta', 'contact_click', channel),
+  intentClick: (intent: string) => trackEvent('intent', 'click', intent),
 };
