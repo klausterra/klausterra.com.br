@@ -11,7 +11,8 @@ export function Offer() {
           <h2>{COMMERCIAL.title}</h2>
           <p className="lede">{COMMERCIAL.text}</p>
           <p className="offer-filter">
-            Founder-led, escopo seletivo e foco em problemas nos quais estratégia, produto e engenharia precisam conversar.
+            Founder-led, escopo seletivo e foco em situações nas quais negócio, produto e engenharia precisam
+            conversar com clareza.
           </p>
         </div>
         <div className="offer-cta">
@@ -20,7 +21,7 @@ export function Offer() {
             href={POSITIONING.whatsapp}
             target="_blank"
             rel="noopener"
-            onClick={() => analytics.contactClick('project_whatsapp')}
+            onClick={() => analytics.intentClick('offer_project')}
           >
             <WhatsIcon />
             {COMMERCIAL.primaryLabel}
@@ -29,7 +30,7 @@ export function Offer() {
             href={COMMERCIAL.secondaryHref}
             target="_blank"
             rel="noopener"
-            onClick={() => analytics.contactClick('hipercube')}
+            onClick={() => analytics.intentClick('offer_partnership')}
           >
             {COMMERCIAL.secondaryLabel} →
           </a>
