@@ -3,6 +3,8 @@ import { CircuitBackground } from './components/CircuitBackground'
 import { Contact } from './components/Contact'
 import { Education } from './components/Education'
 import { Ecosystem } from './components/Ecosystem'
+import { ExecutiveCapabilities } from './components/ExecutiveCapabilities'
+import { ExecutiveSnapshot } from './components/ExecutiveSnapshot'
 import { FeaturedCases } from './components/FeaturedCases'
 import { Footer } from './components/Footer'
 import { Hero } from './components/Hero'
@@ -23,7 +25,7 @@ export default function App() {
   useEffect(() => {
     const onPointerMove = (e: PointerEvent) => {
       const target = (e.target as HTMLElement)?.closest(
-        '.problem-card, .case-card, .work-card, .lab-card, .ecosystem-card, .os, .fig, .legacy-card',
+        '.problem-card, .case-card, .work-card, .lab-card, .ecosystem-card, .capability-card, .snapshot-metric, .os, .fig, .legacy-card',
       ) as HTMLElement | null
       if (target) {
         const rect = target.getBoundingClientRect()
@@ -40,9 +42,11 @@ export default function App() {
       <CircuitBackground />
       <TopBar onToggleTheme={toggle} />
       <Hero />
+      <ExecutiveSnapshot />
       <Problems />
       <FeaturedCases />
       <WorkModes />
+      <ExecutiveCapabilities />
       <Track />
       <Ecosystem />
       <Principles />
