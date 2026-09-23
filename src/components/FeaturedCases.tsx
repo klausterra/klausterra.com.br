@@ -16,9 +16,9 @@ export function FeaturedCases() {
   return (
     <Section
       id="cases"
-      eyebrow="Em foco agora"
-      title="Maya Vet Anest e HiperBuild são hoje os dois projetos prioritários."
-      lede="São frentes diferentes, mas complementares: uma demonstra IA vertical aplicada a uma rotina crítica de saúde; a outra transforma experiência prática de engenharia, produto e negócios em formação para quem quer construir com IA de verdade."
+      eyebrow="Cases & evidências"
+      title="Projetos que mostram como estratégia, produto e engenharia se encontram."
+      lede="Os exemplos abaixo não estão aqui como catálogo de tecnologia. Eles mostram como problemas diferentes exigem decisões diferentes — e como a solução precisa sobreviver ao mundo real."
     >
       <div className="case-grid">
         {cases.map((item, index) => {
@@ -29,7 +29,7 @@ export function FeaturedCases() {
               <div className="case-topline">
                 <span className="case-by">{item.by}</span>
                 <span className="case-category">
-                  {isPriority ? 'PROJETO PRIORITÁRIO · ' : ''}
+                  {isPriority ? 'EM FOCO · ' : ''}
                   {item.category}
                 </span>
               </div>
@@ -40,11 +40,11 @@ export function FeaturedCases() {
                 <p>{item.problem}</p>
               </div>
               <div className="case-block">
-                <span>Decisão</span>
+                <span>Decisão / solução</span>
                 <p>{item.decision}</p>
               </div>
               <div className="case-result">
-                <span>O que isso demonstra</span>
+                <span>Impacto / evidência</span>
                 <p>{item.outcome}</p>
               </div>
 
