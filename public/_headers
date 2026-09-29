@@ -8,3 +8,7 @@
 
 /*.html
   Cache-Control: public, max-age=0, must-revalidate
+
+/community-talk/*.ppsx
+  Content-Type: application/vnd.openxmlformats-officedocument.presentationml.slideshow
+  Content-Disposition: attachment; filename="Community_Talk_Klaus_Terra_IA_2026.ppsx"

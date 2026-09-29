@@ -18,5 +18,13 @@
     return Response.redirect(`https://klausterra.com.br${url.pathname}${url.search}`, 301);
   }
 
+  const shortLinks = {
+    "/talk": "/community-talk/?mtm_campaign=community-talk-2026&mtm_source=short-link",
+  };
+  const shortTarget = shortLinks[url.pathname.replace(/\/+$/, "").toLowerCase()];
+  if (shortTarget) {
+    return Response.redirect(`https://klausterra.com.br${shortTarget}`, 302);
+  }
+
   return context.next();
 }

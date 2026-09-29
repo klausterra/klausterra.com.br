@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Community Talk · IA 2026 — Klaus Terra</title>
+  <meta name="description" content="Baixe a apresentação da Community Talk de Klaus Terra sobre IA em 2026, com HiperBuild." />
+  <meta name="theme-color" content="#0b0d10" />
+  <link rel="canonical" href="https://klausterra.com.br/community-talk/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Community Talk · IA 2026 — Klaus Terra" />
+  <meta property="og:description" content="Baixe a apresentação completa da talk." />
+  <meta property="og:url" content="https://klausterra.com.br/community-talk/" />
+  <meta property="og:image" content="https://klausterra.com.br/og.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0b0d10;
+      --bg-elev: #12161c;
+      --line: #243041;
+      --text: #e8edf4;
+      --muted: #9aa8b8;
+      --accent: #c4a574;
+      --accent-soft: rgba(196, 165, 116, 0.14);
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; }
+    body {
+      font-family: "Instrument Sans", system-ui, sans-serif;
+      background:
+        radial-gradient(900px 420px at 50% -10%, #1a2230 0%, transparent 60%),
+        var(--bg);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrap {
+      width: min(460px, calc(100% - 2rem));
+      margin: 0 auto;
+      padding: 2.5rem 0 3.5rem;
+    }
+    .identity { text-align: center; margin-bottom: 1.75rem; }
+    .avatar {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      border: 1px solid var(--line);
+      margin: 0 auto 1rem;
+      object-fit: cover;
+      display: block;
+    }
+    .pill {
+      display: inline-block;
+      margin-bottom: 0.85rem;
+      padding: 0.28rem 0.7rem;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .identity h1 {
+      font-family: Newsreader, Georgia, serif;
+      font-weight: 600;
+      font-size: 1.75rem;
+      letter-spacing: -0.02em;
+      margin: 0 0 0.5rem;
+    }
+    .identity p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+    .links { display: grid; gap: 0.65rem; margin-top: 1.5rem; }
+    a.card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      padding: 1rem 1.1rem;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--bg-elev);
+      color: var(--text);
+      text-decoration: none;
+      transition: border-color 160ms ease, transform 160ms ease, background 160ms ease;
+    }
+    a.card:hover {
+      border-color: #3a4b63;
+      transform: translateY(-1px);
+      background: #151a22;
+    }
+    a.card.primary {
+      border-color: #4a3d28;
+      background: linear-gradient(180deg, #1a1712 0%, #12161c 100%);
+    }
+    a.card .meta { display: grid; gap: 0.15rem; min-width: 0; }
+    a.card .title { font-weight: 600; font-size: 1rem; }
+    a.card .sub { color: var(--muted); font-size: 0.8rem; }
+    a.card .arrow { color: var(--accent); font-size: 1.1rem; flex: none; }
+    .hint {
+      margin: 1rem 0 0;
+      color: var(--muted);
+      font-size: 0.78rem;
+      line-height: 1.5;
+      text-align: center;
+    }
+    footer {
+      margin-top: 2.25rem;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.78rem;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+  </style>
+  <!-- Matomo Analytics -->
+  <script>
+    var _paq = window._paq = window._paq || [];
+    _paq.push(['disableCookies']);
+    _paq.push(['addDownloadExtensions', 'ppsx|pps']);
+    _paq.push(['enableHeartBeatTimer', 15]);
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="https://matomo.hipercube.ia.br/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '21']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+  <!-- End Matomo Code -->
+</head>
+<body>
+  <main class="wrap">
+    <header class="identity">
+      <img class="avatar" src="/klaus-terra.webp" alt="Klaus Terra" width="96" height="96" />
+      <span class="pill">Community Talk · 2026</span>
+      <h1>IA em 2026 — com HiperBuild</h1>
+      <p>Obrigado por participar! Aqui está a apresentação completa da talk para você baixar e revisar.</p>
+    </header>
+
+    <div class="links">
+      <a class="card primary" id="download" href="/community-talk/Community_Talk_Klaus_Terra_IA_2026.ppsx" download data-track="download_ppsx">
+        <span class="meta">
+          <span class="title">Baixar apresentação</span>
+          <span class="sub">PowerPoint (.ppsx) · 1,4 MB</span>
+        </span>
+        <span class="arrow">↓</span>
+      </a>
+      <a class="card" href="https://hiperbuild.ia.br/" target="_blank" rel="noopener" data-track="hiperbuild">
+        <span class="meta">
+          <span class="title">Conhecer o HiperBuild</span>
+          <span class="sub">Educação · construir com IA</span>
+        </span>
+        <span class="arrow">→</span>
+      </a>
+      <a class="card" href="https://wa.me/553199057007?text=Ol%C3%A1%20Klaus%2C%20vi%20sua%20Community%20Talk" target="_blank" rel="noopener" data-track="whatsapp">
+        <span class="meta">
+          <span class="title">Falar comigo</span>
+          <span class="sub">WhatsApp · dúvidas, projetos e parcerias</span>
+        </span>
+        <span class="arrow">→</span>
+      </a>
+      <a class="card" href="https://www.linkedin.com/in/klausterra" target="_blank" rel="noopener" data-track="linkedin">
+        <span class="meta">
+          <span class="title">LinkedIn</span>
+          <span class="sub">Conecte-se comigo</span>
+        </span>
+        <span class="arrow">→</span>
+      </a>
+    </div>
+
+    <p class="hint">O arquivo .ppsx abre direto em modo apresentação no PowerPoint. Para editar ou ver no celular, use PowerPoint, Keynote ou Google Slides.</p>
+
+    <footer>
+      <a href="https://klausterra.com.br/">klausterra.com.br</a> · BlackHex · engenharia · software · IA
+    </footer>
+  </main>
+  <script>
+    document.querySelectorAll('[data-track]').forEach(function (el) {
+      el.addEventListener('click', function () {
+        (window._paq = window._paq || []).push(['trackEvent', 'community_talk', 'click', el.getAttribute('data-track')]);
+      });
+    });
+  </script>
+</body>
+</html>
