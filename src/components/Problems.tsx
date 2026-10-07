@@ -5,9 +5,9 @@ export function Problems() {
   return (
     <Section
       id="problemas"
-      eyebrow="Onde eu gero valor"
-      title="Empresas me procuram quando tecnologia deixa de ser simples."
-      lede="O ponto de partida não é a ferramenta. É o problema de negócio, a restrição operacional e o resultado esperado. A tecnologia entra depois, na medida certa."
+      eyebrow="Quando faz sentido me chamar"
+      title="A consultoria começa antes da escolha da ferramenta."
+      lede="Normalmente a conversa começa com uma dúvida de negócio, um projeto travado, uma proposta que precisa ser avaliada ou a sensação de que existe oportunidade com IA, mas ainda falta clareza."
     >
       <div className="problem-grid">
         {BUSINESS_PROBLEMS.map((item) => (

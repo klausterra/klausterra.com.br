@@ -5,9 +5,9 @@ export function WorkModes() {
   return (
     <Section
       id="como-trabalho"
-      eyebrow="Como eu trabalho"
-      title="Da decisão executiva à operação."
-      lede="O objetivo é reduzir incerteza rápido. Primeiro entendemos o problema e o retorno esperado; depois escolhemos arquitetura, escopo e nível de execução."
+      eyebrow="Formatos de atuação"
+      title="Da dúvida executiva ao acompanhamento recorrente."
+      lede="Nem todo problema precisa virar um projeto grande. A atuação pode começar por um diagnóstico pontual, evoluir para um roadmap ou permanecer como advisory para apoiar decisões ao longo do tempo."
     >
       <div className="work-grid">
         {WORK_MODES.map((item) => (
