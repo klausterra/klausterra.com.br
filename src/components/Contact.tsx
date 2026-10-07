@@ -17,8 +17,8 @@ export function Contact() {
       id="contato"
       className="contact"
       eyebrow="Contato"
-      title="Tecnologia com mais clareza."
-      lede="Para projetos, advisory, arquitetura, produto ou IA aplicada, envie o contexto do problema. Quanto mais concreto o desafio, melhor a conversa."
+      title="Traga o problema. A tecnologia vem depois."
+      lede="Se você está avaliando IA, automação, um fornecedor, um produto ou uma decisão de tecnologia, me envie o contexto. A primeira conversa serve para entender se eu realmente posso ajudar."
     >
       <div className="cta">
         <a
