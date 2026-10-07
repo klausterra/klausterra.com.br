@@ -42,18 +42,18 @@ export default function App() {
       <CircuitBackground />
       <TopBar onToggleTheme={toggle} />
       <Hero />
-      <ExecutiveSnapshot />
       <Problems />
-      <FeaturedCases />
       <WorkModes />
+      <FeaturedCases />
+      <ExecutiveSnapshot />
       <ExecutiveCapabilities />
+      <Offer />
       <Track />
       <Ecosystem />
       <Principles />
       <Laboratory />
       <OpenSource />
       <Education />
-      <Offer />
       <Contact />
       <Footer />
       <WhatsAppButton />
