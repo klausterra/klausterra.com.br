@@ -1,15 +1,15 @@
 export const POSITIONING = {
   name: 'Klaus Terra',
-  title: 'Executivo de Tecnologia (CTO) · Produto & IA · Founder',
-  headline: ['Transformo problemas complexos de negócio', 'em tecnologia que funciona.'],
+  title: 'Consultor Executivo em IA & Tecnologia · CTO · Founder',
+  headline: ['IA e tecnologia para decisões', 'que fazem sentido para o negócio.'],
   subheadline:
-    'Estratégia, produto, arquitetura, software e inteligência artificial para empresas que precisam conectar decisão executiva à execução real.',
-  signature: 'Da engenharia que move operações à IA que move negócios.',
+    'Ajudo empresários e executivos a identificar onde a inteligência artificial realmente gera valor, reduzir decisões erradas e transformar oportunidades em projetos executáveis.',
+  signature: 'Estratégia antes da ferramenta. Negócio antes do hype.',
   proof:
-    'Mais de duas décadas acumulando camadas de experiência — sistemas críticos, liderança de equipes, capital intensivo, software, produto e IA — para decidir com visão de negócio sem perder profundidade técnica.',
+    'Minha atuação combina mais de duas décadas entre engenharia, sistemas críticos, liderança, software, produto, arquitetura e negócios. A consultoria parte do problema real, não da tecnologia da moda.',
   portrait: '/klaus-terra.jpg',
   portraitWebp: '/klaus-terra.webp',
-  portraitAlt: 'Klaus Terra, executivo de tecnologia, CTO e founder',
+  portraitAlt: 'Klaus Terra, consultor executivo em inteligência artificial e tecnologia',
   email: 'klaus@hipercube.ia.br',
   whatsapp: 'https://wa.me/5531995557007',
   whatsappLabel: '+55 31 99555-7007',
@@ -23,11 +23,11 @@ export const EXECUTIVE_SNAPSHOT = [
 ] as const
 
 export const EXECUTIVE_ROLES = [
-  'CTO / Diretor de Tecnologia',
+  'Consultoria Executiva em IA',
+  'CTO Advisory',
   'Technology Strategy',
-  'Produto & IA',
-  'Transformação & Arquitetura',
-  'Board / Advisory',
+  'Produto & Automação',
+  'Arquitetura & Transformação',
 ] as const
 
 export type ExecutiveCapability = {
@@ -38,24 +38,24 @@ export type ExecutiveCapability = {
 
 export const EXECUTIVE_CAPABILITIES: ExecutiveCapability[] = [
   {
-    title: 'Liderança & Negócio',
-    text: 'Experiência de founder e executivo em ambientes nos quais pessoas, prazo, risco, investimento e operação precisam permanecer alinhados.',
-    skills: ['Technology Strategy', 'Governança', 'Gestão de risco e capital', 'Liderança multidisciplinar'],
+    title: 'Estratégia & Negócio',
+    text: 'Apoio decisões de investimento, prioridade e adoção de tecnologia com leitura executiva de risco, retorno, operação e capacidade de execução.',
+    skills: ['Technology Strategy', 'Governança', 'Priorização', 'Gestão de risco e capital'],
   },
   {
-    title: 'Engenharia & Sistemas Críticos',
-    text: 'Base construída em infraestrutura, energia, telecomunicações, automação e comissionamento de operações onde falha técnica tem consequência real.',
-    skills: ['Sistemas críticos', 'Automação', 'Telecom', 'CAPEX / OPEX'],
+    title: 'IA & Automação',
+    text: 'Identifico onde IA, agentes e automação podem reduzir atrito, acelerar processos ou criar novas capacidades sem transformar ferramenta em fim.',
+    skills: ['GenAI & agentes', 'RAG', 'Automação', 'Computer Vision'],
   },
   {
     title: 'Produto & Software',
-    text: 'Capacidade de transformar dores operacionais em produtos digitais, definir arquitetura, reduzir escopo e conduzir a passagem de MVP para operação.',
+    text: 'Transformo oportunidades em escopo, arquitetura e plano de produto, conectando necessidade de negócio, usuário e engenharia.',
     skills: ['Product Strategy', 'Arquitetura de software', 'Cloud & integrações', 'MVP e escala'],
   },
   {
-    title: 'Inteligência Artificial',
-    text: 'IA tratada como sistema de produção: conectada a dados, processos, segurança, governança, custo e experiência de usuário.',
-    skills: ['GenAI & agentes', 'RAG', 'Computer Vision', 'Edge AI & automação'],
+    title: 'Engenharia & Sistemas Críticos',
+    text: 'Base técnica em infraestrutura, energia, telecom, automação e ambientes onde falha operacional tem consequência real.',
+    skills: ['Sistemas críticos', 'Automação', 'Telecom', 'CAPEX / OPEX'],
   },
 ]
 
@@ -100,34 +100,34 @@ export type BusinessProblem = {
 
 export const BUSINESS_PROBLEMS: BusinessProblem[] = [
   {
-    title: 'IA sem caso de uso claro',
-    text: 'A empresa quer aplicar inteligência artificial, mas ainda não sabe onde existe valor real, retorno mensurável ou risco aceitável.',
-    signal: 'Estratégia & ROI',
+    title: '“Onde IA realmente faz sentido na minha empresa?”',
+    text: 'Mapeio processos, gargalos, riscos e oportunidades para separar casos de uso com valor real de iniciativas que só consomem tempo e orçamento.',
+    signal: 'Diagnóstico Executivo',
   },
   {
-    title: 'Integração com sistemas existentes',
-    text: 'A prova de conceito funciona isolada, mas precisa conversar com dados, sistemas legados, APIs, permissões e processos reais da operação.',
-    signal: 'Arquitetura & Integração',
+    title: '“Preciso automatizar, mas não sei por onde começar.”',
+    text: 'Organizo prioridades, dependências, dados, integrações e impacto operacional antes da escolha de ferramenta ou fornecedor.',
+    signal: 'IA & Automação',
   },
   {
-    title: 'Produto novo saindo do papel',
-    text: 'Existe uma oportunidade de produto ou SaaS, mas faltam decisões de escopo, arquitetura, experiência, modelo operacional e caminho para o MVP.',
-    signal: 'Produto & Execução',
+    title: '“Recebi uma proposta técnica e não sei se faz sentido.”',
+    text: 'Atuo como segunda opinião executiva para avaliar arquitetura, escopo, custo, riscos, fornecedores e aderência ao problema de negócio.',
+    signal: 'Second Opinion',
   },
   {
-    title: 'Arquitetura crescendo sem direção',
-    text: 'Custos, integrações, dados e dependências começaram a crescer e a empresa precisa simplificar antes que a complexidade vire dívida estrutural.',
+    title: '“Temos um produto ou projeto, mas falta direção técnica.”',
+    text: 'Ajudo a reduzir escopo, escolher arquitetura, definir roadmap e alinhar tecnologia, produto e execução.',
     signal: 'CTO Advisory',
   },
   {
-    title: 'Automação de processos complexos',
-    text: 'Há trabalho manual, conhecimento espalhado e decisões repetitivas que podem ser transformados em fluxos, agentes e sistemas auditáveis.',
-    signal: 'Automação & Agentes',
+    title: '“A operação cresceu e a tecnologia virou um gargalo.”',
+    text: 'Reviso processos, integrações, sistemas, dados e responsabilidades para reduzir complexidade e recuperar capacidade de decisão.',
+    signal: 'Transformação',
   },
   {
-    title: 'Protótipo que precisa virar operação',
-    text: 'O demo impressiona, mas agora precisa de segurança, observabilidade, governança, custos previsíveis, UX e confiabilidade para uso real.',
-    signal: 'Engenharia de Produção',
+    title: '“Quero alguém experiente para acompanhar as decisões.”',
+    text: 'Atuação recorrente como conselheiro de tecnologia e IA para empresários, CEOs e lideranças que precisam de apoio sem montar uma estrutura executiva completa.',
+    signal: 'Advisory Mensal',
   },
 ]
 
@@ -251,46 +251,45 @@ export type WorkMode = {
 export const WORK_MODES: WorkMode[] = [
   {
     number: '01',
-    title: 'Diagnóstico & Estratégia',
-    text: 'Entender o problema antes de escolher a tecnologia. Mapear processos, restrições, riscos, retorno e onde IA realmente cria vantagem.',
-    delivers: 'Diagnóstico executivo · prioridades · roadmap',
+    title: 'Diagnóstico Executivo de IA',
+    text: 'Conversa estruturada para entender operação, gargalos, processos e oportunidades. O objetivo é identificar rapidamente o que merece atenção e o que não merece investimento agora.',
+    delivers: 'Prioridades · riscos · oportunidades · próximos passos',
   },
   {
     number: '02',
-    title: 'Arquitetura',
-    text: 'Desenhar sistemas, integrações, dados, segurança, custos e operação com simplicidade suficiente para evoluir sem virar um labirinto.',
-    delivers: 'Arquitetura · decisões técnicas · plano de implementação',
+    title: 'Roadmap de IA & Tecnologia',
+    text: 'Aprofundamento do diagnóstico para transformar oportunidades em uma sequência executável de iniciativas, com dependências, esforço, impacto e critérios de decisão.',
+    delivers: 'Roadmap · arquitetura · priorização · plano de implantação',
   },
   {
     number: '03',
-    title: 'Produto & Execução',
-    text: 'Transformar a decisão em MVP, sistema ou produto operacional, priorizando valor, observabilidade e aprendizado rápido com usuário real.',
-    delivers: 'MVP · implantação · evolução orientada por métricas',
+    title: 'Second Opinion & Projetos',
+    text: 'Avaliação independente de propostas, fornecedores, arquitetura, escopo ou projetos em andamento antes de comprometer orçamento, prazo ou operação.',
+    delivers: 'Parecer executivo · riscos · alternativas · recomendação',
   },
   {
     number: '04',
     title: 'Advisory Executivo',
-    text: 'Apoiar CEO, CTO e liderança em decisões de tecnologia, produto e IA sem exigir a criação de uma grande estrutura interna para cada problema.',
+    text: 'Acompanhamento recorrente para empresários, CEOs e lideranças que precisam de apoio em decisões de IA, produto, arquitetura e tecnologia.',
     delivers: 'Decisão · governança · acompanhamento',
   },
 ]
 
 export const COMMERCIAL = {
-  eyebrow: 'Projetos · Advisory · Parcerias',
-  title: 'Tecnologia, liderança ou novos negócios: vamos começar pelo problema certo.',
+  eyebrow: 'Consultoria Executiva em IA & Tecnologia',
+  title: 'Se a decisão envolve IA ou tecnologia e o impacto é de negócio, vale conversar.',
   text:
-    'A conversa pode começar por um projeto, CTO advisory, arquitetura, produto, IA aplicada, parceria estratégica ou oportunidade de negócio. O ponto comum é transformar complexidade em decisão e execução.',
-  primaryLabel: 'Discutir um projeto',
-  secondaryLabel: 'Parcerias & ecossistema',
-  secondaryHref: 'https://blackhex.com.br',
+    'Você pode chegar com uma dúvida, uma proposta de fornecedor, um processo que precisa ser automatizado, um produto novo ou uma decisão de investimento. A primeira função da consultoria é organizar o problema antes de recomendar qualquer tecnologia.',
+  primaryLabel: 'Falar sobre meu desafio',
+  secondaryLabel: 'Conhecer a Hipercube',
+  secondaryHref: 'https://hipercube.ia.br',
 } as const
 
 export const STRATEGY_NAV = [
-  { href: '#executivo', label: 'perfil' },
-  { href: '#problemas', label: 'problemas' },
+  { href: '#problemas', label: 'quando me chamar' },
+  { href: '#como-trabalho', label: 'consultoria' },
   { href: '#cases', label: 'cases' },
-  { href: '#competencias', label: 'competências' },
+  { href: '#executivo', label: 'experiência' },
   { href: '#trajetoria', label: 'trajetória' },
-  { href: '#grupo', label: 'ecossistema' },
   { href: '#contato', label: 'contato' },
 ] as const
