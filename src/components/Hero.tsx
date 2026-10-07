@@ -42,17 +42,17 @@ export function Hero() {
             <div className="hero-ctas">
               <a
                 className="hero-cta-btn primary"
-                href="#contratar"
-                onClick={() => analytics.intentClick('hero_project')}
+                href="#como-trabalho"
+                onClick={() => analytics.intentClick('hero_consulting')}
               >
-                Discutir um projeto →
+                Ver como funciona a consultoria →
               </a>
               <a
                 className="hero-cta-btn"
-                href="#grupo"
-                onClick={() => analytics.intentClick('hero_ecosystem')}
+                href="#cases"
+                onClick={() => analytics.intentClick('hero_cases')}
               >
-                Conhecer os negócios
+                Ver cases e projetos
               </a>
               <a
                 className="hero-cta-btn subtle"
@@ -69,24 +69,24 @@ export function Hero() {
           </div>
 
           <aside className="hero-proof" aria-label="Resumo de posicionamento">
-            <span className="hero-proof-label">Operator mindset · engenharia antes do hype</span>
+            <span className="hero-proof-label">Consultoria executiva · IA sem hype</span>
             <p>{POSITIONING.proof}</p>
             <div className="hero-proof-grid">
               <div>
-                <b>Operação</b>
-                <span>sistemas críticos e execução</span>
+                <b>Estratégia</b>
+                <span>prioridade, risco e retorno</span>
               </div>
               <div>
-                <b>C-level</b>
-                <span>tecnologia, produto e governança</span>
+                <b>IA</b>
+                <span>casos de uso e automação</span>
               </div>
               <div>
-                <b>Builder</b>
-                <span>software, IA e produtos reais</span>
+                <b>CTO</b>
+                <span>arquitetura, produto e governança</span>
               </div>
               <div>
-                <b>Founder</b>
-                <span>negócios, risco e capital</span>
+                <b>Execução</b>
+                <span>da decisão ao projeto real</span>
               </div>
             </div>
           </aside>
