@@ -20,6 +20,9 @@
 
 .topbar-cta{font:700 11px/1 var(--display);text-decoration:none;padding:9px 12px;border-radius:7px;background:var(--ochre);color:#0B1418;white-space:nowrap}
 .topbar-cta:hover{background:var(--ochre-ink)}
+@media (min-width:720px) and (max-width:899px){
+  .topbar .social{display:none}
+}
 
 .problem-grid,.work-grid,.lab-grid,.ecosystem-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,245px),1fr));gap:14px}
 .problem-card,.work-card,.lab-card,.ecosystem-card,.case-card{position:relative;overflow:hidden;background:var(--raise);border:1px solid var(--rule);border-radius:12px;transition:transform .18s,border-color .18s,box-shadow .18s}
