@@ -4,7 +4,7 @@ export const DATA_CENTER_ROLE = {
   since: 'out. 2026 – atual',
   location: 'Brasília, DF',
   summary:
-    'Atuo pela In-Haus Industrial (Grupo GPS) em engenharia de automação para data centers, em Brasília. Meu trabalho tem foco na disponibilidade, na confiabilidade e na continuidade operacional.',
+    'Atuo pela In-Haus Industrial (Grupo GPS) na engenharia de automação do data center do Banco do Brasil, em Brasília. Meu trabalho tem foco na disponibilidade, na confiabilidade e na continuidade operacional.',
   areas: [
     {
       title: 'Supervisão e controle',
