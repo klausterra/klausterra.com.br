@@ -10,7 +10,7 @@ export const IDENTITY = {
     'Eu projeto o sistema inteiro: o chip dentro do sensor, a rede que o conecta, o servidor que guarda o dado, o aplicativo na mão da pessoa e a inteligência que decide o que fazer.',
   thesisEmphasis: 'Oito camadas integradas — da infraestrutura de base à aplicação final.',
   who:
-    'Engenheiro eletricista com duas décadas de experiência em sistemas críticos, infraestrutura e inovação. Da liderança em megaprojetos industriais à criação de plataformas digitais, firmware e IA em produção: hoje atuo como founder e executivo liderando tecnologia, produtos e estratégias no ecossistema de empresas que fundei.',
+    'Engenheiro eletricista com mais de 22 anos de experiência em sistemas críticos, infraestrutura e inovação. Da liderança em megaprojetos industriais à criação de plataformas digitais, firmware e IA em produção: hoje atuo como founder e executivo liderando tecnologia, produtos e estratégias no ecossistema de empresas que fundei.',
   email: 'klaus@hipercube.ia.br',
   github: 'https://github.com/klausterra',
   linkedin: 'https://www.linkedin.com/in/klausterra',

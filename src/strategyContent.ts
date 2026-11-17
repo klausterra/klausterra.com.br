@@ -30,7 +30,7 @@ export const POSITIONING = {
   title: 'Engenheiro · CTO · Consultor',
   headline: 'Engenharia de IA e infraestrutura crítica',
   subheadline:
-    'Há mais de 20 anos atuo em engenharia e tecnologia. Minha trajetória reúne automação, elétrica e telecomunicações, operação de data centers e desenvolvimento de produtos com inteligência artificial.',
+    'Há mais de 22 anos atuo em engenharia e tecnologia. Minha trajetória reúne automação, elétrica e telecomunicações, operação de data centers e desenvolvimento de produtos com inteligência artificial.',
   signature: 'Tecnologia com mais clareza.',
   portrait: '/klaus-terra.jpg',
   portraitWebp: '/klaus-terra.webp',
@@ -58,7 +58,7 @@ export const PRACTICE_AREAS = [
 ] as const
 
 export const EXECUTIVE_SNAPSHOT = [
-  { value: '20+', label: 'anos de trajetória', sub: 'engenharia, tecnologia e negócios' },
+  { value: '22+', label: 'anos de trajetória', sub: 'engenharia, tecnologia e negócios' },
   { value: '250+', label: 'profissionais liderados', sub: 'equipes multidisciplinares e operação' },
   { value: 'R$ 2 bi+', label: 'escala de CAPEX', sub: 'projetos e sistemas críticos' },
   { value: 'End-to-end', label: 'visão de tecnologia', sub: 'estratégia → produto → operação' },
