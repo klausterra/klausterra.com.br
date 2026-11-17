@@ -43,10 +43,10 @@ export default function App() {
       <CircuitBackground />
       <TopBar onToggleTheme={toggle} />
       <Hero />
+      <WorkModes />
       <DataCenterExperience />
       <ExecutiveSnapshot />
       <Problems />
-      <WorkModes />
       <FeaturedCases />
       <ExecutiveCapabilities />
       <Offer />

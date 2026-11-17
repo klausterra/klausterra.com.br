@@ -5,9 +5,9 @@ export function WorkModes() {
   return (
     <Section
       id="como-trabalho"
-      eyebrow="Formatos de atuação"
-      title="Da dúvida executiva ao acompanhamento recorrente."
-      lede="Nem todo problema precisa virar um projeto grande. A atuação pode começar por um diagnóstico pontual, evoluir para um roadmap ou permanecer como advisory para apoiar decisões ao longo do tempo."
+      eyebrow="Consultoria"
+      title="Consultoria em engenharia de IA"
+      lede="Ajudo empresas a identificar onde a IA pode gerar valor, avaliar arquiteturas e transformar casos de uso em planos de implantação. Minha prática em engenharia de IA inclui agentes, sistemas de busca com RAG e integração de modelos com software e dados de negócio."
     >
       <div className="work-grid">
         {WORK_MODES.map((item) => (

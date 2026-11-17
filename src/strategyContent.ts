@@ -27,13 +27,11 @@ export const DATA_CENTER_ROLE = {
 
 export const POSITIONING = {
   name: 'Klaus Terra',
-  title: 'Engenheiro de Automação Sênior · CTO · Founder',
-  headline: ['Engenharia de automação', 'para data centers.'],
+  title: 'Engenheiro · CTO · Consultor',
+  headline: 'Engenharia de IA e infraestrutura crítica',
   subheadline:
-    'Há mais de 20 anos atuo entre engenharia, infraestrutura e tecnologia. Hoje atuo como engenheiro de automação sênior na In-Haus Industrial (Grupo GPS), em infraestrutura crítica de data center em Brasília.',
-  signature: 'Infraestrutura crítica · Data Center (CDCP)',
-  proof:
-    'Minha atuação em automação conecta sistemas de campo, supervisão e operação para sustentar a disponibilidade da infraestrutura.',
+    'Há mais de 20 anos atuo em engenharia e tecnologia. Minha trajetória reúne automação, elétrica e telecomunicações, operação de data centers e desenvolvimento de produtos com inteligência artificial.',
+  signature: 'Tecnologia com mais clareza.',
   portrait: '/klaus-terra.jpg',
   portraitWebp: '/klaus-terra.webp',
   portraitAlt: 'Klaus Terra, engenheiro de automação sênior',
@@ -41,6 +39,23 @@ export const POSITIONING = {
   whatsapp: 'https://wa.me/5531995557007',
   whatsappLabel: '+55 31 99555-7007',
 } as const
+
+export const PRACTICE_AREAS = [
+  {
+    title: 'Engenharia de IA',
+    description: 'Experiência em arquitetura e desenvolvimento de produtos com IA. Consultoria para diagnosticar oportunidades, avaliar soluções e planejar a implantação.',
+    href: '#como-trabalho',
+    label: 'Conhecer a consultoria em IA',
+    intent: 'hero_consulting',
+  },
+  {
+    title: 'Automação e infraestrutura crítica',
+    description: 'Especialidade em automação industrial e predial, engenharia elétrica e telecomunicações, com atuação atual em data centers.',
+    href: '#data-center',
+    label: 'Conhecer a atuação em engenharia',
+    intent: 'hero_data_center',
+  },
+] as const
 
 export const EXECUTIVE_SNAPSHOT = [
   { value: '20+', label: 'anos de trajetória', sub: 'engenharia, tecnologia e negócios' },
@@ -50,11 +65,11 @@ export const EXECUTIVE_SNAPSHOT = [
 ] as const
 
 export const EXECUTIVE_ROLES = [
-  'Consultoria Executiva em IA',
+  'Engenharia e consultoria em IA',
+  'Automação industrial e predial',
+  'Engenharia elétrica e telecomunicações',
+  'Data centers',
   'CTO Advisory',
-  'Technology Strategy',
-  'Produto & Automação',
-  'Arquitetura & Transformação',
 ] as const
 
 export type ExecutiveCapability = {
@@ -82,7 +97,7 @@ export const EXECUTIVE_CAPABILITIES: ExecutiveCapability[] = [
   {
     title: 'Engenharia & Sistemas Críticos',
     text: 'Experiência em automação industrial e predial, infraestrutura elétrica, climatização e telecomunicações, com foco em disponibilidade e continuidade operacional.',
-    skills: ['Data centers', 'BMS/BAS', 'SCADA', 'Energia e climatização'],
+    skills: ['Data centers', 'BMS/BAS', 'SCADA', 'Energia e climatização', 'Telecomunicações'],
   },
 ]
 
@@ -313,6 +328,7 @@ export const COMMERCIAL = {
 } as const
 
 export const STRATEGY_NAV = [
+  { href: '#como-trabalho', label: 'engenharia de IA' },
   { href: '#data-center', label: 'data centers' },
   { href: '#cases', label: 'projetos' },
   { href: '#trajetoria', label: 'trajetória' },

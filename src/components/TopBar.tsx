@@ -40,8 +40,8 @@ export function TopBar({ onToggleTheme }: { onToggleTheme: () => void }) {
             )
           })}
         </div>
-        <a className="topbar-cta" href="#contratar">
-          Consultoria
+        <a className="topbar-cta" href="#contato">
+          Fale comigo
         </a>
         <button className="tbtn" onClick={onToggleTheme} title="Alternar tema" aria-label="Alternar tema">
           <MoonIcon />
