@@ -1,19 +1,28 @@
 /* Strategic homepage layer: authority, hierarchy and high-ticket conversion */
 
-.hero-cols-strategy{align-items:stretch}
-.hero-kicker{font:600 11px/1 var(--mono);letter-spacing:.15em;text-transform:uppercase;color:var(--ochre)}
-.hero-title span{color:var(--ochre-ink)}
 .hero-thesis-strategy{max-width:48ch;color:var(--ink2)}
-.hero-proof{display:grid;gap:22px;padding:clamp(24px,3vw,34px);border:1px solid var(--rule2);border-radius:16px;background:color-mix(in srgb,var(--raise) 92%,transparent);box-shadow:0 18px 50px -30px rgba(0,0,0,.35)}
-.hero-proof-label{font:600 10px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--signal)}
-.hero-proof>p{font:500 clamp(1.05rem,1.8vw,1.25rem)/1.5 var(--body);color:var(--ink);max-width:36ch}
-.hero-proof-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:12px;overflow:hidden}
-.hero-proof-grid>div{display:grid;gap:4px;padding:16px;background:var(--raise)}
-.hero-proof-grid b{font:700 1rem/1.2 var(--display);color:var(--ink)}
-.hero-proof-grid span{font:500 11px/1.45 var(--mono);color:var(--ink3)}
+.hero-practices{display:grid;gap:14px}
+.hero-practice{
+  display:grid;
+  grid-template-rows:auto 1fr auto;
+  justify-items:start;
+  gap:10px;
+  padding:clamp(18px,2.3vw,26px);
+  border:1px solid var(--rule2);
+  border-radius:14px;
+  background:var(--raise);
+}
+.hero-practice h2{font-size:clamp(1.2rem,1.8vw,1.55rem)}
+.hero-practice p{color:var(--ink2);line-height:1.55}
+@media (min-width:640px) and (max-width:959px){
+  .hero-practices{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
 
 .topbar-cta{font:700 11px/1 var(--display);text-decoration:none;padding:9px 12px;border-radius:7px;background:var(--ochre);color:#0B1418;white-space:nowrap}
 .topbar-cta:hover{background:var(--ochre-ink)}
+@media (min-width:720px) and (max-width:899px){
+  .topbar .social{display:none}
+}
 
 .problem-grid,.work-grid,.lab-grid,.ecosystem-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,245px),1fr));gap:14px}
 .problem-card,.work-card,.lab-card,.ecosystem-card,.case-card{position:relative;overflow:hidden;background:var(--raise);border:1px solid var(--rule);border-radius:12px;transition:transform .18s,border-color .18s,box-shadow .18s}
@@ -66,12 +75,25 @@
 
 @media (max-width:719px){
   .topbar-cta{display:none}
-  .hero-proof-grid{grid-template-columns:1fr}
-  .hero-proof{padding:20px}
   .problem-grid,.work-grid,.lab-grid,.ecosystem-grid{grid-template-columns:1fr}
   .case-card{padding:18px}
 }
 
+
+/* ---------- experiência em data center ---------- */
+.data-center-role{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:baseline;
+  gap:6px 16px;
+  margin-bottom:18px;
+  padding:14px 16px;
+  border-left:3px solid var(--ochre);
+  border-radius:0 8px 8px 0;
+  background:var(--ochre-soft);
+}
+.data-center-role strong{font:700 .95rem/1.4 var(--display)}
+.data-center-role span{font:500 .75rem/1.5 var(--mono);color:var(--ink2)}
 
 /* ---------- executive snapshot ---------- */
 .executive-snapshot{position:relative;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);background:color-mix(in srgb,var(--raise) 88%,transparent)}

@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { CircuitBackground } from './components/CircuitBackground'
 import { Contact } from './components/Contact'
+import { DataCenterExperience } from './components/DataCenterExperience'
 import { Education } from './components/Education'
 import { Ecosystem } from './components/Ecosystem'
 import { ExecutiveCapabilities } from './components/ExecutiveCapabilities'
@@ -42,10 +43,11 @@ export default function App() {
       <CircuitBackground />
       <TopBar onToggleTheme={toggle} />
       <Hero />
-      <Problems />
       <WorkModes />
-      <FeaturedCases />
+      <DataCenterExperience />
       <ExecutiveSnapshot />
+      <Problems />
+      <FeaturedCases />
       <ExecutiveCapabilities />
       <Offer />
       <Track />

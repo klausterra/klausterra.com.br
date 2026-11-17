@@ -1,15 +1,13 @@
 import { IDENTITY } from '../content'
 import { analytics } from '../lib/analytics'
-import { POSITIONING } from '../strategyContent'
+import { POSITIONING, PRACTICE_AREAS } from '../strategyContent'
 import { FileDownIcon } from './icons'
 
 export function Hero() {
-  const [line1, line2] = POSITIONING.headline
-
   return (
     <header className="hero" id="topo">
       <div className="shell hero-in">
-        <div className="hero-cols hero-cols-strategy">
+        <div className="hero-cols">
           <div className="hero-left">
             <div className="byline">
               <picture>
@@ -29,31 +27,11 @@ export function Hero() {
               </div>
             </div>
 
-            <p className="hero-kicker">{POSITIONING.signature}</p>
-
-            <h1 className="hero-title">
-              {line1}
-              <br />
-              <span>{line2}</span>
-            </h1>
+            <h1 className="hero-title">{POSITIONING.headline}</h1>
 
             <p className="hero-thesis hero-thesis-strategy">{POSITIONING.subheadline}</p>
 
             <div className="hero-ctas">
-              <a
-                className="hero-cta-btn primary"
-                href="#como-trabalho"
-                onClick={() => analytics.intentClick('hero_consulting')}
-              >
-                Ver como funciona a consultoria →
-              </a>
-              <a
-                className="hero-cta-btn"
-                href="#cases"
-                onClick={() => analytics.intentClick('hero_cases')}
-              >
-                Ver cases e projetos
-              </a>
               <a
                 className="hero-cta-btn subtle"
                 href={IDENTITY.executiveBriefPdf}
@@ -68,28 +46,21 @@ export function Hero() {
             </div>
           </div>
 
-          <aside className="hero-proof" aria-label="Resumo de posicionamento">
-            <span className="hero-proof-label">Consultoria executiva · IA sem hype</span>
-            <p>{POSITIONING.proof}</p>
-            <div className="hero-proof-grid">
-              <div>
-                <b>Estratégia</b>
-                <span>prioridade, risco e retorno</span>
-              </div>
-              <div>
-                <b>IA</b>
-                <span>casos de uso e automação</span>
-              </div>
-              <div>
-                <b>CTO</b>
-                <span>arquitetura, produto e governança</span>
-              </div>
-              <div>
-                <b>Execução</b>
-                <span>da decisão ao projeto real</span>
-              </div>
-            </div>
-          </aside>
+          <div className="hero-practices">
+            {PRACTICE_AREAS.map((area) => (
+              <article className="hero-practice" key={area.href}>
+                <h2>{area.title}</h2>
+                <p>{area.description}</p>
+                <a
+                  className="hero-cta-btn"
+                  href={area.href}
+                  onClick={() => analytics.intentClick(area.intent)}
+                >
+                  {area.label} <span aria-hidden="true">→</span>
+                </a>
+              </article>
+            ))}
+          </div>
         </div>
       </div>
     </header>

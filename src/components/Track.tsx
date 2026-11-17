@@ -1,21 +1,32 @@
 import { TRACK } from '../content'
-import { CAREER_GAINS } from '../strategyContent'
+import { CAREER_GAINS, DATA_CENTER_ROLE } from '../strategyContent'
 import { Section } from './Section'
+
+const careerTrack = [
+  ...TRACK,
+  {
+    phase: 'AUTOMAÇÃO & DATA CENTERS',
+    period: DATA_CENTER_ROLE.since,
+    org: DATA_CENTER_ROLE.employer,
+    role: DATA_CENTER_ROLE.title,
+    text: 'Engenharia de automação para infraestrutura de data center em Brasília, com foco em disponibilidade, confiabilidade e operação contínua.',
+  },
+]
 
 export function Track() {
   return (
     <Section
       id="trajetoria"
       eyebrow="Evolução & Liderança"
-      title="A carreira não foi uma sequência de cargos. Foi uma acumulação de competências."
-      lede="Da engenharia de campo à liderança C-level e ao venture building, cada etapa adicionou uma camada que hoje influencia como eu avalio risco, arquitetura, produto, pessoas e negócio."
+      title="Da engenharia de campo à infraestrutura crítica"
+      lede="Minha trajetória reúne comissionamento industrial, projetos de infraestrutura, liderança executiva em tecnologia e engenharia de automação em data centers."
     >
       <div className="track-wrap">
         <div className="track-rail" aria-hidden="true">
           <div className="track-pulse" />
         </div>
         <ol className="track">
-          {TRACK.map((stop, index) => {
+          {careerTrack.map((stop, index) => {
             const career = CAREER_GAINS[stop.org]
 
             return (
