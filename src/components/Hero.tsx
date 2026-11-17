@@ -42,17 +42,17 @@ export function Hero() {
             <div className="hero-ctas">
               <a
                 className="hero-cta-btn primary"
-                href="#como-trabalho"
-                onClick={() => analytics.intentClick('hero_consulting')}
+                href="#data-center"
+                onClick={() => analytics.intentClick('hero_data_center')}
               >
-                Ver como funciona a consultoria →
+                Minha atuação em data center →
               </a>
               <a
                 className="hero-cta-btn"
-                href="#cases"
-                onClick={() => analytics.intentClick('hero_cases')}
+                href="#como-trabalho"
+                onClick={() => analytics.intentClick('hero_consulting')}
               >
-                Ver cases e projetos
+                Consultoria executiva em IA
               </a>
               <a
                 className="hero-cta-btn subtle"
@@ -68,25 +68,25 @@ export function Hero() {
             </div>
           </div>
 
-          <aside className="hero-proof" aria-label="Resumo de posicionamento">
-            <span className="hero-proof-label">Consultoria executiva · IA sem hype</span>
+          <aside className="hero-proof" aria-label="Escopo técnico">
+            <span className="hero-proof-label">Automação de infraestrutura crítica</span>
             <p>{POSITIONING.proof}</p>
             <div className="hero-proof-grid">
               <div>
-                <b>Estratégia</b>
-                <span>prioridade, risco e retorno</span>
+                <b>BMS/BAS e SCADA</b>
+                <span>supervisão e controle</span>
               </div>
               <div>
-                <b>IA</b>
-                <span>casos de uso e automação</span>
+                <b>Energia e climatização</b>
+                <span>monitoramento de sistemas críticos</span>
               </div>
               <div>
-                <b>CTO</b>
-                <span>arquitetura, produto e governança</span>
+                <b>Integração</b>
+                <span>equipamentos e supervisórios</span>
               </div>
               <div>
-                <b>Execução</b>
-                <span>da decisão ao projeto real</span>
+                <b>Operação 24×7</b>
+                <span>alarmes, manutenção e mudanças</span>
               </div>
             </div>
           </aside>

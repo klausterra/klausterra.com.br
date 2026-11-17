@@ -1,15 +1,42 @@
+export const DATA_CENTER_ROLE = {
+  employer: 'In-Haus Industrial · Grupo GPS',
+  title: 'Engenheiro de Automação Sênior',
+  since: 'out. 2026 – atual',
+  location: 'Brasília, DF',
+  summary:
+    'Atuo pela In-Haus Industrial (Grupo GPS) em engenharia de automação para data centers, em Brasília. Meu trabalho tem foco na disponibilidade, na confiabilidade e na continuidade operacional.',
+  areas: [
+    {
+      title: 'Supervisão e controle',
+      text: 'Engenharia de automação predial, supervisão operacional e análise de alarmes.',
+    },
+    {
+      title: 'Energia e climatização',
+      text: 'Monitoramento de energia e climatização em infraestrutura crítica.',
+    },
+    {
+      title: 'Integração de sistemas',
+      text: 'Integração entre equipamentos, sistemas de controle e plataformas de supervisão.',
+    },
+    {
+      title: 'Continuidade operacional',
+      text: 'Planejamento de manutenção, análise de falhas, gestão de mudanças e documentação de procedimentos com as equipes de operação e fornecedores.',
+    },
+  ],
+} as const
+
 export const POSITIONING = {
   name: 'Klaus Terra',
-  title: 'Consultor Executivo em IA & Tecnologia · CTO · Founder',
-  headline: ['IA e tecnologia para decisões', 'que fazem sentido para o negócio.'],
+  title: 'Engenheiro de Automação Sênior · CTO · Founder',
+  headline: ['Engenharia de automação', 'para data centers.'],
   subheadline:
-    'Ajudo empresários e executivos a identificar onde a inteligência artificial realmente gera valor, reduzir decisões erradas e transformar oportunidades em projetos executáveis.',
-  signature: 'Estratégia antes da ferramenta. Negócio antes do hype.',
+    'Há mais de 20 anos atuo entre engenharia, infraestrutura e tecnologia. Hoje atuo como engenheiro de automação sênior na In-Haus Industrial (Grupo GPS), em infraestrutura crítica de data center em Brasília.',
+  signature: 'Infraestrutura crítica · Data Center (CDCP)',
   proof:
-    'Minha atuação combina mais de duas décadas entre engenharia, sistemas críticos, liderança, software, produto, arquitetura e negócios. A consultoria parte do problema real, não da tecnologia da moda.',
+    'Minha atuação em automação conecta sistemas de campo, supervisão e operação para sustentar a disponibilidade da infraestrutura.',
   portrait: '/klaus-terra.jpg',
   portraitWebp: '/klaus-terra.webp',
-  portraitAlt: 'Klaus Terra, consultor executivo em inteligência artificial e tecnologia',
+  portraitAlt: 'Klaus Terra, engenheiro de automação sênior',
   email: 'klaus@hipercube.ia.br',
   whatsapp: 'https://wa.me/5531995557007',
   whatsappLabel: '+55 31 99555-7007',
@@ -54,8 +81,8 @@ export const EXECUTIVE_CAPABILITIES: ExecutiveCapability[] = [
   },
   {
     title: 'Engenharia & Sistemas Críticos',
-    text: 'Base técnica em infraestrutura, energia, telecom, automação e ambientes onde falha operacional tem consequência real.',
-    skills: ['Sistemas críticos', 'Automação', 'Telecom', 'CAPEX / OPEX'],
+    text: 'Experiência em automação industrial e predial, infraestrutura elétrica, climatização e telecomunicações, com foco em disponibilidade e continuidade operacional.',
+    skills: ['Data centers', 'BMS/BAS', 'SCADA', 'Energia e climatização'],
   },
 ]
 
@@ -286,10 +313,8 @@ export const COMMERCIAL = {
 } as const
 
 export const STRATEGY_NAV = [
-  { href: '#problemas', label: 'quando me chamar' },
-  { href: '#como-trabalho', label: 'consultoria' },
-  { href: '#cases', label: 'cases' },
-  { href: '#executivo', label: 'experiência' },
+  { href: '#data-center', label: 'data centers' },
+  { href: '#cases', label: 'projetos' },
   { href: '#trajetoria', label: 'trajetória' },
   { href: '#contato', label: 'contato' },
 ] as const
