@@ -28,10 +28,10 @@ export const DATA_CENTER_ROLE = {
 export const POSITIONING = {
   name: 'Klaus Terra',
   title: 'Engenheiro · CTO · Consultor',
-  headline: 'Engenharia de IA e infraestrutura crítica',
+  headline: 'Inteligência artificial e infraestruturas críticas',
   subheadline:
     'Há mais de 22 anos atuo em engenharia e tecnologia. Minha trajetória reúne automação, elétrica e telecomunicações, operação de data centers e desenvolvimento de produtos com inteligência artificial.',
-  signature: 'Tecnologia com mais clareza.',
+  signature: 'Inteligência artificial e infraestruturas críticas',
   portrait: '/klaus-terra.jpg',
   portraitWebp: '/klaus-terra.webp',
   portraitAlt: 'Klaus Terra, engenheiro de automação sênior',
